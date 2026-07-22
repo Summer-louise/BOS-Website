@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "BOS Automated"
+version = "1.0.0"
+id = "artifacts/bos-automated"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22847
+
+[services.development]
+run = "pnpm --filter @workspace/bos-automated run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/bos-automated", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/bos-automated/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22847"
+BASE_PATH = "/"
