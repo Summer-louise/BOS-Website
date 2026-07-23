@@ -1,169 +1,150 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 
-interface WorkflowNode {
-  id: string;
-  label: string;
-  icon: string;
-  x: number;
-  y: number;
-  color: string;
+const NODE_W = 148;
+const NODE_H = 44;
+const NODE_RX = 22;
+
+const nodes = [
+  { id: 'lead',    label: 'Lead Captured',    x: 90,  y: 220 },
+  { id: 'crm',     label: 'CRM Updated',       x: 280, y: 110 },
+  { id: 'follow',  label: 'Follow-up Sent',    x: 275, y: 330 },
+  { id: 'viewing', label: 'Viewing Booked',    x: 490, y: 185 },
+  { id: 'deal',    label: 'Deal Won',           x: 670, y: 270 },
+];
+
+const connections = [
+  { from: 'lead',    to: 'crm' },
+  { from: 'lead',    to: 'follow' },
+  { from: 'crm',     to: 'viewing' },
+  { from: 'follow',  to: 'viewing' },
+  { from: 'viewing', to: 'deal' },
+];
+
+function getPos(id: string) {
+  const n = nodes.find(n => n.id === id)!;
+  return { x: n.x, y: n.y };
 }
 
-interface WorkflowConnection {
-  from: string;
-  to: string;
+function cubicPath(fromId: string, toId: string) {
+  const s = getPos(fromId);
+  const e = getPos(toId);
+  const dx = e.x - s.x;
+  return `M ${s.x} ${s.y} C ${s.x + dx * 0.45} ${s.y}, ${e.x - dx * 0.45} ${e.y}, ${e.x} ${e.y}`;
 }
 
-interface WorkflowVisualizationProps {
-  nodes: WorkflowNode[];
-  connections: WorkflowConnection[];
-  className?: string;
-}
-
-export function WorkflowVisualization({ nodes, connections, className = '' }: WorkflowVisualizationProps) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const getNodePosition = (nodeId: string) => {
-    const node = nodes.find(n => n.id === nodeId);
-    return node ? { x: node.x, y: node.y } : { x: 0, y: 0 };
-  };
-
-  const calculatePath = (from: string, to: string) => {
-    const start = getNodePosition(from);
-    const end = getNodePosition(to);
-    
-    const midX = (start.x + end.x) / 2;
-    
-    return `M ${start.x} ${start.y} Q ${midX} ${start.y}, ${midX} ${(start.y + end.y) / 2} T ${end.x} ${end.y}`;
-  };
-
+export function WorkflowVisualization() {
   return (
-    <div className={`relative ${className}`}>
+    <div className="absolute inset-0 pointer-events-none overflow-visible">
       <svg
-        viewBox="0 0 800 500"
-        className="w-full h-full"
+        viewBox="0 0 780 440"
+        className="w-full h-full overflow-visible"
         preserveAspectRatio="xMidYMid meet"
       >
-        <defs>
-          <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0" />
-            <stop offset="50%" stopColor="hsl(var(--accent))" stopOpacity="1" />
-            <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0" />
-          </linearGradient>
-        </defs>
+        {/* Subtle decorative arcs — organic, low-opacity */}
+        <motion.ellipse
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.07 }}
+          transition={{ duration: 2.5, delay: 0.3 }}
+          cx="380" cy="220" rx="230" ry="140"
+          fill="none"
+          stroke="hsl(var(--secondary))"
+          strokeWidth="1"
+        />
+        <motion.ellipse
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.05 }}
+          transition={{ duration: 2.5, delay: 0.6 }}
+          cx="500" cy="180" rx="120" ry="90"
+          fill="none"
+          stroke="hsl(var(--primary))"
+          strokeWidth="0.75"
+        />
 
-        {/* Connection lines */}
-        <g>
-          {connections.map((conn, idx) => {
-            const pathD = calculatePath(conn.from, conn.to);
-            const pathId = `path-${idx}`;
-            
-            return (
-              <g key={`conn-${idx}`}>
-                {/* Static dashed line */}
-                <path
-                  d={pathD}
-                  stroke="hsl(var(--accent) / 0.2)"
-                  strokeWidth="2"
-                  fill="none"
-                  strokeDasharray="4 4"
-                  className="animate-flow-dash"
-                />
-                
-                {/* Animated data pulse */}
-                {mounted && (
-                  <>
-                    <path
-                      id={pathId}
-                      d={pathD}
-                      fill="none"
-                      stroke="none"
-                    />
-                    <motion.circle
-                      r="4"
-                      fill="hsl(var(--accent))"
-                      initial={{ offsetDistance: '0%', opacity: 0 }}
-                      animate={{ offsetDistance: '100%', opacity: [0, 1, 1, 0] }}
-                      transition={{
-                        duration: 2.5,
-                        repeat: Infinity,
-                        delay: idx * 0.3,
-                        ease: 'linear',
-                      }}
-                      style={{
-                        offsetPath: `path('${pathD}')`,
-                      }}
-                    />
-                  </>
-                )}
-              </g>
-            );
-          })}
-        </g>
+        {/* Connection paths */}
+        {connections.map((conn, idx) => {
+          const d = cubicPath(conn.from, conn.to);
+          const duration = 2.8 + idx * 0.4;
+          const delay = idx * 0.6;
+          return (
+            <g key={`conn-${idx}`}>
+              {/* Static dashed line */}
+              <path
+                d={d}
+                stroke="hsl(var(--secondary))"
+                strokeWidth="1"
+                fill="none"
+                strokeDasharray="5 5"
+                opacity="0.5"
+              />
+              {/* Animated dot travelling the path */}
+              <motion.circle
+                r="3.5"
+                fill="hsl(var(--primary))"
+                opacity="0.75"
+                initial={{ offsetDistance: '0%' }}
+                animate={{ offsetDistance: '100%' }}
+                transition={{
+                  duration,
+                  repeat: Infinity,
+                  delay,
+                  ease: 'linear',
+                  repeatDelay: 0.8,
+                }}
+                style={{ offsetPath: `path('${d}')` } as React.CSSProperties}
+              />
+            </g>
+          );
+        })}
 
         {/* Nodes */}
-        <g>
-          {nodes.map((node, idx) => (
-            <motion.g
-              key={node.id}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
+        {nodes.map((node, idx) => (
+          <motion.g
+            key={node.id}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 + idx * 0.18, duration: 0.9, ease: 'easeOut' }}
+          >
+            {/* Subtle drop-shadow rect behind */}
+            <rect
+              x={node.x - NODE_W / 2 + 1}
+              y={node.y - NODE_H / 2 + 2}
+              width={NODE_W}
+              height={NODE_H}
+              rx={NODE_RX}
+              fill="rgba(0,0,0,0.04)"
+            />
+            {/* Main pill node */}
+            <rect
+              x={node.x - NODE_W / 2}
+              y={node.y - NODE_H / 2}
+              width={NODE_W}
+              height={NODE_H}
+              rx={NODE_RX}
+              fill="hsl(var(--card))"
+              stroke="hsl(var(--secondary))"
+              strokeWidth="1.5"
+            />
+            {/* Small accent dot on left edge of pill */}
+            <circle
+              cx={node.x - NODE_W / 2 + 14}
+              cy={node.y}
+              r="4"
+              fill="hsl(var(--primary))"
+              opacity="0.55"
+            />
+            <text
+              x={node.x + 4}
+              y={node.y + 5}
+              textAnchor="middle"
+              fontSize="12.5"
+              fontFamily="'DM Sans', sans-serif"
+              fontWeight="400"
+              fill="hsl(var(--foreground))"
             >
-              {/* Node glow */}
-              <circle
-                cx={node.x}
-                cy={node.y}
-                r="28"
-                fill={node.color}
-                opacity="0.15"
-                className="animate-pulse-glow"
-                style={{ animationDelay: `${idx * 0.2}s` }}
-              />
-              
-              {/* Node background */}
-              <rect
-                x={node.x - 24}
-                y={node.y - 24}
-                width="48"
-                height="48"
-                rx="12"
-                fill={node.color}
-                stroke="hsl(var(--background))"
-                strokeWidth="2"
-              />
-              
-              {/* Icon */}
-              <text
-                x={node.x}
-                y={node.y + 6}
-                textAnchor="middle"
-                fontSize="20"
-                fill="white"
-              >
-                {node.icon}
-              </text>
-              
-              {/* Label */}
-              <text
-                x={node.x}
-                y={node.y + 48}
-                textAnchor="middle"
-                fontSize="12"
-                fontWeight="600"
-                fill="hsl(var(--foreground))"
-                className="font-display"
-              >
-                {node.label}
-              </text>
-            </motion.g>
-          ))}
-        </g>
+              {node.label}
+            </text>
+          </motion.g>
+        ))}
       </svg>
     </div>
   );

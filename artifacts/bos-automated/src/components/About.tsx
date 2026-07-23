@@ -1,89 +1,73 @@
 import { motion } from 'framer-motion';
-import { Heart, Sparkles, MapPin } from 'lucide-react';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 export function About() {
   return (
-    <section id="about" className="py-20 sm:py-32 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Image/Avatar */}
+    <section id="about" className="w-full">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+
+          {/* Left: Two photos stacked */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="flex flex-col gap-4"
           >
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/10 rounded-full blur-2xl" />
-              
-              <div className="relative bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-12 border border-border/50">
-                <Avatar className="w-48 h-48 mx-auto mb-6 ring-4 ring-background shadow-2xl">
-                  <AvatarFallback className="text-4xl font-bold font-display bg-gradient-to-br from-primary to-accent text-white">
-                    SLB
-                  </AvatarFallback>
-                </Avatar>
-                
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold font-display mb-1">Summer-Louise Bevan</h3>
-                  <p className="text-muted-foreground mb-4">Founder, BOS Automated</p>
-                  
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border text-sm">
-                    <MapPin size={16} className="text-primary" />
-                    <span className="font-medium">Sunshine Coast, QLD</span>
-                  </div>
-                </div>
+            {/* Main portrait */}
+            <div className="aspect-[4/3] relative overflow-hidden bg-muted">
+              <img
+                src="/summer.png"
+                alt="Summer-Louise Bevan, BOS Automated"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            {/* Previous business — the trailer */}
+            <div className="aspect-[16/10] relative overflow-hidden bg-muted">
+              <img
+                src="/trailer.jpg"
+                alt="Mountain Juice and Coffee trailer — Summer-Louise's previous business in Mount Coolum"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute bottom-0 left-0 right-0 px-5 py-3 bg-foreground/70">
+                <p className="text-xs text-background/80 font-sans font-light tracking-wide">
+                  Mountain Juice and Coffee, Mount Coolum — where it all started.
+                </p>
               </div>
             </div>
           </motion.div>
 
           {/* Right: Story */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="flex flex-col items-start lg:pt-6"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6">
-              <Heart size={16} />
-              <span>Real solutions, real person</span>
-            </div>
+            <span className="text-xs tracking-widest uppercase font-sans text-muted-foreground mb-6">
+              About Summer-Louise
+            </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
-              Not a tech agency.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                A local expert who gets it.
-              </span>
+            <h2 className="text-4xl md:text-5xl font-serif italic text-foreground leading-[1.1] mb-8">
+              From the cafe floor to the automation studio.
             </h2>
 
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-6 text-lg text-foreground font-light leading-relaxed mb-10">
               <p>
-                Summer-Louise isn't a software developer who stumbled into consulting. She's a former cafe owner from Mount Coolum who ran a real business — dealing with suppliers, staff rosters, inventory chaos, and customer flow — and discovered a passion for making messy operations <em>work</em>.
+                Summer-Louise is not a software developer who stumbled into consulting. She is a former cafe owner from Mount Coolum who ran a real business, dealing with suppliers, staff rosters, inventory chaos, and customer flow, and discovered a passion for making messy operations simple.
               </p>
-
               <p>
-                After 2-3 years deep in Make.com automations, she's built systems that eliminate bottlenecks most business owners don't even realise they have. She doesn't sell you a template and disappear. She builds something that fits how <em>you</em> actually work.
+                After years deep in Make.com automations, she builds systems that eliminate bottlenecks most business owners do not even realise they have. Technology should make your life easier, not harder. If a system does not save you real time and stress, it is not worth building.
               </p>
-
-              <p className="flex items-start gap-3 pt-2">
-                <Sparkles size={24} className="text-accent flex-shrink-0 mt-1" />
-                <span>
-                  <strong className="text-foreground">Her philosophy:</strong> Technology should make your life easier, not harder. If a system doesn't save you real time and real stress, it's not worth building. She's not here to impress you with complexity — she's here to give you your time back.
-                </span>
+              <p>
+                She genuinely cares about finding solutions others do not see, and about the businesses she works with. Local knowledge, real-world experience, and a belief that even the smallest business deserves to run like a well-oiled machine.
               </p>
             </div>
 
-            <div className="mt-8 p-6 bg-card border border-border rounded-2xl">
-              <p className="text-foreground font-semibold mb-2">
-                "I love finding solutions people didn't know were possible."
-              </p>
-              <p className="text-sm text-muted-foreground">
-                That's the energy Summer-Louise brings. Not corporate, not transactional — just someone who genuinely cares about making your business run better.
-              </p>
-            </div>
+            <span className="inline-block px-4 py-2 bg-muted/50 text-muted-foreground border border-border/50 rounded-full text-xs font-sans uppercase tracking-wide">
+              Sunshine Coast, QLD
+            </span>
           </motion.div>
         </div>
       </div>
