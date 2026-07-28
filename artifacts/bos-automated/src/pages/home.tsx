@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
+import { WorkflowSection } from '@/components/WorkflowSection';
 import { PainPoints } from '@/components/PainPoints';
 import { Services } from '@/components/Services';
 import { AutomationShowcase } from '@/components/AutomationShowcase';
@@ -58,6 +59,7 @@ export default function Home() {
       <Navigation />
       <main className="flex-1 flex flex-col gap-[120px] pb-[120px]">
         <Hero />
+        <WorkflowSection />
         <PainPoints />
         <Services />
         <AutomationShowcase />

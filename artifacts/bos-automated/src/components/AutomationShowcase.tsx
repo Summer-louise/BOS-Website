@@ -2,19 +2,34 @@ import { motion } from 'framer-motion';
 
 const flows = [
   {
-    src: '/automations/flow-1.png',
-    label: 'Lead capture and CRM sync',
-    desc: 'Multi-branch logic routing each lead source into the right CRM pipeline automatically.',
+    src: '/automations/flow-1.png?v=3',
+    label: 'Lead capture & multi-branch routing',
+    desc: 'Each lead source triggers its own path — personalised follow-up sent automatically based on origin.',
   },
   {
-    src: '/automations/flow-2.png',
+    src: '/automations/flow-2.png?v=3',
     label: 'Automated email campaign',
     desc: 'Scheduled outreach triggered by lead status, with activity logging on every send.',
   },
   {
-    src: '/automations/flow-3.png',
-    label: 'Webhook and router flow',
+    src: '/automations/flow-3.png?v=3',
+    label: 'Webhook & router flow',
     desc: 'Inbound data filtered, parsed, and distributed across multiple downstream systems.',
+  },
+  {
+    src: '/automations/flow-4.png?v=3',
+    label: 'Event & calendar management',
+    desc: 'Attendee data synced from a spreadsheet, calendar invites created, confirmation emails sent.',
+  },
+  {
+    src: '/automations/flow-5.png?v=3',
+    label: 'Multi-segment campaign automation',
+    desc: 'Separate campaign logic runs in parallel — each audience segment handled with its own rules.',
+  },
+  {
+    src: '/automations/flow-6.png?v=3',
+    label: 'Marketing list & newsletter dispatch',
+    desc: 'One trigger fans out to every subscriber, with individual tracking and unsubscribe handling.',
   },
 ];
 
@@ -48,18 +63,16 @@ export function AutomationShowcase() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
-              transition={{ delay: idx * 0.1, duration: 0.7 }}
+              transition={{ delay: (idx % 3) * 0.1, duration: 0.7 }}
               className="flex flex-col"
             >
-              {/* Screenshot preview */}
-              <div className="aspect-[16/10] overflow-hidden bg-muted border border-border/60 shadow-sm">
+              <div className="aspect-[16/9] overflow-hidden bg-[#f0eff4] border border-border/60 shadow-sm">
                 <img
                   src={flow.src}
                   alt={`Make.com automation: ${flow.label}`}
-                  className="w-full h-full object-cover object-left-top"
+                  className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-[1.06]"
                 />
               </div>
-              {/* Caption */}
               <div className="pt-4">
                 <h3 className="text-sm font-sans font-medium text-foreground mb-1">
                   {flow.label}

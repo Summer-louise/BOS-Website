@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "_TJT4unAEooa3SCkGKvP9"
+uri = "file://attached_assets/bos-automated-website-copy.md"
+type = "text"
+title = "BOS Automated — Website Copy"

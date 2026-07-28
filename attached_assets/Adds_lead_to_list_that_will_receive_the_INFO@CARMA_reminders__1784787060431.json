@@ -1,0 +1,855 @@
+{
+    "name": "Adds lead to list that will receive the INFO@CARMA reminders for EVENTS",
+    "flow": [
+        {
+            "id": 1,
+            "module": "airtable:TriggerWatchRecords",
+            "version": 3,
+            "parameters": {
+                "base": "appG4KlgNPlix8Ww9",
+                "view": "viwbfsB4JeXgnIIFo",
+                "table": "tblvG5JJLLRnBRFJa",
+                "config": {
+                    "labelField": "Full Name formula",
+                    "triggerField": "Event link modified"
+                },
+                "formula": "FIND(   \"Inside Oxford Planning: Why Applications Stall and How to Get Them Moving\",   ARRAYJOIN({Related Events}) ) > 0",
+                "maxRecords": 10000,
+                "__IMTCONN__": 4216656,
+                "useColumnId": false
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -146,
+                    "y": 5
+                },
+                "restore": {
+                    "parameters": {
+                        "base": {
+                            "label": "CARMA UK CRM"
+                        },
+                        "view": {
+                            "label": "View all"
+                        },
+                        "table": {
+                            "label": "Leads"
+                        },
+                        "config": {
+                            "nested": {
+                                "labelField": {
+                                    "label": "Full Name formula"
+                                },
+                                "triggerField": {
+                                    "label": "Event link modified"
+                                }
+                            }
+                        },
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable2"
+                            },
+                            "label": "Acute Design connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    },
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "config",
+                        "spec": [
+                            {
+                                "name": "triggerField",
+                                "type": "select",
+                                "label": "Trigger field",
+                                "required": true
+                            },
+                            {
+                                "name": "triggerField",
+                                "type": "hidden"
+                            },
+                            {
+                                "name": "labelField",
+                                "type": "select",
+                                "label": "Label field",
+                                "required": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Trigger configuration"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit",
+                        "required": true
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Full Name formula",
+                        "type": "text",
+                        "label": "Full Name formula"
+                    },
+                    {
+                        "name": "Lead Actions",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Lead Actions"
+                    },
+                    {
+                        "name": "Email",
+                        "type": "text",
+                        "label": "Email"
+                    },
+                    {
+                        "name": "Company",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Company"
+                    },
+                    {
+                        "name": "Full name",
+                        "type": "text",
+                        "label": "Full name"
+                    },
+                    {
+                        "name": "First Name",
+                        "type": "text",
+                        "label": "First Name"
+                    },
+                    {
+                        "name": "Middle Name(s)",
+                        "type": "text",
+                        "label": "Middle Name(s)"
+                    },
+                    {
+                        "name": "Last Name",
+                        "type": "text",
+                        "label": "Last Name"
+                    },
+                    {
+                        "name": "Failed Email",
+                        "type": "text",
+                        "label": "Failed Email"
+                    },
+                    {
+                        "name": "Backup Email",
+                        "type": "text",
+                        "label": "Backup Email"
+                    },
+                    {
+                        "name": "Website",
+                        "type": "array",
+                        "label": "Website"
+                    },
+                    {
+                        "name": "Apollo Sync Status",
+                        "type": "text",
+                        "label": "Apollo Sync Status"
+                    },
+                    {
+                        "name": "Reason for review",
+                        "type": "text",
+                        "label": "Reason for review",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Record ID",
+                        "type": "text",
+                        "label": "Record ID"
+                    },
+                    {
+                        "name": "Phone",
+                        "type": "text",
+                        "label": "Phone"
+                    },
+                    {
+                        "name": "LinkedIn URL",
+                        "type": "text",
+                        "label": "LinkedIn URL"
+                    },
+                    {
+                        "name": "Role",
+                        "type": "text",
+                        "label": "Role"
+                    },
+                    {
+                        "name": "Email Health",
+                        "type": "text",
+                        "label": "Email Health"
+                    },
+                    {
+                        "name": "Opted-In?",
+                        "type": "boolean",
+                        "label": "Opted-In?"
+                    },
+                    {
+                        "name": "Date Opted-In",
+                        "time": false,
+                        "type": "date",
+                        "label": "Date Opted-In"
+                    },
+                    {
+                        "name": "Lead Warmth",
+                        "type": "text",
+                        "label": "Lead Warmth"
+                    },
+                    {
+                        "name": "Lead Status",
+                        "type": "text",
+                        "label": "Lead Status"
+                    },
+                    {
+                        "name": "Cold Contact Stage",
+                        "type": "text",
+                        "label": "Cold Contact Stage"
+                    },
+                    {
+                        "name": "Connected on LinkedIn",
+                        "type": "boolean",
+                        "label": "Connected on LinkedIn"
+                    },
+                    {
+                        "name": "Closest Relationship",
+                        "type": "array",
+                        "label": "Closest Relationship",
+                        "dynamic": true,
+                        "editable": true
+                    },
+                    {
+                        "name": "Contacts Origin",
+                        "type": "text",
+                        "label": "Contacts Origin"
+                    },
+                    {
+                        "name": "Related Events",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Related Events"
+                    },
+                    {
+                        "name": "Related Campaigns",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Related Campaigns"
+                    },
+                    {
+                        "name": "Notes",
+                        "type": "text",
+                        "label": "Notes",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Total Events Registered",
+                        "type": "number",
+                        "label": "Total Events Registered"
+                    },
+                    {
+                        "name": "Total Campaigns Contacted",
+                        "type": "number",
+                        "label": "Total Campaigns Contacted"
+                    },
+                    {
+                        "name": "Assistants",
+                        "type": "text",
+                        "label": "Assistants"
+                    },
+                    {
+                        "name": "Office(Suburb)",
+                        "type": "text",
+                        "label": "Office(Suburb)",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Attendance Type",
+                        "type": "text",
+                        "label": "Attendance Type"
+                    },
+                    {
+                        "name": "Email Content",
+                        "type": "array",
+                        "label": "Email Content"
+                    },
+                    {
+                        "name": "Date added",
+                        "type": "date",
+                        "label": "Date added"
+                    },
+                    {
+                        "name": "Duplicate Check Complete",
+                        "type": "boolean",
+                        "label": "Duplicate Check Complete"
+                    },
+                    {
+                        "name": "Comparable Name",
+                        "type": "text",
+                        "label": "Comparable Name"
+                    },
+                    {
+                        "name": "Company Type",
+                        "type": "array",
+                        "label": "Company Type"
+                    },
+                    {
+                        "name": "Lead Type",
+                        "type": "array",
+                        "label": "Lead Type",
+                        "dynamic": true,
+                        "editable": true
+                    },
+                    {
+                        "name": "Possible Duplicate matching",
+                        "type": "text",
+                        "label": "Possible Duplicate matching"
+                    },
+                    {
+                        "name": "Industry Category",
+                        "type": "array",
+                        "label": "Industry Category"
+                    },
+                    {
+                        "name": "Linked field to leads table",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Linked field to leads table"
+                    },
+                    {
+                        "name": "Form field: Linked field to leads table",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Form field: Linked field to leads table"
+                    },
+                    {
+                        "name": "Invited to Sponsor",
+                        "type": "array",
+                        "label": "Invited to Sponsor"
+                    },
+                    {
+                        "name": "Invited to Present at",
+                        "type": "array",
+                        "label": "Invited to Present at"
+                    },
+                    {
+                        "name": "Created By",
+                        "spec": [
+                            {
+                                "name": "id",
+                                "type": "text",
+                                "label": "ID"
+                            },
+                            {
+                                "name": "email",
+                                "type": "text",
+                                "label": "Email"
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Created By"
+                    },
+                    {
+                        "name": "Automation Text (Fail safe filter)",
+                        "type": "text",
+                        "label": "Automation Text (Fail safe filter)",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Name of Automation Used",
+                        "type": "text",
+                        "label": "Name of Automation Used",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Next Action",
+                        "type": "text",
+                        "label": "Next Action",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Next Action assigned to:",
+                        "spec": [
+                            {
+                                "name": "id",
+                                "type": "text",
+                                "label": "ID"
+                            },
+                            {
+                                "name": "email",
+                                "type": "email",
+                                "label": "Email"
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Next Action assigned to:"
+                    },
+                    {
+                        "name": "Replied?",
+                        "type": "text",
+                        "label": "Replied?"
+                    },
+                    {
+                        "name": "Event link modified",
+                        "type": "date",
+                        "label": "Event link modified"
+                    },
+                    {
+                        "name": "New Table",
+                        "type": "text",
+                        "label": "New Table"
+                    },
+                    {
+                        "name": "CERT STATUS",
+                        "type": "text",
+                        "label": "CERT STATUS"
+                    },
+                    {
+                        "name": "Comparable company name",
+                        "type": "array",
+                        "label": "Comparable company name"
+                    },
+                    {
+                        "name": "Touch Point",
+                        "type": "text",
+                        "label": "Touch Point"
+                    },
+                    {
+                        "name": "Comms",
+                        "type": "array",
+                        "label": "Comms"
+                    },
+                    {
+                        "name": "Lead Progression Check",
+                        "type": "boolean",
+                        "label": "Lead Progression Check"
+                    },
+                    {
+                        "name": "Colleagues",
+                        "type": "array",
+                        "label": "Colleagues"
+                    },
+                    {
+                        "name": "Add Comany",
+                        "type": "text",
+                        "label": "Add Comany"
+                    },
+                    {
+                        "name": "Add New Lead's Details",
+                        "type": "text",
+                        "label": "Add New Lead's Details"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 16,
+            "module": "sendinblue:GetContact",
+            "version": 2,
+            "parameters": {
+                "__IMTCONN__": 4216611
+            },
+            "filter": null,
+            "mapper": {
+                "email": "{{1.Email}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 212,
+                    "y": 9
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "sendinblue2"
+                            },
+                            "label": "Acute Design Brevo Connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:sendinblue2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "email",
+                        "type": "email",
+                        "label": "Email",
+                        "required": true
+                    }
+                ]
+            },
+            "onerror": [
+                {
+                    "id": 17,
+                    "module": "sendinblue:CreateContact",
+                    "version": 2,
+                    "parameters": {
+                        "__IMTCONN__": 4216611
+                    },
+                    "mapper": {
+                        "email": "{{1.Email}}",
+                        "listIds": [
+                            16
+                        ],
+                        "attributes": {
+                            "OPT_IN": true,
+                            "LASTNAME": "{{1.`Last Name`}}",
+                            "LINKEDIN": "{{1.`LinkedIn URL`}}",
+                            "FIRSTNAME": "{{1.`First Name`}}",
+                            "FULL_NAME": "{{1.`Full Name formula`}}",
+                            "JOB_TITLE": "{{1.Role}}"
+                        }
+                    },
+                    "metadata": {
+                        "designer": {
+                            "x": 512,
+                            "y": 159
+                        },
+                        "restore": {
+                            "expect": {
+                                "listIds": {
+                                    "mode": "chose",
+                                    "label": [
+                                        "16"
+                                    ]
+                                },
+                                "attributes": {
+                                    "nested": {
+                                        "OPT_IN": {
+                                            "mode": "chose"
+                                        },
+                                        "DOUBLE_OPT-IN": {
+                                            "mode": "chose",
+                                            "label": "Empty"
+                                        }
+                                    }
+                                },
+                                "updateEnabled": {
+                                    "mode": "chose"
+                                },
+                                "smsBlacklisted": {
+                                    "mode": "chose"
+                                },
+                                "emailBlacklisted": {
+                                    "mode": "chose"
+                                },
+                                "smtpBlacklistSender": {
+                                    "mode": "chose"
+                                }
+                            },
+                            "parameters": {
+                                "__IMTCONN__": {
+                                    "data": {
+                                        "scoped": "true",
+                                        "connection": "sendinblue2"
+                                    },
+                                    "label": "Acute Design Brevo Connection"
+                                }
+                            }
+                        },
+                        "parameters": [
+                            {
+                                "name": "__IMTCONN__",
+                                "type": "account:sendinblue2",
+                                "label": "Connection",
+                                "required": true
+                            }
+                        ],
+                        "expect": [
+                            {
+                                "name": "email",
+                                "type": "email",
+                                "label": "Email"
+                            },
+                            {
+                                "name": "attributes",
+                                "spec": [
+                                    {
+                                        "name": "SMS",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "LANDLINE_NUMBER",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "WHATSAPP",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "JOB_TITLE",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "LINKEDIN",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "EXT_ID",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "CONTACT_TIMEZONE",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "OPT_IN",
+                                        "type": "boolean"
+                                    },
+                                    {
+                                        "name": "DOUBLE_OPT-IN",
+                                        "type": "select",
+                                        "validate": {
+                                            "enum": [
+                                                1,
+                                                2
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "FIRSTNAME",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "LASTNAME",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "FULL_NAME",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "AIRTABLE_ID",
+                                        "type": "number"
+                                    },
+                                    {
+                                        "name": "RECORD_ID",
+                                        "type": "text"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Attributes"
+                            },
+                            {
+                                "name": "listIds",
+                                "type": "select",
+                                "label": "Lists",
+                                "multiple": true
+                            },
+                            {
+                                "name": "emailBlacklisted",
+                                "type": "boolean",
+                                "label": "Email blacklisted"
+                            },
+                            {
+                                "name": "smsBlacklisted",
+                                "type": "boolean",
+                                "label": "SMS blacklisted"
+                            },
+                            {
+                                "name": "updateEnabled",
+                                "type": "boolean",
+                                "label": "Update enabled"
+                            },
+                            {
+                                "name": "smtpBlacklistSender",
+                                "spec": {
+                                    "name": "value",
+                                    "type": "text"
+                                },
+                                "type": "array",
+                                "label": "SMTP blacklist sender"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "module": "sendinblue:AddExistingContacts",
+            "version": 2,
+            "parameters": {
+                "__IMTCONN__": 4216611
+            },
+            "mapper": {
+                "emails": [
+                    "{{1.Email}}"
+                ],
+                "listId": 16
+            },
+            "metadata": {
+                "designer": {
+                    "x": 485,
+                    "y": -157
+                },
+                "restore": {
+                    "expect": {
+                        "emails": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        },
+                        "listId": {
+                            "mode": "chose",
+                            "label": "Registered for April CPD"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "sendinblue2"
+                            },
+                            "label": "Acute Design Brevo Connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:sendinblue2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "listId",
+                        "type": "select",
+                        "label": "List",
+                        "required": true
+                    },
+                    {
+                        "name": "emails",
+                        "spec": {
+                            "name": "value",
+                            "type": "email"
+                        },
+                        "type": "array",
+                        "label": "Emails",
+                        "required": true
+                    }
+                ]
+            },
+            "onerror": [
+                {
+                    "id": 13,
+                    "module": "builtin:Ignore",
+                    "version": 1,
+                    "metadata": {
+                        "designer": {
+                            "x": 870,
+                            "y": -148
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "us1.make.com",
+        "notes": [
+            {
+                "moduleIds": [
+                    1
+                ],
+                "content": "<p>This Automation is set to run 1hr after the automation that brings in leads from the registration GS (CPD Registration via website form - confirmation email Sent) &gt; Adding them as 'opted in' then this one adds them to the list to recieve the email reminders.</p>",
+                "isFilterNote": false,
+                "metadata": {
+                    "color": "#9138FE"
+                }
+            }
+        ]
+    }
+}

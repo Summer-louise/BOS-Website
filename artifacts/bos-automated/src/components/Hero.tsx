@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { WorkflowVisualization } from './WorkflowVisualization';
 
 const options = [
   {
@@ -50,7 +49,7 @@ export function Hero() {
       className="relative min-h-[100dvh] w-full flex items-center pt-24 bg-background overflow-hidden"
     >
       <div className="max-w-[1200px] w-full mx-auto px-5 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left: Content */}
           <motion.div
@@ -59,37 +58,13 @@ export function Hero() {
             transition={{ duration: 0.9, ease: 'easeOut' }}
             className="flex flex-col items-start"
           >
-            {/* Portrait + badge row */}
-            <div className="flex items-center gap-4 mb-9">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.85 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
-                className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-border"
-              >
-                <img
-                  src="/summer.png"
-                  alt="Summer-Louise Bevan"
-                  className="w-full h-full object-cover object-top"
-                />
-              </motion.div>
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.35 }}
-                className="inline-block px-3 py-1 bg-secondary/15 text-secondary border border-secondary/25 rounded-full text-[0.65rem] font-sans font-medium uppercase tracking-wider"
-              >
-                Sunshine Coast Automation Specialist
-              </motion.span>
-            </div>
-
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[4.75rem] font-serif leading-[1.05] text-foreground mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] font-serif leading-[1.05] text-foreground mb-6">
               Your business,<br />
               <span className="italic text-foreground/75">running itself.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-lg mb-10">
-              Smart automations built on Make.com, so you can spend your time where it matters.
+              Smart digital automations tailored and built for you, so you can spend your time on higher priorities.
             </p>
 
             {/* Dropdown CTA */}
@@ -137,15 +112,38 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Right: Workflow Visualization — no box, floats on background */}
+          {/* Right: Summer's portrait */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1.2 }}
-            className="relative h-[400px] md:h-[520px] w-full"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.35, duration: 1.1, ease: 'easeOut' }}
+            className="flex flex-col items-center lg:items-start"
           >
-            <WorkflowVisualization />
+            <div className="relative w-full max-w-[460px]">
+              {/* Photo */}
+              <div className="aspect-[3/4] overflow-hidden bg-muted w-full">
+                <img
+                  src="/summer.png"
+                  alt="Summer-Louise Bevan, BOS Automated"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+
+              {/* Caption strip */}
+              <div className="mt-4 flex flex-col gap-0.5">
+                <p className="text-xs font-sans uppercase tracking-widest text-muted-foreground">
+                  Summer-Louise Bevan
+                </p>
+                <p className="text-sm font-serif italic text-foreground/70">
+                  Sunshine Coast Automation Specialist
+                </p>
+              </div>
+
+              {/* Decorative accent */}
+              <div className="absolute -bottom-3 -right-3 w-24 h-24 border border-secondary/30 -z-10" />
+            </div>
           </motion.div>
+
         </div>
       </div>
     </section>

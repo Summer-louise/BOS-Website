@@ -1,0 +1,1597 @@
+{
+    "name": "Email to specified leads in CRM (MASTER)",
+    "flow": [
+        {
+            "id": 10,
+            "module": "airtable:ActionSearchRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 4216656
+            },
+            "mapper": {
+                "base": "appG4KlgNPlix8Ww9",
+                "view": "viwbfsB4JeXgnIIFo",
+                "table": "tblvG5JJLLRnBRFJa",
+                "fields": [
+                    "Full Name formula",
+                    "First Name",
+                    "Email",
+                    "Lead Warmth",
+                    "Full name",
+                    "Opted-In?",
+                    "Email Touch Point"
+                ],
+                "formula": "AND(\n  {Opted-In?}=FALSE(),\n  {Lead Warmth}!=\"Unsubscribed\",\n  {Lead Warmth}!=\"Employee\",\n  {Lead Warmth}!=\"Client\",\n  {Email}!=BLANK(),\n  FIND(\"@\", {Email})>0,\n  {Contact Type}!=\"Supplier\",\n  OR(\n    {Email Touch Point}=\"\",\n    FIND(\"Recorded copy of 'The Architect's Dilemma' CPD Event\", {Email Touch Point})=0\n  )\n)",
+                "maxRecords": "200",
+                "useColumnId": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "base": {
+                            "mode": "chose",
+                            "label": "CARMA UK CRM"
+                        },
+                        "sort": {
+                            "mode": "chose"
+                        },
+                        "view": {
+                            "mode": "chose",
+                            "label": "View all"
+                        },
+                        "table": {
+                            "mode": "chose",
+                            "label": "Leads"
+                        },
+                        "fields": {
+                            "mode": "chose",
+                            "label": [
+                                "Full Name formula",
+                                "First Name",
+                                "Email",
+                                "Lead Warmth",
+                                "Full name",
+                                "Opted-In?",
+                                "Email Touch Point"
+                            ]
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable2"
+                            },
+                            "label": "Acute Design connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit"
+                    },
+                    {
+                        "name": "sort",
+                        "spec": [
+                            {
+                                "name": "field",
+                                "type": "select",
+                                "label": "Field",
+                                "dynamic": true,
+                                "options": []
+                            },
+                            {
+                                "name": "direction",
+                                "type": "select",
+                                "label": "Direction",
+                                "options": [
+                                    {
+                                        "label": "Descending",
+                                        "value": "desc"
+                                    },
+                                    {
+                                        "label": "Ascending",
+                                        "value": "asc"
+                                    }
+                                ]
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Sort"
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "fields",
+                        "type": "select",
+                        "label": "Output Fields",
+                        "multiple": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "__IMTLENGTH__",
+                        "type": "uinteger",
+                        "label": "Total number of bundles"
+                    },
+                    {
+                        "name": "__IMTINDEX__",
+                        "type": "uinteger",
+                        "label": "Bundle order position"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Full Name formula",
+                        "type": "text",
+                        "label": "Full Name formula"
+                    },
+                    {
+                        "name": "First Name",
+                        "type": "text",
+                        "label": "First Name"
+                    },
+                    {
+                        "name": "Email",
+                        "type": "text",
+                        "label": "Email"
+                    },
+                    {
+                        "name": "Lead Warmth",
+                        "type": "text",
+                        "label": "Lead Warmth"
+                    },
+                    {
+                        "name": "Full name",
+                        "type": "text",
+                        "label": "Full name"
+                    },
+                    {
+                        "name": "Opted-In?",
+                        "type": "boolean",
+                        "label": "Opted-In?"
+                    },
+                    {
+                        "name": "Email Touch Point",
+                        "type": "text",
+                        "label": "Email Touch Point",
+                        "multiline": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 13,
+            "module": "util:FunctionSleep",
+            "version": 1,
+            "parameters": {},
+            "filter": {
+                "name": "Ensures only one email sent per lead",
+                "conditions": [
+                    [
+                        {
+                            "a": "{{10.`Email Touch Point`}}",
+                            "b": "Recorded copy of 'The Architect's Dilemma' CPD Event",
+                            "o": "text:notcontain"
+                        },
+                        {
+                            "a": "{{10.Email}}",
+                            "o": "exist"
+                        }
+                    ]
+                ]
+            },
+            "mapper": {
+                "duration": "42"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                },
+                "restore": {},
+                "expect": [
+                    {
+                        "name": "duration",
+                        "type": "uinteger",
+                        "label": "Delay",
+                        "required": true,
+                        "validate": {
+                            "max": 300,
+                            "min": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "module": "google-email:ActionSendEmail",
+            "version": 2,
+            "parameters": {
+                "account": 4311219
+            },
+            "mapper": {
+                "cc": [],
+                "to": [
+                    "{{10.Email}}"
+                ],
+                "bcc": [],
+                "from": "",
+                "html": "<p>Dear {{10.`First Name`}},</p>\n\n<p>I hope you have been well and business is booming for you!</p>\n\n<p>Following Carma UK Constructions recent event, \"The Architect's Dilemma\", I'd like to share a link to the recording for you and your team to watch.</p>\n\n<p>This CPD featured professionals from Q Two Consulting and Beyond Carbon, and covered key topics including:</p>\n\n<ul>\n<li>The realities of Passivhaus design</li>\n<li>Minimizing embodied carbon</li>\n<li>Designing for resilience against overheating</li>\n<li>Navigating JCT pitfalls and RIBA frameworks</li>\n</ul>\n\n<p>YouTube link: <a href=\"https://youtu.be/4HMLDY07nGk?si=AVdAKbjzuNanYvE5\"><b>The Architect's Dilemma Episode 01</b></a></p>\n<p>If you don't feel comfortable clicking the link, you can also find it on YouTube under that title.</p>\n\n<p>We are now planning our next CPD event on the 3rd of November, which will take place in Oxford. This session will focus on two critical topics for the modern architect:</p>\n\n<p>Preventing water ingress: Learn how to leverage sensors and AI to protect your projects from water damage and associated costs.<br>\nBuilding regulations &amp; fire safety: Get an overview of key legislation, including the Building Safety Act 2022, and understand the latest fire safety guidance.</p>\n\n<p>This event will feature industry professionals from ConstruktCLT, OWL Building Control Solutions Ltd, and Tector.</p>\n\n<p>If you are interested in attending, please let me know and I can send you a link to the event!\n<br>Look forward to hearing from you and hope you find the recording valuable.</p>\n\n<p>Have a good day.</p>\n\n<p>Warm regards,<br>\nPaul Sellers<br>\nCEO, Carma UK Construction<br>\n<br>\n<a href=\"mailto:ps@carmaukconstruction.co.uk\">ps@carmaukconstruction.co.uk</a><br>\n+44 7719 338653</p>",
+                "subject": "Recorded copy of 'The Architect's Dilemma' CPD Event",
+                "attachments": []
+            },
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "cc": {
+                            "mode": "chose"
+                        },
+                        "to": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        },
+                        "bcc": {
+                            "mode": "chose"
+                        },
+                        "attachments": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "account": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google-restricted"
+                            },
+                            "label": "ps@carmaukconstruction.co.uk (ps@carmaukconstruction.co.uk)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "account",
+                        "type": "account:google-restricted",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "from",
+                        "type": "text",
+                        "label": "From"
+                    },
+                    {
+                        "name": "to",
+                        "spec": {
+                            "name": "value",
+                            "type": "email",
+                            "label": "Email address",
+                            "required": true
+                        },
+                        "type": "array",
+                        "label": "To",
+                        "required": true
+                    },
+                    {
+                        "name": "subject",
+                        "type": "text",
+                        "label": "Subject"
+                    },
+                    {
+                        "name": "html",
+                        "type": "text",
+                        "label": "Content"
+                    },
+                    {
+                        "name": "attachments",
+                        "spec": [
+                            {
+                                "name": "fileName",
+                                "type": "filename",
+                                "label": "File name",
+                                "required": true,
+                                "semantic": "file:name"
+                            },
+                            {
+                                "name": "data",
+                                "type": "buffer",
+                                "label": "Data",
+                                "required": true,
+                                "semantic": "file:data"
+                            },
+                            {
+                                "name": "cid",
+                                "type": "text",
+                                "label": "Content-ID"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Attachments"
+                    },
+                    {
+                        "name": "cc",
+                        "spec": {
+                            "name": "value",
+                            "type": "email",
+                            "label": "Email address"
+                        },
+                        "type": "array",
+                        "label": "Copy recipient"
+                    },
+                    {
+                        "name": "bcc",
+                        "spec": {
+                            "name": "value",
+                            "type": "email",
+                            "label": "Email address"
+                        },
+                        "type": "array",
+                        "label": "Blind copy recipient"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "module": "airtable:ActionCreateRecord",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 4216656
+            },
+            "mapper": {
+                "base": "appG4KlgNPlix8Ww9",
+                "table": "tblsMJ9tV8xaVVzWR",
+                "record": {
+                    "fldCZPxcqzKbdWATG": "{{formatDate(now; \"hh:mm A\")}}",
+                    "fldO1T8lPCJ6zIrcI": "Make.com",
+                    "fldSeCQCol5LsZ0Qe": "<p>Dear {{10.`First Name`}},</p>\n\n<p>I hope you have been well and business is booming for you!</p>\n\n<p>Following Carma UK Constructions recent event, \"The Architect's Dilemma,\" I'd like to share a link to the recording for you and your team to watch.</p>\n\n<p>This CPD featured professionals from Q Two Consulting and Beyond Carbon, and covered key topics including:</p>\n\n<ul>\n<li>The realities of Passivhaus design</li>\n<li>Minimizing embodied carbon</li>\n<li>Designing for resilience against overheating</li>\n<li>Navigating JCT pitfalls and RIBA frameworks</li>\n</ul>\n\n<p>YouTube link: <a href=\"https://youtu.be/4HMLDY07nGk?si=AVdAKbjzuNanYvE5\"><b>The Architect's Dilemma Episode 01</b></a></p>\n<p>If you don't feel comfortable clicking the link, you can also find it on YouTube under that title.</p>\n\n<p>We are now planning our next CPD event on the 3rd of November, which will take place in Oxford. This session will focus on two critical topics for the modern architect:</p>\n\n<p>Preventing water ingress: Learn how to leverage sensors and AI to protect your projects from water damage and associated costs.<br>\nBuilding regulations &amp; fire safety: Get an overview of key legislation, including the Building Safety Act 2022, and understand the latest fire safety guidance.</p>\n\n<p>This event will feature industry professionals from ConstruktCLT, OWL Building Control Solutions Ltd, and Tector.</p>\n\n<p>If you are interested in attending, please let me know and I can send you a link to the event!\n<br>Look forward to hearing from you and hope you find the recording valuable.</p>\n\n<p>Have a good day.</p>\n\n<p>Warm regards,<br>\nPaul Sellers<br>\nCEO, Carma UK Construction<br>\n<br>\n<a href=\"mailto:ps@carmaukconstruction.co.uk\">ps@carmaukconstruction.co.uk</a><br>\n+44 7719 338653</p>",
+                    "fldcahm1ptiy6QJTO": "ps@carmaukconstruction.co.uk",
+                    "flde1dK75f1OS3QR2": "Email Sent",
+                    "fldl5VqhnCSUuWYBG": "{{10.id}}",
+                    "fldzMhYprPJLUmGjv": "{{formatDate(now; \"YYYY.MM.DD\")}}"
+                },
+                "typecast": false,
+                "useColumnId": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 900,
+                    "y": 0,
+                    "name": "Records Activity in \"Lead Activity Logs\""
+                },
+                "restore": {
+                    "expect": {
+                        "base": {
+                            "label": "CRM Management (CARMA) NEW"
+                        },
+                        "table": {
+                            "label": "Lead Activity Logs",
+                            "nested": [
+                                {
+                                    "name": "record",
+                                    "spec": [
+                                        {
+                                            "name": "flde1dK75f1OS3QR2",
+                                            "type": "text",
+                                            "label": "Activity type"
+                                        },
+                                        {
+                                            "name": "fldl5VqhnCSUuWYBG",
+                                            "spec": {
+                                                "label": "Record ID"
+                                            },
+                                            "type": "array",
+                                            "label": "Leads"
+                                        },
+                                        {
+                                            "name": "fldSeCQCol5LsZ0Qe",
+                                            "type": "text",
+                                            "label": "Correspondence log",
+                                            "multiline": true
+                                        },
+                                        {
+                                            "name": "fldzMhYprPJLUmGjv",
+                                            "type": "text",
+                                            "label": "Activity Date"
+                                        },
+                                        {
+                                            "name": "fldCZPxcqzKbdWATG",
+                                            "type": "text",
+                                            "label": "Activity Time"
+                                        },
+                                        {
+                                            "mode": "edit",
+                                            "name": "fldO1T8lPCJ6zIrcI",
+                                            "type": "select",
+                                            "label": "Source",
+                                            "dynamic": true,
+                                            "options": [
+                                                {
+                                                    "label": "Brevo",
+                                                    "value": "Brevo"
+                                                },
+                                                {
+                                                    "label": "LinkedIn",
+                                                    "value": "LinkedIn"
+                                                },
+                                                {
+                                                    "label": "Event",
+                                                    "value": "Event"
+                                                },
+                                                {
+                                                    "label": "Manual",
+                                                    "value": "Manual"
+                                                },
+                                                {
+                                                    "label": "Make.com",
+                                                    "value": "Make.com"
+                                                },
+                                                {
+                                                    "label": "July CPD registrations via website",
+                                                    "value": "July CPD registrations via website"
+                                                },
+                                                {
+                                                    "label": "Contact Us Page",
+                                                    "value": "Contact Us Page"
+                                                },
+                                                {
+                                                    "label": "Stay up to date",
+                                                    "value": "Stay up to date"
+                                                },
+                                                {
+                                                    "label": "Registered interest in presenting at CPD",
+                                                    "value": "Registered interest in presenting at CPD"
+                                                }
+                                            ],
+                                            "validate": false
+                                        },
+                                        {
+                                            "name": "fldyEHgfI78yIxHYB",
+                                            "type": "text",
+                                            "label": "Notes",
+                                            "multiline": true
+                                        },
+                                        {
+                                            "name": "fldPGZV1tQZKJJTPj",
+                                            "spec": [
+                                                {
+                                                    "help": "Unique user id",
+                                                    "name": "id",
+                                                    "type": "text",
+                                                    "label": "ID"
+                                                },
+                                                {
+                                                    "help": "User's email address",
+                                                    "name": "email",
+                                                    "type": "email",
+                                                    "label": "Email"
+                                                }
+                                            ],
+                                            "type": "array",
+                                            "label": "Contacted By"
+                                        },
+                                        {
+                                            "name": "fldCyCviJX4UWLEhQ",
+                                            "type": "boolean",
+                                            "label": "Sent"
+                                        },
+                                        {
+                                            "name": "fldVtNFtuAqgDBvSm",
+                                            "type": "boolean",
+                                            "label": "Delivered"
+                                        },
+                                        {
+                                            "name": "fldcahm1ptiy6QJTO",
+                                            "type": "text",
+                                            "label": "Email sent from"
+                                        },
+                                        {
+                                            "mode": "edit",
+                                            "name": "fldT72mHmBkpIjltn",
+                                            "type": "select",
+                                            "label": "Email status",
+                                            "dynamic": true,
+                                            "options": [
+                                                {
+                                                    "label": "Unsubscribed",
+                                                    "value": "Unsubscribed"
+                                                },
+                                                {
+                                                    "label": "Delivered",
+                                                    "value": "Delivered"
+                                                },
+                                                {
+                                                    "label": "Opened",
+                                                    "value": "Opened"
+                                                },
+                                                {
+                                                    "label": "Clicked",
+                                                    "value": "Clicked"
+                                                },
+                                                {
+                                                    "label": "Soft Bounce",
+                                                    "value": "Soft Bounce"
+                                                },
+                                                {
+                                                    "label": "Hard Bounce",
+                                                    "value": "Hard Bounce"
+                                                },
+                                                {
+                                                    "label": "Deleted",
+                                                    "value": "Deleted"
+                                                }
+                                            ],
+                                            "validate": false
+                                        },
+                                        {
+                                            "name": "fldCjIbxnAIqM4uVW",
+                                            "type": "text",
+                                            "label": "Brevo Campaign Name"
+                                        },
+                                        {
+                                            "name": "fldvEi89sTgDCWEkW",
+                                            "type": "text",
+                                            "label": "Activity"
+                                        }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Record"
+                                }
+                            ]
+                        },
+                        "record": {
+                            "nested": {
+                                "fldCyCviJX4UWLEhQ": {
+                                    "mode": "chose"
+                                },
+                                "fldO1T8lPCJ6zIrcI": {
+                                    "mode": "chose",
+                                    "label": "Make.com"
+                                },
+                                "fldPGZV1tQZKJJTPj": {
+                                    "mode": "chose"
+                                },
+                                "fldT72mHmBkpIjltn": {
+                                    "mode": "edit"
+                                },
+                                "fldVtNFtuAqgDBvSm": {
+                                    "mode": "chose"
+                                },
+                                "fldl5VqhnCSUuWYBG": {
+                                    "mode": "edit"
+                                }
+                            }
+                        },
+                        "typecast": {
+                            "mode": "chose"
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable2"
+                            },
+                            "label": "Acute Design connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "typecast",
+                        "type": "boolean",
+                        "label": "Smart links",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "record",
+                        "spec": [
+                            {
+                                "name": "flde1dK75f1OS3QR2",
+                                "type": "text",
+                                "label": "Activity type"
+                            },
+                            {
+                                "name": "fldl5VqhnCSUuWYBG",
+                                "spec": {
+                                    "name": "value",
+                                    "label": "Record ID"
+                                },
+                                "type": "array",
+                                "label": "Leads"
+                            },
+                            {
+                                "name": "fldSeCQCol5LsZ0Qe",
+                                "type": "text",
+                                "label": "Correspondence log"
+                            },
+                            {
+                                "name": "fldzMhYprPJLUmGjv",
+                                "type": "text",
+                                "label": "Activity Date"
+                            },
+                            {
+                                "name": "fldCZPxcqzKbdWATG",
+                                "type": "text",
+                                "label": "Activity Time"
+                            },
+                            {
+                                "mode": "edit",
+                                "name": "fldO1T8lPCJ6zIrcI",
+                                "type": "select",
+                                "label": "Source"
+                            },
+                            {
+                                "name": "fldyEHgfI78yIxHYB",
+                                "type": "text",
+                                "label": "Notes"
+                            },
+                            {
+                                "name": "fldPGZV1tQZKJJTPj",
+                                "spec": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "ID"
+                                    },
+                                    {
+                                        "name": "email",
+                                        "type": "email",
+                                        "label": "Email"
+                                    }
+                                ],
+                                "type": "array",
+                                "label": "Contacted By"
+                            },
+                            {
+                                "name": "fldCyCviJX4UWLEhQ",
+                                "type": "boolean",
+                                "label": "Sent"
+                            },
+                            {
+                                "name": "fldVtNFtuAqgDBvSm",
+                                "type": "boolean",
+                                "label": "Delivered"
+                            },
+                            {
+                                "name": "fldcahm1ptiy6QJTO",
+                                "type": "text",
+                                "label": "Email sent from"
+                            },
+                            {
+                                "mode": "edit",
+                                "name": "fldT72mHmBkpIjltn",
+                                "type": "select",
+                                "label": "Email status"
+                            },
+                            {
+                                "name": "fldCjIbxnAIqM4uVW",
+                                "type": "text",
+                                "label": "Brevo Campaign Name"
+                            },
+                            {
+                                "name": "fldvEi89sTgDCWEkW",
+                                "type": "text",
+                                "label": "Activity"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Record"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Activity type",
+                        "type": "text",
+                        "label": "Activity type"
+                    },
+                    {
+                        "name": "Leads",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Leads"
+                    },
+                    {
+                        "name": "Correspondence log",
+                        "type": "text",
+                        "label": "Correspondence log",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Activity Date",
+                        "type": "text",
+                        "label": "Activity Date"
+                    },
+                    {
+                        "name": "Activity Time",
+                        "type": "text",
+                        "label": "Activity Time"
+                    },
+                    {
+                        "name": "Source",
+                        "type": "text",
+                        "label": "Source"
+                    },
+                    {
+                        "name": "Interaction Summary",
+                        "type": "text",
+                        "label": "Interaction Summary"
+                    },
+                    {
+                        "name": "Notes",
+                        "type": "text",
+                        "label": "Notes",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Contacted By",
+                        "spec": [
+                            {
+                                "name": "id",
+                                "type": "text",
+                                "label": "ID"
+                            },
+                            {
+                                "name": "email",
+                                "type": "email",
+                                "label": "Email"
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Contacted By"
+                    },
+                    {
+                        "name": "Sent",
+                        "type": "boolean",
+                        "label": "Sent"
+                    },
+                    {
+                        "name": "Delivered",
+                        "type": "boolean",
+                        "label": "Delivered"
+                    },
+                    {
+                        "name": "Email sent from",
+                        "type": "text",
+                        "label": "Email sent from"
+                    },
+                    {
+                        "name": "Email status",
+                        "type": "text",
+                        "label": "Email status"
+                    },
+                    {
+                        "name": "Brevo Campaign Name",
+                        "type": "text",
+                        "label": "Brevo Campaign Name"
+                    },
+                    {
+                        "name": "Activity",
+                        "type": "text",
+                        "label": "Activity"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "module": "airtable:ActionUpdateRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 4216656
+            },
+            "mapper": {
+                "id": "{{10.id}}",
+                "base": "appG4KlgNPlix8Ww9",
+                "table": "tblvG5JJLLRnBRFJa",
+                "record": {
+                    "fldff3YdptvSizXyy": "Recorded copy of 'The Architect's Dilemma' CPD Event\n\nLink Sent {{formatDate(now; \"DD-MM-YYYY hh:mm A\")}}"
+                },
+                "typecast": false,
+                "useColumnId": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1276,
+                    "y": 1,
+                    "name": "Adds Filter conditions (Link Sent)"
+                },
+                "restore": {
+                    "expect": {
+                        "base": {
+                            "label": "CRM Management (CARMA) NEW"
+                        },
+                        "table": {
+                            "label": "Leads"
+                        },
+                        "record": {
+                            "nested": {
+                                "fld3qz3cwwjNraQiG": {
+                                    "mode": "chose"
+                                },
+                                "fld58L3qI40nFF1Rb": {
+                                    "mode": "edit"
+                                },
+                                "fldDIHISMgSw5txfS": {
+                                    "mode": "chose"
+                                },
+                                "fldH4hs7tPsWeIIUt": {
+                                    "mode": "edit"
+                                },
+                                "fldPyyG1jq6L04uDH": {
+                                    "mode": "chose"
+                                },
+                                "fldShS1vaqApr0jg1": {
+                                    "mode": "chose"
+                                },
+                                "fldTb81QonJ1c9SXu": {
+                                    "mode": "chose"
+                                },
+                                "fldTsfE6ibXb8dYn9": {
+                                    "mode": "chose"
+                                },
+                                "fldbOONYszMwu9oAa": {
+                                    "mode": "edit"
+                                },
+                                "fldbROQQ6Djo7H7vq": {
+                                    "mode": "edit"
+                                },
+                                "fldeGdvgsfLrx1KOE": {
+                                    "mode": "chose"
+                                },
+                                "fldf2Ww5pSuUXdveB": {
+                                    "mode": "chose"
+                                },
+                                "fldmzpdYVeU8Mv7mF": {
+                                    "mode": "chose"
+                                },
+                                "fldojDy9KVBGHJWKP": {
+                                    "mode": "edit"
+                                },
+                                "fldwiE20AC4HFCWUe": {
+                                    "mode": "chose"
+                                },
+                                "fldxYW2wmv7ETNWUo": {
+                                    "mode": "chose"
+                                },
+                                "fldxkQJGvaPZ7UVyX": {
+                                    "mode": "chose"
+                                }
+                            }
+                        },
+                        "typecast": {
+                            "mode": "chose"
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable2"
+                            },
+                            "label": "Acute Design connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "typecast",
+                        "type": "boolean",
+                        "label": "Smart links",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "Record ID",
+                        "required": true
+                    },
+                    {
+                        "name": "record",
+                        "spec": [
+                            {
+                                "name": "fldRRPVfSA9MdA1t7",
+                                "type": "text",
+                                "label": "Full name"
+                            },
+                            {
+                                "name": "fldcWwQ3iZYkTIh3U",
+                                "type": "text",
+                                "label": "First Name"
+                            },
+                            {
+                                "name": "fld73lTdYtL9FwhHE",
+                                "type": "text",
+                                "label": "Middle Name(s)"
+                            },
+                            {
+                                "name": "fldvpZB64x2vuaibu",
+                                "type": "text",
+                                "label": "Last Name"
+                            },
+                            {
+                                "name": "fldsO9LUgR6bG323E",
+                                "type": "text",
+                                "label": "Email"
+                            },
+                            {
+                                "name": "fld9rMz8kpE95BAzl",
+                                "type": "text",
+                                "label": "Phone"
+                            },
+                            {
+                                "name": "fldgIipA5vObSfE5I",
+                                "type": "text",
+                                "label": "LinkedIn URL"
+                            },
+                            {
+                                "name": "fldSsDA6YFecCP1hg",
+                                "type": "text",
+                                "label": "Role"
+                            },
+                            {
+                                "name": "fldxkQJGvaPZ7UVyX",
+                                "spec": {
+                                    "name": "value",
+                                    "label": "Record ID"
+                                },
+                                "type": "array",
+                                "label": "Company"
+                            },
+                            {
+                                "name": "fldPyyG1jq6L04uDH",
+                                "type": "boolean",
+                                "label": "Opted-In?"
+                            },
+                            {
+                                "name": "fldShS1vaqApr0jg1",
+                                "spec": {
+                                    "mode": "edit",
+                                    "name": "value",
+                                    "type": "select",
+                                    "label": "Value",
+                                    "dynamic": true,
+                                    "options": [
+                                        {
+                                            "label": "Newsletter",
+                                            "value": "Newsletter"
+                                        },
+                                        {
+                                            "label": "Contact Us Page",
+                                            "value": "Contact Us Page"
+                                        },
+                                        {
+                                            "label": "Stay up to date",
+                                            "value": "Stay up to date"
+                                        },
+                                        {
+                                            "label": "July CPD registrations via website",
+                                            "value": "July CPD registrations via website"
+                                        },
+                                        {
+                                            "label": "Registered interest in presenting at CPD",
+                                            "value": "Registered interest in presenting at CPD"
+                                        }
+                                    ],
+                                    "validate": false
+                                },
+                                "type": "array",
+                                "label": "Opted-Into"
+                            },
+                            {
+                                "name": "fldfzWF8WYBJaVXVV",
+                                "time": false,
+                                "type": "date",
+                                "label": "Date Opted-In"
+                            },
+                            {
+                                "mode": "edit",
+                                "name": "fld58L3qI40nFF1Rb",
+                                "type": "select",
+                                "label": "Lead Warmth"
+                            },
+                            {
+                                "name": "fldP6ZCxB9cYZNQzl",
+                                "type": "text",
+                                "label": "Office(Suburb)"
+                            },
+                            {
+                                "name": "fldff3YdptvSizXyy",
+                                "type": "text",
+                                "label": "Email Touch Point"
+                            },
+                            {
+                                "name": "fldgQjfBeeXYvrRTu",
+                                "type": "text",
+                                "label": "LinkedIn Touch Point"
+                            },
+                            {
+                                "name": "fldTb81QonJ1c9SXu",
+                                "type": "boolean",
+                                "label": "Connected on LinkedIn"
+                            },
+                            {
+                                "name": "fldf2Ww5pSuUXdveB",
+                                "spec": {
+                                    "mode": "edit",
+                                    "name": "value",
+                                    "type": "select",
+                                    "label": "Value",
+                                    "dynamic": true,
+                                    "options": [
+                                        {
+                                            "label": "Summer",
+                                            "value": "Summer"
+                                        },
+                                        {
+                                            "label": "Phil T",
+                                            "value": "Phil T"
+                                        },
+                                        {
+                                            "label": "Paul S",
+                                            "value": "Paul S"
+                                        },
+                                        {
+                                            "label": "George E",
+                                            "value": "George E"
+                                        },
+                                        {
+                                            "label": "Peter D",
+                                            "value": "Peter D"
+                                        },
+                                        {
+                                            "label": "Ben F",
+                                            "value": "Ben F"
+                                        }
+                                    ],
+                                    "validate": false
+                                },
+                                "type": "array",
+                                "label": "Closest Relationship"
+                            },
+                            {
+                                "name": "fld3qz3cwwjNraQiG",
+                                "type": "boolean",
+                                "label": "Email Error"
+                            },
+                            {
+                                "mode": "edit",
+                                "name": "fldbROQQ6Djo7H7vq",
+                                "type": "select",
+                                "label": "Contacts Origin"
+                            },
+                            {
+                                "name": "fldxYW2wmv7ETNWUo",
+                                "spec": {
+                                    "name": "value",
+                                    "label": "Record ID"
+                                },
+                                "type": "array",
+                                "label": "Related Events"
+                            },
+                            {
+                                "name": "fldmzpdYVeU8Mv7mF",
+                                "spec": {
+                                    "name": "value",
+                                    "label": "Record ID"
+                                },
+                                "type": "array",
+                                "label": "Related Campaigns"
+                            },
+                            {
+                                "name": "fldcap2NQHP9PYHQ1",
+                                "type": "text",
+                                "label": "Notes"
+                            },
+                            {
+                                "name": "fldTsfE6ibXb8dYn9",
+                                "spec": {
+                                    "name": "value",
+                                    "label": "Record ID"
+                                },
+                                "type": "array",
+                                "label": "Assistants"
+                            },
+                            {
+                                "mode": "edit",
+                                "name": "fldH4hs7tPsWeIIUt",
+                                "type": "select",
+                                "label": "Lead Status"
+                            },
+                            {
+                                "name": "fldwiE20AC4HFCWUe",
+                                "spec": {
+                                    "name": "value",
+                                    "label": "Record ID"
+                                },
+                                "type": "array",
+                                "label": "Review"
+                            },
+                            {
+                                "mode": "edit",
+                                "name": "fldojDy9KVBGHJWKP",
+                                "type": "select",
+                                "label": "Attendance Type"
+                            },
+                            {
+                                "name": "fldeGdvgsfLrx1KOE",
+                                "spec": {
+                                    "name": "value",
+                                    "label": "Record ID"
+                                },
+                                "type": "array",
+                                "label": "Latest contact"
+                            },
+                            {
+                                "mode": "edit",
+                                "name": "fldbOONYszMwu9oAa",
+                                "type": "select",
+                                "label": "Apollo Sync Status"
+                            },
+                            {
+                                "name": "fldstbX2Dot58VyIK",
+                                "type": "text",
+                                "label": "Backup Email"
+                            },
+                            {
+                                "name": "fldR6zQ1p0TPundkQ",
+                                "type": "text",
+                                "label": "Phone Contact"
+                            },
+                            {
+                                "name": "fldDIHISMgSw5txfS",
+                                "type": "boolean",
+                                "label": "Duplicate Check Complete"
+                            },
+                            {
+                                "name": "fld8JTKadOPP4WRbU",
+                                "type": "text",
+                                "label": "Reason for review"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Record"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Full Name formula",
+                        "type": "text",
+                        "label": "Full Name formula"
+                    },
+                    {
+                        "name": "Full name",
+                        "type": "text",
+                        "label": "Full name"
+                    },
+                    {
+                        "name": "First Name",
+                        "type": "text",
+                        "label": "First Name"
+                    },
+                    {
+                        "name": "Middle Name(s)",
+                        "type": "text",
+                        "label": "Middle Name(s)"
+                    },
+                    {
+                        "name": "Last Name",
+                        "type": "text",
+                        "label": "Last Name"
+                    },
+                    {
+                        "name": "Email",
+                        "type": "text",
+                        "label": "Email"
+                    },
+                    {
+                        "name": "Phone",
+                        "type": "text",
+                        "label": "Phone"
+                    },
+                    {
+                        "name": "LinkedIn URL",
+                        "type": "text",
+                        "label": "LinkedIn URL"
+                    },
+                    {
+                        "name": "Role",
+                        "type": "text",
+                        "label": "Role"
+                    },
+                    {
+                        "name": "Company",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Company"
+                    },
+                    {
+                        "name": "Opted-In?",
+                        "type": "boolean",
+                        "label": "Opted-In?"
+                    },
+                    {
+                        "name": "Opted-Into",
+                        "type": "array",
+                        "label": "Opted-Into",
+                        "dynamic": true,
+                        "editable": true
+                    },
+                    {
+                        "name": "Date Opted-In",
+                        "time": false,
+                        "type": "date",
+                        "label": "Date Opted-In"
+                    },
+                    {
+                        "name": "Lead Warmth",
+                        "type": "text",
+                        "label": "Lead Warmth"
+                    },
+                    {
+                        "name": "Office(Suburb)",
+                        "type": "text",
+                        "label": "Office(Suburb)",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Email Touch Point",
+                        "type": "text",
+                        "label": "Email Touch Point"
+                    },
+                    {
+                        "name": "LinkedIn Touch Point",
+                        "type": "text",
+                        "label": "LinkedIn Touch Point"
+                    },
+                    {
+                        "name": "Connected on LinkedIn",
+                        "type": "boolean",
+                        "label": "Connected on LinkedIn"
+                    },
+                    {
+                        "name": "Closest Relationship",
+                        "type": "array",
+                        "label": "Closest Relationship",
+                        "dynamic": true,
+                        "editable": true
+                    },
+                    {
+                        "name": "Latest Contact Date",
+                        "type": "array",
+                        "label": "Latest Contact Date"
+                    },
+                    {
+                        "name": "Last Contacted By",
+                        "type": "array",
+                        "label": "Last Contacted By"
+                    },
+                    {
+                        "name": "Email Error",
+                        "type": "boolean",
+                        "label": "Email Error"
+                    },
+                    {
+                        "name": "Contacts Origin",
+                        "type": "text",
+                        "label": "Contacts Origin"
+                    },
+                    {
+                        "name": "Related Events",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Related Events"
+                    },
+                    {
+                        "name": "Related Campaigns",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Related Campaigns"
+                    },
+                    {
+                        "name": "Notes",
+                        "type": "text",
+                        "label": "Notes",
+                        "multiline": true
+                    },
+                    {
+                        "name": "Lead Age (Days)",
+                        "type": "text",
+                        "label": "Lead Age (Days)"
+                    },
+                    {
+                        "name": "Total Events Registered",
+                        "type": "number",
+                        "label": "Total Events Registered"
+                    },
+                    {
+                        "name": "Total Campaigns Contacted",
+                        "type": "number",
+                        "label": "Total Campaigns Contacted"
+                    },
+                    {
+                        "name": "Lead Summary",
+                        "type": "text",
+                        "label": "Lead Summary"
+                    },
+                    {
+                        "name": "Next Best Action",
+                        "type": "text",
+                        "label": "Next Best Action"
+                    },
+                    {
+                        "name": "Assistants",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Assistants"
+                    },
+                    {
+                        "name": "Lead Status",
+                        "type": "text",
+                        "label": "Lead Status"
+                    },
+                    {
+                        "name": "Review",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Review"
+                    },
+                    {
+                        "name": "Attendance Type",
+                        "type": "text",
+                        "label": "Attendance Type"
+                    },
+                    {
+                        "name": "Latest contact",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Latest contact"
+                    },
+                    {
+                        "name": "Email Content",
+                        "type": "array",
+                        "label": "Email Content"
+                    },
+                    {
+                        "name": "Apollo Sync Status",
+                        "type": "text",
+                        "label": "Apollo Sync Status"
+                    },
+                    {
+                        "name": "Website (Lookup from company)",
+                        "type": "array",
+                        "label": "Website (Lookup from company)"
+                    },
+                    {
+                        "name": "Backup Email",
+                        "type": "text",
+                        "label": "Backup Email"
+                    },
+                    {
+                        "name": "Phone Contact",
+                        "type": "text",
+                        "label": "Phone Contact"
+                    },
+                    {
+                        "name": "Date added",
+                        "type": "date",
+                        "label": "Date added"
+                    },
+                    {
+                        "name": "Last modified",
+                        "type": "date",
+                        "label": "Last modified"
+                    },
+                    {
+                        "name": "Duplicate Check Complete",
+                        "type": "boolean",
+                        "label": "Duplicate Check Complete"
+                    },
+                    {
+                        "name": "Comparable Name",
+                        "type": "text",
+                        "label": "Comparable Name"
+                    },
+                    {
+                        "name": "Reason for review",
+                        "type": "text",
+                        "label": "Reason for review"
+                    },
+                    {
+                        "name": "Record ID",
+                        "type": "text",
+                        "label": "Record ID"
+                    },
+                    {
+                        "name": "Industry Type",
+                        "type": "array",
+                        "label": "Industry Type"
+                    },
+                    {
+                        "name": "Colleagues",
+                        "type": "array",
+                        "label": "Colleagues"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "us1.make.com",
+        "notes": []
+    }
+}

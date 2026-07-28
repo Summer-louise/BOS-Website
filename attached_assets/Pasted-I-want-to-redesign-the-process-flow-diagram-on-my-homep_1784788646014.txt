@@ -1,0 +1,25 @@
+I want to redesign the process flow diagram on my homepage. Right now it's a hexagon-shaped loop with 5 neutral boxes ("Lead Captured," "CRM Updated," "Viewing Booked," "Follow-up Sent," "Deal Won") connected by dashed lines in a circular arrangement. Replace it with two separate horizontal flows, stacked vertically, each telling a "problem → automated fix → result" story instead of a generic loop.
+
+Layout: Two lanes, each with a small left-aligned label above it, and 4 boxes connected left-to-right by short arrows within that lane (no connection between the two lanes). Each box is the same rounded-pill shape already used on the site (rounded rect, thin border, small colored dot or accent on the left like the current boxes have). Roughly equal box widths, evenly spaced, wrapping to two rows on mobile if needed.
+
+Color logic: The first box in each lane (the "problem") should use our warm terracotta/orange accent color — the same one used on the "Get in touch" button — as its border and a soft tint of it as the background, to make it visually pop as the pain point. The remaining three boxes in each lane (the automated steps and the outcome) should use the sage green we already use for the existing flow boxes, keeping them visually connected as "the solution." Text inside each box should be dark enough to read clearly against its tint.
+
+Lane 1 — label "Lead Capture & Response":
+
+(terracotta) "After-hours enquiry" / "Lead goes cold"
+(sage) "AI replies instantly" / "Under 60 seconds"
+(sage) "CRM auto-updated" / "Zero manual entry"
+(sage) "Viewing booked" / "Before competitors call"
+
+Lane 2 — label "Marketing & Nurture":
+
+(terracotta) "Past clients go quiet" / "No consistent follow-up"
+(sage) "Auto nurture sequence" / "Market updates sent"
+(sage) "New listing shared" / "Social + email, instantly"
+(sage) "Referral or relist" / "Top of mind all year"
+
+Arrows: Simple thin connector lines with a small arrowhead between each box in the same lane, matching the dashed style already used, but shortened since boxes now sit closer together in a straight line rather than a loop.
+
+Legend: Small line below both lanes with two tiny colored squares and labels: terracotta square = "Pain point without automation," sage square = "Automated by BOS Automated."
+
+Keep unchanged: the serif italic "BOS Automated" logo, the nav bar, the cream page background, and the overall typography style used elsewhere on the page.
