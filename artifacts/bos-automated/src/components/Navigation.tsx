@@ -57,13 +57,17 @@ export function Navigation() {
           <div className="flex items-center justify-between">
             <Link
               href="#hero"
-              className="font-serif text-2xl italic tracking-wide text-foreground hover:text-primary transition-colors cursor-pointer"
+              className="cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
-              BOS Automated
+              <img
+                src="/logo.svg"
+                alt="BOS Automated"
+                className="h-10 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
