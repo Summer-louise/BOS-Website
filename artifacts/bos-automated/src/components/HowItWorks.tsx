@@ -9,7 +9,7 @@ const steps = [
   {
     number: '02',
     title: 'Design',
-    description: 'Your custom workflow is built in Make.com. Tailored to how you actually operate your business daily.',
+    description: 'Your custom workflow is built and tested, tailored to how you actually operate your business.',
   },
   {
     number: '03',

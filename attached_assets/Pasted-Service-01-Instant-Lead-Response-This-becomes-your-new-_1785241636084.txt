@@ -1,0 +1,31 @@
+Service 01: Instant Lead Response
+
+(This becomes your new lead service. Push the current “Lead Capture & CRM Sync” to 02 — it’s the quieter operational partner to this one.)
+
+01. Instant Lead Response
+
+Tagline: Every enquiry gets a reply in seconds — even when your hands are full.
+
+The problem:
+A buyer enquires on REA while you’re mid-inspection. You see it two hours later. By then they’ve enquired on three other listings, and one of those agents already called them back. You didn’t lose that lead because you’re bad at your job — you lost it because you were doing your job. Speed is everything, and you can’t be on the phone while you’re selling a house.
+
+How it works:
+
+	1.	An enquiry comes in from REA, Domain, Facebook, your website, or a missed call
+	2.	The lead gets an instant, personalised text and email — in your name, within seconds
+	3.	They’re told you’ve got them and exactly what happens next, so they stop shopping around
+	4.	The lead lands in your CRM at the same moment, logged and ready
+	5.	A follow-up task is created and assigned, so nobody slips through while you’re busy
+
+Tools used: Make.com · Twilio · your CRM · Gmail/Outlook
+
+Real-world outcome:
+“You’re standing in someone’s kitchen at a 10am open. A buyer enquires on your beachfront listing. Before you’ve shaken the next inspector’s hand, they’ve had a warm reply from you and booked a callback. You never touched your phone.”
+
+A couple of notes on dropping these in:
+
+On the hero, once you make this change, glance back at your pain section — it already leads with “Leads falling through the cracks,” so now your hero, your first pain card, and your first service all point at the same wound. That’s exactly the alignment we talked about, and it’s what turns a reader into a booked call.
+
+On the service card, I kept the tools line honest but light. If you haven’t set up Twilio yet, swap it for whatever SMS path you’ll actually use, or just write “Make.com · SMS · your CRM” so you’re never promising a specific tool you haven’t wired up. Same principle as the showcase section — don’t let the copy commit to something the build can’t back yet.
+
+Want me to do the same treatment on the current “Lead Capture & CRM Sync” card so it reads clearly as the operational sequel to this one, rather than overlapping with it?

@@ -55,13 +55,13 @@ export function About() {
 
             <div className="space-y-6 text-lg text-foreground font-light leading-relaxed mb-10">
               <p>
-                Summer-Louise is not a software developer who stumbled into consulting. She is a former cafe owner from Mount Coolum who ran a real business, dealing with suppliers, staff rosters, inventory chaos, and customer flow, and discovered a passion for making messy operations simple.
+                I'm not a software developer who stumbled into consulting. I'm a former cafe owner from Mount Coolum who ran a real business — dealing with suppliers, staff rosters, inventory chaos, and customer flow — and discovered a passion for making messy operations simple.
               </p>
               <p>
-                After years deep in Make.com automations, she builds systems that eliminate bottlenecks most business owners do not even realise they have. Technology should make your life easier, not harder. If a system does not save you real time and stress, it is not worth building.
+                After years deep in Make.com automations, I build systems that eliminate bottlenecks most business owners do not even realise they have. Technology should make your life easier, not harder. If a system does not save you real time and stress, it is not worth building.
               </p>
               <p>
-                She genuinely cares about finding solutions others do not see, and about the businesses she works with. Local knowledge, real-world experience, and a belief that even the smallest business deserves to run like a well-oiled machine.
+                I genuinely care about finding solutions others do not see, and about the businesses I work with. Local knowledge, real-world experience, and a belief that even the smallest business deserves to run like a well-oiled machine.
               </p>
             </div>
 

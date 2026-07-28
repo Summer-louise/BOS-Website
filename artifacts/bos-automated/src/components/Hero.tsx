@@ -59,12 +59,12 @@ export function Hero() {
             className="flex flex-col items-start"
           >
             <h1 className="text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] font-serif leading-[1.05] text-foreground mb-6">
-              Your business,<br />
-              <span className="italic text-foreground/75">running itself.</span>
+              Stop losing leads<br />
+              <span className="italic text-foreground/75">while you're at an open home.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-lg mb-10">
-              Smart digital automations tailored and built for you, so you can spend your time on higher priorities.
+              Every enquiry answered in seconds, every follow-up handled, every past client nurtured — automatically. Built for Sunshine Coast agents by someone who's run a real business.
             </p>
 
             {/* Dropdown CTA */}

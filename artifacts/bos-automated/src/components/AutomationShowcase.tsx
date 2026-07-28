@@ -52,7 +52,7 @@ export function AutomationShowcase() {
             Automations built for real businesses.
           </h2>
           <p className="mt-5 text-lg text-muted-foreground font-light max-w-2xl">
-            Every flow below is a live scenario, already running and saving someone hours each week.
+            Every flow below is built and tested — the kind of automation that saves real business owners hours each week.
           </p>
         </motion.div>
 

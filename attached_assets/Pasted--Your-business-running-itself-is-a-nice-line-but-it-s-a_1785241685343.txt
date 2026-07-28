@@ -1,0 +1,56 @@
+“Your business, running itself” is a nice line but it’s a category cliché — every automation site says a version of it, and it’s about your offering, not their pain. The tagline underneath is also slightly abstract (“higher priorities”).
+
+The hero is the one place to lead with the visceral problem. Something like:
+
+Headline: Stop losing leads while you’re at an open home.
+Tagline: Every enquiry answered in seconds, every follow-up handled, every past client nurtured — automatically. Built for Sunshine Coast agents by someone who’s run a real business.
+
+That does three things your current hero doesn’t: names the exact moment of pain, promises a concrete outcome, and drops your credibility hook. You can keep “your business, running itself” as a secondary line lower down if you love it.
+
+The “Let’s talk ▾” dropdown with three contact modes is lovely — genuinely good UX and it signals you’re approachable. Keep that exactly as is.
+
+Pain Points — “Sound familiar?”
+
+This section is the strongest on the page. The heading is perfect, the sub-heading (“You did not get into real estate to spend your day on admin”) is exactly the right voice, and the six cards are specific and true. Marcus would nod at every one.
+
+Two small things. First, card ordering — put “Leads falling through the cracks” first (you already have) and consider making “No system for cold leads” second, since those two are the revenue-bleeding ones; the admin cards are real but less emotionally urgent. Lead with money lost, follow with time lost.
+
+Second, a tiny wording lift on card 2: “You send the same email 50 times a week. Same SMS. Same message. It never ends.” is good but “It never ends” reads slightly defeatist. Try “…and it’s you doing it, not a system.” Keeps the agitation pointed at the fixable cause.
+
+Services — “What I build for you”
+
+Strong section, and the “click to expand” intro is smart. The problem/how-it-works/outcome structure is exactly right, and the real-world outcome quotes are the best part — concrete and visual. A few notes:
+
+The most glaring gap given our whole conversation: there’s no “instant missed-call / instant lead response” service here. Your services are heavily weighted toward CRM sync, campaigns, enrichment, and events — all valuable, but the speed-to-lead piece (text the enquiry back in seconds no matter the source) is the thing an agent will pay for first, and it’s not called out as its own headline service. Right now it’s partly buried inside “01. Lead Capture & CRM Sync,” which is framed around data entry, not speed. I’d strongly consider splitting out a service 01 that’s purely about instant response — “Every enquiry answered in seconds, even when you can’t pick up” — because that’s your wedge. Sell the emotional win (never lose a hot buyer to the agent who replied first), then let CRM sync be the quieter operational one.
+
+Small tooling note: several cards list specific tools (Airtable, Brevo, Apollo, Eventbrite). For a non-techy agent this is mostly reassuring (“she knows her stuff”) but occasionally it can create hesitation (“do I have to buy all these?”). Consider a one-line reassurance somewhere: “You don’t need to own or learn any of these — I handle the tools, you just get the result.” That kills a silent objection.
+
+The Marcus example in service 03 made me smile — using the persona name. Just make sure that’s intentional and not a placeholder you meant to swap; a real reader won’t know who Marcus is, so “You can see that a lead opened your last three emails and clicked the appraisal link twice” is safer.
+
+Real Work / Automation Showcase
+
+Good for credibility. One honest caution: the intro says “Every flow below is a live scenario, already running and saving someone hours each week.” ￼ If you’re early and these are partly demo builds rather than paying-client production scenarios, soften to “built and tested” rather than “already running” — because if an agent asks “which client is that one running for?” you want to answer cleanly. Never let your copy write a cheque your client list can’t cash; it’s the fastest way to lose trust with exactly the cautious buyer you’re courting.
+
+Who We Work With
+
+Fine as is. Real Estate featured is the right call. Since you’re targeting agents hardest, you could even lead the whole site’s positioning toward them and treat print/construction as “also available,” but keeping three shows range for word-of-mouth. Your choice — depends whether you want to be “the automation person for Sunshine Coast agents” (stronger, more referABLE) or a generalist.
+
+About Summer-Louise
+
+This is excellent and don’t let anyone talk you out of it. “She is a former cafe owner from Mount Coolum who ran a real business” ￼ is your single best trust asset — it says you’ve felt operational chaos yourself, which is far more persuasive to a small-business owner than a tech CV. The cafe-floor-to-automation-studio framing is memorable and human. Keep every word.
+
+One micro-tweak: the section slightly over-uses “she.” Reads a touch like a bio someone else wrote about you. If the rest of the site is first-person (“What I build for you”), consider making About first-person too for consistency — “I’m not a software developer who stumbled into consulting. I ran a real business…” First person from a solo operator builds more intimacy than third.
+
+How It Starts
+
+Clean, clear three steps. No changes needed — though again, “built in Make.com” names the tool where the client doesn’t care about the tool. “Your custom workflow is built and tested, tailored to how you actually operate” reads slightly better to a non-techy agent. Save “Make.com” for where it earns credibility (About, or a footer “Certified Make.com specialist” type badge), not in the client-facing promise.
+
+Contact
+
+“Ready to get your time back?” is a good warm close. Nothing to fix.
+
+The one consistency thread to pull
+
+If you take only one thing from this: decide whether the site’s headline promise is “speed-to-lead” or “everything automated,” and make the hero + first service match that choice. Right now the hero promises everything, the pain section screams leads, and the services lead with data entry. Line those three up — problem, agitation, and first solution all pointing at the same wound — and the site goes from “good” to “an agent reads it and immediately books a call.”
+
+Want me to write you a tightened full hero section and a brand-new “Service 01: Instant Lead Response” card in your existing voice, so you can drop them straight in?

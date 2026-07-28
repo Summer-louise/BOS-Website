@@ -12,6 +12,22 @@ type Service = {
 
 const services: Service[] = [
   {
+    title: 'Instant Lead Response',
+    tagline: 'Every enquiry gets a reply in seconds — even when your hands are full.',
+    problem:
+      'A buyer enquires on REA while you\'re mid-inspection. You see it two hours later. By then they\'ve enquired on three other listings, and one of those agents already called them back. You didn\'t lose that lead because you\'re bad at your job — you lost it because you were doing your job. Speed is everything, and you can\'t be on the phone while you\'re selling a house.',
+    howItWorks: [
+      'An enquiry comes in from REA, Domain, Facebook, your website, or a missed call',
+      'The lead gets an instant, personalised text and email — in your name, within seconds',
+      'They\'re told you\'ve got them and exactly what happens next, so they stop shopping around',
+      'The lead lands in your CRM at the same moment, logged and ready',
+      'A follow-up task is created and assigned, so nobody slips through while you\'re busy',
+    ],
+    tools: ['Make.com', 'SMS', 'Your CRM', 'Gmail / Outlook'],
+    payoff:
+      'You\'re standing in someone\'s kitchen at a 10am open. A buyer enquires on your beachfront listing. Before you\'ve shaken the next inspector\'s hand, they\'ve had a warm reply from you and booked a callback. You never touched your phone.',
+  },
+  {
     title: 'Lead Capture & CRM Sync',
     tagline: 'Every enquiry and registration lands in your CRM. Automatically.',
     problem:
@@ -57,7 +73,7 @@ const services: Service[] = [
     ],
     tools: ['Brevo', 'Airtable', 'Custom email hooks'],
     payoff:
-      'You can see that Marcus opened your last three emails and clicked the appraisal link twice. That\'s your next call.',
+      'You can see that a lead opened your last three emails and clicked the appraisal link twice. That\'s your next call.',
   },
   {
     title: 'Lead Enrichment & Database Cleaning',
@@ -213,6 +229,9 @@ export function Services() {
           </h2>
           <p className="text-lg text-muted-foreground font-light max-w-2xl">
             Click any service to see exactly what the automation does, how it works step by step, and what it means for your day-to-day as an agent.
+          </p>
+          <p className="text-sm text-muted-foreground font-light max-w-2xl mt-3">
+            You don't need to own or learn any of these tools — I handle everything, you just get the result.
           </p>
         </motion.div>
 

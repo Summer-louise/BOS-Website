@@ -6,12 +6,12 @@ const painPoints = [
     description: 'REA, Domain, Facebook, your website. They all come in to different places and nothing talks to each other.',
   },
   {
-    title: 'Copy-paste follow-up, every single day',
-    description: 'You send the same email 50 times a week. Same SMS. Same message. It never ends.',
-  },
-  {
     title: 'No system for cold leads',
     description: 'Leads from 6 to 12 months ago that went quiet. No re-engagement system. Lost opportunity, every time.',
+  },
+  {
+    title: 'Copy-paste follow-up, every single day',
+    description: 'You send the same email 50 times a week. Same SMS. Same message. And it\'s you doing it, not a system.',
   },
   {
     title: 'Manual open home coordination',
