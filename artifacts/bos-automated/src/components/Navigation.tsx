@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,10 +15,13 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
+    { label: 'What is automation?', href: '/what-is-automation', external: true },
     { label: 'Services', href: '#services' },
     { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },
   ];
+
+  const [, navigate] = useLocation();
 
   const scrollToSection = (href: string) => {
     const id = href.replace('#', '');
@@ -26,6 +29,16 @@ export function Navigation() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setMobileMenuOpen(false);
+    }
+  };
+
+  const handleNavClick = (e: React.MouseEvent, link: { href: string; external?: boolean }) => {
+    e.preventDefault();
+    if (link.external) {
+      navigate(link.href);
+      setMobileMenuOpen(false);
+    } else {
+      scrollToSection(link.href);
     }
   };
 
@@ -60,10 +73,7 @@ export function Navigation() {
                   <a
                     key={link.href}
                     href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(link.href);
-                    }}
+                    onClick={(e) => handleNavClick(e, link)}
                     className="text-sm font-sans font-medium text-foreground hover:text-primary transition-colors cursor-pointer"
                   >
                     {link.label}
@@ -107,10 +117,7 @@ export function Navigation() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(link.href);
-                  }}
+                  onClick={(e) => handleNavClick(e, link)}
                   className="text-foreground hover:text-primary transition-colors block border-b border-border/50 pb-4"
                 >
                   {link.label}
