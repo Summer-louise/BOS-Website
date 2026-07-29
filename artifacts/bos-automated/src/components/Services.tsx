@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'wouter';
 
 type Service = {
   title: string;
@@ -233,6 +234,13 @@ export function Services() {
           <p className="text-sm text-muted-foreground font-light max-w-2xl mt-3">
             You don't need to own or learn any of these tools. I handle everything, you just get the result.
           </p>
+          <Link
+            href="/construction"
+            className="inline-flex items-center gap-1.5 mt-5 text-xs font-sans text-muted-foreground/60 hover:text-primary border border-border/40 hover:border-primary/30 px-3 py-1.5 rounded-full transition-all duration-200"
+          >
+            <span>In roofing or construction?</span>
+            <span className="text-[10px]">→</span>
+          </Link>
         </motion.div>
 
         <motion.div

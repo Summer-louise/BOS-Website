@@ -15,17 +15,17 @@ const ctaOptions = [
 ];
 
 const painPoints = [
-  "I'm up on a roof, my phone rings, and I can't answer it. By the time I'm down and call back, they've already booked the next guy on the list.",
+  "I'm up on a roof and my phone rings. By the time I'm back on the ground and call back, they've already booked someone else.",
+  "I'm on site all day and can't stop to answer every call or message. By the time I'm done, half of them have moved on.",
   "Leads come in from everywhere. Phone calls, Facebook messages, your website, referrals from mates. They all end up scattered, nothing's tracked in one place, so some just get forgotten.",
   "A quote goes out and then... nothing. No one's chasing it up, so jobs that should've been booked just go cold.",
-  "Word travels fast on the Sunshine Coast. Even when the work is great, if people feel like they got left on read, that's the story that gets told.",
 ];
 
 const features = [
   {
     icon: Phone,
     title: 'Missed Call Text-Back',
-    body: "Someone calls while you're on a roof and you can't pick up? They get an instant text back so they know you got it and haven't been ignored. Not just ignored while they call the next roofer on Google.",
+    body: "Someone calls while you're on a roof or on site and you can't pick up? They get an instant text back so they know you got it. Instead of hanging up and calling the next trade on Google.",
   },
   {
     icon: FolderOpen,
@@ -140,10 +140,10 @@ export default function Construction() {
       <section className="max-w-[1200px] mx-auto px-5 md:px-8 py-20 md:py-28">
         <motion.div {...fadeUp} className="max-w-[720px]">
           <span className="text-xs tracking-widest uppercase font-sans text-muted-foreground mb-6 block">
-            Roofing &amp; Construction
+            Trades &amp; Construction
           </span>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.05] mb-6">
-            Don't lose leads because you were on a roof.
+            Don't lose leads because you were on site.
           </h1>
           <p className="text-xl text-foreground/70 font-light leading-relaxed mb-10 max-w-[560px]">
             Automation that answers, tracks, and follows up on every lead. Nothing falls through the cracks while you're busy doing the actual work.
@@ -200,7 +200,7 @@ export default function Construction() {
                 Turn up.<br />Do the job.<br />Get paid.
               </h2>
               <p className="text-lg text-foreground/70 font-light leading-relaxed">
-                You got into this trade to build things, not to spend your evenings chasing quotes and answering texts. The admin should handle itself.
+                You got into this to build things, not to spend your evenings chasing quotes and answering texts. The admin should handle itself.
               </p>
             </motion.div>
             <motion.div
@@ -239,7 +239,7 @@ export default function Construction() {
               What I build for you
             </h2>
             <p className="text-lg text-foreground/70 font-light max-w-[560px]">
-              This is what automation actually looks like for a roofing business. No new software to learn, no extra admin. It just runs in the background.
+              This is what automation actually looks like for a trades business. No new software to learn, no extra admin. It just runs in the background.
             </p>
           </motion.div>
 
