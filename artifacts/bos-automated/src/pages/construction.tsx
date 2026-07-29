@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'wouter';
 import { ArrowRight, Phone, FolderOpen, MessageSquare, Star, ChevronDown, CalendarDays, Mail, MapPin } from 'lucide-react';
 import { Footer } from '@/components/Footer';
 
@@ -9,13 +10,12 @@ const IN_PERSON_MAILTO = `mailto:summer@bosautomated.com?subject=In-Person%20Mee
 
 const ctaOptions = [
   { label: 'Book a call', sub: 'Pick a time that suits you', href: CALENDLY, icon: CalendarDays, external: true },
-  { label: 'Virtual call', sub: 'Video call, wherever you are', href: CALENDLY, icon: CalendarDays, external: true },
   { label: 'Meet in person', sub: 'Sunshine Coast', href: IN_PERSON_MAILTO, icon: MapPin, external: false },
   { label: 'Email me directly', sub: 'summer@bosautomated.com', href: 'mailto:summer@bosautomated.com', icon: Mail, external: false },
 ];
 
 const painPoints = [
-  "You're up on a roof, your phone rings, and you can't answer it. By the time you're down and call back, they've already booked the next guy on the list.",
+  "I'm up on a roof, my phone rings, and I can't answer it. By the time I'm down and call back, they've already booked the next guy on the list.",
   "Leads come in from everywhere. Phone calls, Facebook messages, your website, referrals from mates. They all end up scattered, nothing's tracked in one place, so some just get forgotten.",
   "A quote goes out and then... nothing. No one's chasing it up, so jobs that should've been booked just go cold.",
   "Word travels fast on the Sunshine Coast. Even when the work is great, if people feel like they got left on read, that's the story that gets told.",
@@ -51,7 +51,7 @@ const fadeUp = {
   transition: { duration: 0.8, ease: 'easeOut' },
 };
 
-function CtaDropdown() {
+function ContactDropdown({ openUp = false }: { openUp?: boolean }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -85,11 +85,11 @@ function CtaDropdown() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: 6 }}
+            initial={{ opacity: 0, y: openUp ? -6 : 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 6 }}
+            exit={{ opacity: 0, y: openUp ? -6 : 6 }}
             transition={{ duration: 0.15 }}
-            className="absolute left-0 bottom-full mb-2 w-64 bg-background shadow-xl border border-border/60 z-50"
+            className={`absolute left-0 w-64 bg-background shadow-xl border border-border/60 z-50 ${openUp ? 'bottom-full mb-2' : 'top-full mt-2'}`}
           >
             {ctaOptions.map((opt) => (
               <button
@@ -118,12 +118,12 @@ export default function Construction() {
       {/* Simple header */}
       <header className="w-full border-b border-border/40 bg-background/95 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
-          <div className="flex flex-col gap-0.5">
+          <Link href="/" className="flex flex-col gap-0.5">
             <img src="/logo.svg" alt="BOS Automated" className="h-9 w-auto" />
             <span className="text-[8px] tracking-widest uppercase font-sans text-muted-foreground/70 leading-none">
               Business Optimisation Systems
             </span>
-          </div>
+          </Link>
           <a
             href={CALENDLY}
             target="_blank"
@@ -148,15 +148,7 @@ export default function Construction() {
           <p className="text-xl text-foreground/70 font-light leading-relaxed mb-10 max-w-[560px]">
             Automation that answers, tracks, and follows up on every lead. Nothing falls through the cracks while you're busy doing the actual work.
           </p>
-          <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-medium text-base px-8 py-4 transition-all duration-200 hover:shadow-md"
-          >
-            Book a Call
-            <ArrowRight size={16} />
-          </a>
+          <ContactDropdown />
         </motion.div>
       </section>
 
@@ -284,7 +276,7 @@ export default function Construction() {
             <p className="text-lg text-background/70 font-light leading-relaxed mb-10">
               If any of this sounds like your business, I'd like to show you what it would actually look like set up for you. No cost, no obligation, just a quick look at where the leaks are and how to plug them.
             </p>
-            <CtaDropdown />
+            <ContactDropdown openUp />
           </motion.div>
         </div>
       </section>
