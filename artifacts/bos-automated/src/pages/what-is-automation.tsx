@@ -224,7 +224,7 @@ export default function WhatIsAutomation() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7 }}
-          className="bg-accent text-accent-foreground px-10 py-12 rounded-sm"
+          className="bg-accent text-accent-foreground px-6 md:px-10 py-12 rounded-sm"
         >
           <h2 className="text-3xl md:text-4xl font-serif leading-snug mb-4">
             Sounds useful?

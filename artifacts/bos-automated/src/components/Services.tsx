@@ -134,12 +134,12 @@ function ServiceRow({ service, idx, isOpen, onToggle }: {
     <div className="border-b border-border/60 last:border-b-0">
       <button
         onClick={onToggle}
-        className="w-full text-left flex flex-col md:flex-row md:items-baseline py-8 group transition-colors hover:bg-muted/20 px-0"
+        className="w-full text-left flex flex-row items-start py-8 group transition-colors hover:bg-muted/20 px-0"
       >
-        <div className={`text-3xl font-serif w-20 flex-shrink-0 mb-2 md:mb-0 transition-colors duration-200 ${isOpen ? 'text-primary' : 'text-secondary/30 group-hover:text-secondary'}`}>
+        <div className={`text-3xl font-serif w-12 md:w-20 flex-shrink-0 transition-colors duration-200 ${isOpen ? 'text-primary' : 'text-secondary/30 group-hover:text-secondary'}`}>
           {String(idx + 1).padStart(2, '0')}.
         </div>
-        <div className="flex-1 md:pr-12">
+        <div className="flex-1 min-w-0 md:pr-12">
           <h3 className="text-xl font-sans font-medium text-foreground mb-1.5">
             {service.title}
           </h3>
@@ -147,7 +147,7 @@ function ServiceRow({ service, idx, isOpen, onToggle }: {
             {service.tagline}
           </p>
         </div>
-        <div className={`flex-shrink-0 mt-4 md:mt-0 md:pl-6 text-2xl transition-transform duration-300 text-muted-foreground ${isOpen ? 'rotate-45' : ''}`}>
+        <div className={`flex-shrink-0 pl-4 text-2xl transition-transform duration-300 text-muted-foreground ${isOpen ? 'rotate-45' : ''}`}>
           +
         </div>
       </button>

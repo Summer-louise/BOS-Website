@@ -113,7 +113,7 @@ export default function Construction() {
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <motion.div {...fadeUp} className="mb-12">
             <span className="text-xs tracking-widest uppercase font-sans text-muted-foreground mb-4 block">
-              Sound familiar?
+              The problem
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-foreground leading-[1.1] mb-4">
               Sound familiar?

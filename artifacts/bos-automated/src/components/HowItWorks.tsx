@@ -54,8 +54,8 @@ export function HowItWorks() {
                 transition={{ delay: idx * 0.15, duration: 0.6 }}
                 className="relative flex flex-col items-center text-center flex-1"
               >
-                {/* Decorative background number */}
-                <div className="text-[120px] font-serif leading-none text-secondary/10 absolute -top-16 select-none z-0">
+                {/* Decorative background number (desktop only — on mobile it overlaps stacked steps) */}
+                <div className="hidden md:block text-[120px] font-serif leading-none text-secondary/10 absolute -top-16 select-none z-0">
                   {step.number}
                 </div>
                 
