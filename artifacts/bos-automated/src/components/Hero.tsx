@@ -64,7 +64,7 @@ export function Hero() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-lg mb-10">
-              Every enquiry answered in seconds, every follow-up handled, every past client nurtured — automatically. Built for Sunshine Coast agents by someone who's run a real business.
+              Every enquiry answered in seconds, every follow-up handled, every past client nurtured. Automatically. Built for Sunshine Coast agents by someone who's run a real business.
             </p>
 
             {/* Dropdown CTA */}

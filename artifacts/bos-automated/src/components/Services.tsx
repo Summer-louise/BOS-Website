@@ -13,17 +13,17 @@ type Service = {
 const services: Service[] = [
   {
     title: 'Instant Lead Response',
-    tagline: 'Every enquiry gets a reply in seconds — even when your hands are full.',
+    tagline: 'Every enquiry gets a reply in seconds, even when your hands are full.',
     problem:
-      'A buyer enquires on REA while you\'re mid-inspection. You see it two hours later. By then they\'ve enquired on three other listings, and one of those agents already called them back. You didn\'t lose that lead because you\'re bad at your job — you lost it because you were doing your job. Speed is everything, and you can\'t be on the phone while you\'re selling a house.',
+      'A buyer enquires on REA while you\'re mid-inspection. You see it two hours later. By then they\'ve enquired on three other listings, and one of those agents already called them back. You didn\'t lose that lead because you\'re bad at your job. You lost it because you were doing your job. Speed is everything, and you can\'t be on the phone while you\'re selling a house.',
     howItWorks: [
       'An enquiry comes in from REA, Domain, Facebook, your website, or a missed call',
-      'The lead gets an instant, personalised text and email — in your name, within seconds',
+      'The lead gets an instant, personalised text and email in your name, within seconds',
       'They\'re told you\'ve got them and exactly what happens next, so they stop shopping around',
-      'The lead lands in your CRM at the same moment, logged and ready',
+      'The lead lands in your CRM and calendar at the same moment, logged and impossible to miss',
       'A follow-up task is created and assigned, so nobody slips through while you\'re busy',
     ],
-    tools: ['Make.com', 'SMS', 'Your CRM', 'Gmail / Outlook'],
+    tools: ['REA / Domain', 'Facebook', 'Your Website', 'SMS', 'Your CRM', 'Gmail / Outlook'],
     payoff:
       'You\'re standing in someone\'s kitchen at a 10am open. A buyer enquires on your beachfront listing. Before you\'ve shaken the next inspector\'s hand, they\'ve had a warm reply from you and booked a callback. You never touched your phone.',
   },
@@ -31,33 +31,66 @@ const services: Service[] = [
     title: 'Lead Capture & CRM Sync',
     tagline: 'Every enquiry and registration lands in your CRM. Automatically.',
     problem:
-      'Leads come in from Eventbrite, your website, open home sign-in sheets, and word of mouth. By the time you manually enter them all, the moment has passed — and half end up missing or entered wrong.',
+      'Leads come in from realestate.com.au and Domain enquiries, your website contact form, open home sign-in sheets, and phone calls. By the time someone gets around to entering them all into the CRM, the hot ones have gone cold, several end up missing or entered wrong, duplicated, or logged under the wrong contact.',
     howItWorks: [
-      'Lead submits a form, registers for an event, or makes an enquiry',
-      'System instantly checks your CRM for a matching email address',
-      'Existing contact updated, or a new record created — in seconds',
-      'Confirmation email sent to the lead automatically',
+      'Lead submits a portal enquiry, website form, or open home sign-in',
+      'System instantly checks your CRM (VaultRE, AgentBox, Rex, or similar) for a matching contact',
+      'Existing contact updated, or a new record created, in seconds',
+      'Lead auto-tagged as buyer, seller, or renter enquiry, and assigned to the right agent',
+      'Confirmation email or SMS sent automatically',
       'All activity logged so your pipeline is always current',
     ],
-    tools: ['Airtable', 'Eventbrite', 'Google Forms', 'Brevo'],
+    tools: ['REA / Domain', 'VaultRE / AgentBox / Rex', 'Email', 'SMS'],
     payoff:
-      'You run a 60-person CPD session. Every attendee is in your CRM by the time you walk out the door. Zero data entry.',
+      'You run a Saturday open home with 40 walk-throughs. By the time you\'re back at the office, every visitor is in your CRM, tagged buyer or renter, with a follow-up email already sent. Zero data entry.',
+  },
+  {
+    title: 'Seller Lead & Appraisal Follow-Up',
+    tagline: 'Instant response to appraisal requests. Automatic nurture for sellers who aren\'t ready yet.',
+    problem:
+      'An appraisal request comes in at 9pm on a Friday. By the time someone calls back Monday, that seller has already booked with a competitor. The window closes fast, and no one was watching.',
+    howItWorks: [
+      'Seller submits an appraisal request via website form, portal enquiry, or Facebook ad',
+      'They receive an instant personalised reply with a local market snapshot and a booking link',
+      'Anyone who isn\'t ready to sell yet drops into an automatic drip sequence',
+      'Sequences include local sold prices and market update nudges to keep them warm until they are',
+      'Nothing sits in an inbox going cold',
+    ],
+    tools: ['REA / Domain', 'Facebook', 'Your Website', 'Your CRM', 'Email', 'SMS'],
+    payoff:
+      'An appraisal request arrives Friday evening. By Monday morning, the seller has already had a personalised reply, a local market update, and a booking link. You\'re ahead before the week begins.',
+  },
+  {
+    title: 'Rental Portfolio Admin Automation',
+    tagline: 'Less time chasing arrears and triaging maintenance. More time growing the rent roll.',
+    problem:
+      'Your property managers spend their day chasing arrears, triaging maintenance requests, and manually booking inspections, instead of growing the rent roll. It\'s reactive work that eats the whole day.',
+    howItWorks: [
+      'Tenants submit maintenance requests through a bot that triages urgency automatically',
+      'Routine jobs route straight to the right tradesperson with no human in the middle',
+      'Arrears reminders go out on a set schedule before it becomes an awkward phone call',
+      'Inspection and lease-renewal dates trigger their own reminder sequences well in advance',
+      'Everything syncs back to whatever your team is already running (PropertyMe, PropertyTree, Console)',
+    ],
+    tools: ['PropertyMe / PropertyTree / Console', 'SMS', 'Email', 'Your CRM'],
+    payoff:
+      'Your property managers stop firefighting and start focusing on what actually grows the business.',
   },
   {
     title: 'Targeted Email Campaigns',
-    tagline: 'Filter your database, send personalised emails, log everything — no manual work.',
+    tagline: 'Filter your database, send personalised emails, log everything. No manual work.',
     problem:
-      'You want to reach cold leads from 6 months ago, or everyone who attended your last event but hasn\'t listed yet. Filtering, exporting, and sending individually takes hours — so it just doesn\'t happen.',
+      'You want to reach cold leads from 6 months ago, or everyone who attended your last open home but hasn\'t listed yet. Filtering, exporting, and sending individually takes hours, so it just doesn\'t happen.',
     howItWorks: [
-      'Define your criteria — by lead status, last contact date, event attendance, or any CRM field',
+      'Define your criteria by lead status, last contact date, event attendance, or any CRM field',
       'System finds every matching lead automatically',
       'Personalised email sent from your own Gmail or Outlook account',
       'Send activity logged to each lead\'s CRM record',
       'Leads marked as contacted so you never double-up',
     ],
-    tools: ['Airtable', 'Gmail', 'Outlook', 'Brevo'],
+    tools: ['Your CRM', 'Gmail', 'Outlook', 'Email platform'],
     payoff:
-      'After your April CPD session, every attendee receives the recording. 47 emails sent, logged, and done — in the time it takes to make a coffee.',
+      'After your open home, every attendee receives a personalised follow-up. 47 emails sent, logged, and done in the time it takes to make a coffee.',
   },
   {
     title: 'Email Engagement Tracking',
@@ -68,10 +101,10 @@ const services: Service[] = [
       'Lead opens or clicks a link in your email campaign',
       'Engagement event captured the moment it happens',
       'System looks up the lead in your CRM',
-      'Open date, click, campaign name all logged to their contact record',
-      'Warmest leads rise to the top — you know who to call first',
+      'Open date, click, and campaign name all logged to their contact record',
+      'Warmest leads rise to the top so you know who to call first',
     ],
-    tools: ['Brevo', 'Airtable', 'Custom email hooks'],
+    tools: ['Email platform', 'Your CRM'],
     payoff:
       'You can see that a lead opened your last three emails and clicked the appraisal link twice. That\'s your next call.',
   },
@@ -79,45 +112,44 @@ const services: Service[] = [
     title: 'Lead Enrichment & Database Cleaning',
     tagline: 'Fill the gaps. Remove duplicates. Walk into every conversation informed.',
     problem:
-      'Half your CRM has missing phone numbers, incomplete company details, or the same contact entered three times under different spellings. Bad data means wasted effort and embarrassing double-ups.',
+      'Half your CRM has missing phone numbers, incomplete details, or the same contact entered three times under different spellings. Bad data means wasted effort and embarrassing double-ups.',
     howItWorks: [
-      'New lead added to CRM — enrichment checks run automatically',
-      'Apollo queried for phone number, LinkedIn, company, and email',
-      'For builders and tradespeople: QBCC licence status and company details pulled automatically',
+      'New lead added to CRM, enrichment checks run automatically',
+      'Phone number, company, and online profile details pulled from enrichment sources',
       'Duplicate scan checks your existing database for matches and flags them',
-      'CRM updated with clean, complete data — no manual research required',
+      'CRM updated with clean, complete data with no manual research required',
     ],
-    tools: ['Apollo', 'QBCC via Apify', 'Airtable', 'Google Sheets'],
+    tools: ['Your CRM', 'Data enrichment tool', 'Spreadsheet'],
     payoff:
-      'A builder enquires about selling their site. Before you call back, their licence status, company, and LinkedIn profile are already in your CRM.',
+      'A prospective vendor enquires. Before you call back, their details are already verified and complete in your CRM.',
   },
   {
-    title: 'Event & CPD Management',
-    tagline: 'Registrations, reminders, cancellations, and post-event follow-up — all handled automatically.',
+    title: 'Event & Open Home Management',
+    tagline: 'Registrations, reminders, cancellations, and post-event follow-up. All handled automatically.',
     problem:
-      'Running a CPD or networking event means managing a spreadsheet, sending manual confirmations, handling cancellations one by one, then emailing the recording to 50 people. It takes more time than the event itself.',
+      'Running an open home or information night means managing a spreadsheet, sending manual confirmations, handling cancellations one by one, then following up with 50 people after. It takes more time than the event itself.',
     howItWorks: [
-      'Registration: form submitted → CRM checked → record created or updated → confirmation email sent in seconds',
-      'Reminders: lead added to automated reminder sequence in your email tool, timed to the event date',
-      'Cancellation: detected from your spreadsheet → you\'re notified instantly → registrant gets a confirmation → records updated',
-      'Post-event: recording ready → system finds all attendees → personalised email sent to each one → all logged to their records',
+      'Registration: form submitted, CRM checked, record created or updated, confirmation sent in seconds',
+      'Reminders: attendee added to an automated reminder sequence timed to the event date',
+      'Cancellation: detected automatically, registrant gets a confirmation, records updated',
+      'Post-event: system finds all attendees and sends a personalised follow-up to each one, all logged',
     ],
-    tools: ['Google Sheets', 'Eventbrite', 'Airtable', 'Brevo', 'Gmail', 'Outlook'],
+    tools: ['Registration form', 'Your CRM', 'Email platform', 'Gmail / Outlook'],
     payoff: 'You run the event. The admin runs itself.',
   },
   {
     title: 'Marketing List & Newsletter Automation',
-    tagline: 'Opt-ins go straight to the right list. Website engagement tracked to the contact.',
+    tagline: 'Opt-ins go straight to the right list. Leads nurtured from the moment they raise their hand.',
     problem:
-      'Leads opt in to your newsletter but you have to manually export from your CRM and import into your email tool. Someone always gets missed, added to the wrong list, or left waiting until you have time.',
+      'Leads opt in to your market updates but you have to manually export from your CRM and import into your email tool. Someone always gets missed, added to the wrong list, or left waiting until you have time.',
     howItWorks: [
-      'Lead\'s opt-in status changes in your CRM (or they fill in a form)',
+      'Lead\'s opt-in status changes in your CRM or they fill in a form',
       'System detects the change and checks your email marketing tool',
       'Contact added to the correct list or segment automatically',
       'Activity logged to their CRM record',
-      'Nurture or newsletter sequence begins — no manual trigger needed',
+      'Nurture or newsletter sequence begins with no manual trigger needed',
     ],
-    tools: ['Airtable', 'Brevo', 'Google Tag Manager'],
+    tools: ['Your CRM', 'Email platform', 'Your Website'],
     payoff:
       'A lead from your open home opts in on the spot. They\'re on your next market update before you\'ve driven home.',
   },
@@ -164,7 +196,7 @@ function ServiceRow({ service, idx, isOpen, onToggle }: {
             <div className="md:pl-20 pb-10 grid md:grid-cols-2 gap-8">
               {/* Problem */}
               <div className="bg-primary/6 border-l-2 border-primary/40 px-6 py-5">
-                <p className="text-xs uppercase tracking-widest font-sans text-primary/70 mb-3">The problem</p>
+                <p className="text-xs uppercase tracking-widest font-sans text-primary/70 mb-3">Sound familiar?</p>
                 <p className="text-sm text-foreground font-light leading-relaxed">{service.problem}</p>
               </div>
 
@@ -231,7 +263,7 @@ export function Services() {
             Click any service to see exactly what the automation does, how it works step by step, and what it means for your day-to-day as an agent.
           </p>
           <p className="text-sm text-muted-foreground font-light max-w-2xl mt-3">
-            You don't need to own or learn any of these tools — I handle everything, you just get the result.
+            You don't need to own or learn any of these tools. I handle everything, you just get the result.
           </p>
         </motion.div>
 

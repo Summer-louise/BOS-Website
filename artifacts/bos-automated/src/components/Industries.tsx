@@ -4,17 +4,14 @@ const industries = [
   {
     name: 'Real Estate Agents',
     description: 'Streamlining listings, viewings, and vendor nurture.',
-    featured: true,
   },
   {
     name: 'Print & Design',
     description: 'Automating quoting, proofs, and approvals.',
-    featured: false,
   },
   {
     name: 'Construction & Roofing',
-    description: 'Connecting site visits with client communications.',
-    featured: false,
+    description: 'Lead capture, follow-up nurturing, and job scheduling from first enquiry through to site.',
   },
 ];
 
@@ -30,10 +27,10 @@ export function Industries() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-12">
-            Who we work with
+            Who I work with
           </h2>
           
-          <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16">
+          <div className="flex flex-col md:flex-row justify-center items-start gap-12 md:gap-16">
             {industries.map((ind, idx) => (
               <motion.div
                 key={idx}
@@ -43,14 +40,10 @@ export function Industries() {
                 transition={{ delay: idx * 0.1, duration: 0.6 }}
                 className="flex flex-col items-center max-w-[280px]"
               >
-                <h3 className={`font-serif mb-3 ${ind.featured ? 'text-3xl text-foreground' : 'text-2xl text-secondary'}`}>
+                <h3 className="font-serif text-2xl text-foreground mb-3">
                   {ind.name}
                 </h3>
-                {ind.featured ? (
-                  <div className="w-12 h-[2px] bg-primary mb-4" />
-                ) : (
-                  <div className="w-8 h-[1px] bg-secondary/50 mb-4" />
-                )}
+                <div className="w-10 h-[1.5px] bg-primary/50 mb-4" />
                 <p className="text-sm text-muted-foreground font-light text-center">
                   {ind.description}
                 </p>

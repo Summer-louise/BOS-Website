@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: 'Does it replace my existing tools?',
-    a: 'No. Automations connect the tools you already use — your email, your CRM, your forms, your calendar — and make them talk to each other. Nothing gets replaced unless you want it to.',
+    a: 'No. Automations connect the tools you already use, your email, your CRM, your forms, your calendar, and make them talk to each other. Nothing gets replaced unless you want it to.',
   },
   {
     q: 'What if something goes wrong?',
@@ -33,7 +33,7 @@ const examples = [
   },
   {
     before: 'You finish a CPD session with 40 attendees.',
-    after: 'Every attendee is added to your database, tagged as "CPD — July", and receives the recording link — while you\'re still packing up the room.',
+    after: 'Every attendee is added to your database, tagged as "CPD: July", and receives the recording link, while you\'re still packing up the room.',
     label: 'Event follow-up',
   },
   {
@@ -93,13 +93,13 @@ export default function WhatIsAutomation() {
         >
           <div className="prose-like space-y-6 text-lg text-foreground font-light leading-relaxed">
             <p>
-              Think of a digital automation as a set of instructions that runs in the background of your business — invisibly, instantly, and without you lifting a finger.
+              Think of a digital automation as a set of instructions that runs in the background of your business, invisibly, instantly, and without you lifting a finger.
             </p>
             <p>
               It works like this: <span className="font-medium text-foreground">when something happens</span> (a new lead enquires, someone fills in a form, a date arrives), the automation <span className="font-medium text-foreground">does something in response</span> (sends an email, updates a spreadsheet, adds a record to your CRM, creates a calendar event).
             </p>
             <p>
-              You set the rules once. After that, it runs on its own — every time, without fail, even while you are asleep or with a client.
+              You set the rules once. After that, it runs on its own, every time, without fail, even while you are asleep or with a client.
             </p>
           </div>
 
@@ -112,7 +112,7 @@ export default function WhatIsAutomation() {
 
           <div className="prose-like space-y-6 text-lg text-foreground font-light leading-relaxed">
             <p>
-              The tools your business already uses — your email, your calendar, your spreadsheets, your CRM, your forms — do not naturally talk to each other. Automations are the connections between them. They pass information from one tool to the next so you do not have to do it by hand.
+              The tools your business already uses, your email, your calendar, your spreadsheets, your CRM, your forms, do not naturally talk to each other. Automations are the connections between them. They pass information from one tool to the next so you do not have to do it by hand.
             </p>
             <p>
               No code. No technical knowledge needed on your end. You describe what you want to happen, and it gets built for you.
@@ -132,7 +132,7 @@ export default function WhatIsAutomation() {
             What it looks like in real life
           </h2>
           <p className="text-base text-muted-foreground font-light mb-12">
-            Here are three examples of what happens without an automation — and what happens with one.
+            Here are three examples of what happens without an automation, and what happens with one.
           </p>
 
           <div className="space-y-6">

@@ -4,7 +4,7 @@ const flows = [
   {
     src: '/automations/flow-1.png?v=3',
     label: 'Lead capture & multi-branch routing',
-    desc: 'Each lead source triggers its own path — personalised follow-up sent automatically based on origin.',
+    desc: 'Each lead source triggers its own path, with personalised follow-up sent automatically based on origin.',
   },
   {
     src: '/automations/flow-2.png?v=3',
@@ -24,7 +24,7 @@ const flows = [
   {
     src: '/automations/flow-5.png?v=3',
     label: 'Multi-segment campaign automation',
-    desc: 'Separate campaign logic runs in parallel — each audience segment handled with its own rules.',
+    desc: 'Separate campaign logic runs in parallel, with each audience segment handled by its own rules.',
   },
   {
     src: '/automations/flow-6.png?v=3',
@@ -52,7 +52,7 @@ export function AutomationShowcase() {
             Automations built for real businesses.
           </h2>
           <p className="mt-5 text-lg text-muted-foreground font-light max-w-2xl">
-            Every flow below is built and tested — the kind of automation that saves real business owners hours each week.
+            Every flow below is built and tested. The kind of automation that saves real business owners hours each week.
           </p>
         </motion.div>
 

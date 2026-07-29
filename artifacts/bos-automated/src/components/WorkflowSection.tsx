@@ -28,6 +28,16 @@ export function WorkflowSection() {
         >
           <WorkflowVisualization />
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-10 text-center font-serif italic text-lg text-muted-foreground"
+        >
+          And that's just the tip of the iceberg.
+        </motion.p>
       </div>
     </section>
   );

@@ -31,7 +31,7 @@ export function About() {
               />
               <div className="absolute bottom-0 left-0 right-0 px-5 py-3 bg-foreground/70">
                 <p className="text-xs text-background/80 font-sans font-light tracking-wide">
-                  Mountain Juice and Coffee, Mount Coolum — where it all started.
+                  Mountain Juice and Coffee, Mount Coolum. Where it all started.
                 </p>
               </div>
             </div>
@@ -55,7 +55,7 @@ export function About() {
 
             <div className="space-y-6 text-lg text-foreground font-light leading-relaxed mb-10">
               <p>
-                I'm not a software developer who stumbled into consulting. I'm a former cafe owner from Mount Coolum who ran a real business — dealing with suppliers, staff rosters, inventory chaos, and customer flow — and discovered a passion for making messy operations simple.
+                I'm not a software developer who stumbled into consulting. I'm a former cafe owner from Mount Coolum who ran a real business, dealing with suppliers, staff rosters, inventory chaos, and customer flow, and discovered a passion for making messy operations simple.
               </p>
               <p>
                 After years deep in Make.com automations, I build systems that eliminate bottlenecks most business owners do not even realise they have. Technology should make your life easier, not harder. If a system does not save you real time and stress, it is not worth building.
