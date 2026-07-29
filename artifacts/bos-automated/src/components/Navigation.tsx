@@ -15,7 +15,7 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { label: 'What is automation?', href: '/what-is-automation', external: true },
+    { label: 'What is an automation?', href: '/what-is-automation', external: true },
     { label: 'Services', href: '#services' },
     { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },

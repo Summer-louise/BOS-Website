@@ -46,7 +46,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100dvh] w-full flex items-center pt-24 bg-background overflow-hidden"
+      className="relative min-h-[100dvh] w-full flex items-center pt-24 bg-background"
     >
       <div className="max-w-[1200px] w-full mx-auto px-5 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -121,7 +121,10 @@ export function Hero() {
           >
             <div className="relative w-full max-w-[460px]">
               {/* Photo */}
-              <div className="aspect-[3/4] overflow-hidden bg-muted w-full">
+              <div
+                className="aspect-[3/4] overflow-hidden bg-muted w-full"
+                style={{ borderRadius: '240px 240px 8px 8px' }}
+              >
                 <img
                   src="/summer.png"
                   alt="Summer-Louise Bevan, BOS Automated"

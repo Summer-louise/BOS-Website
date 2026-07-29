@@ -48,17 +48,17 @@
 
 :root {
   --background: 42 40% 96%;
-  --foreground: 20 38% 17%;
+  --foreground: 20 52% 16%;
   --card: 90 18% 94%;
-  --card-foreground: 20 38% 17%;
+  --card-foreground: 20 52% 16%;
   --card-border: 95 15% 83%;
   --popover: 90 18% 94%;
-  --popover-foreground: 20 38% 17%;
+  --popover-foreground: 20 52% 16%;
   --popover-border: 95 15% 83%;
   --primary: 18 55% 52%;
   --primary-foreground: 40 40% 96%;
   --secondary: 128 22% 48%;
-  --secondary-foreground: 20 38% 17%;
+  --secondary-foreground: 20 52% 16%;
   --muted: 95 18% 90%;
   --muted-foreground: 110 12% 42%;
   --accent: 152 28% 17%;
