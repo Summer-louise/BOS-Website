@@ -77,38 +77,6 @@ const services: Service[] = [
       'Your property managers stop firefighting and start focusing on what actually grows the business.',
   },
   {
-    title: 'Targeted Email Campaigns',
-    tagline: 'Filter your database, send personalised emails, log everything. No manual work.',
-    problem:
-      'You want to reach cold leads from 6 months ago, or everyone who attended your last open home but hasn\'t listed yet. Filtering, exporting, and sending individually takes hours, so it just doesn\'t happen.',
-    howItWorks: [
-      'Define your criteria by lead status, last contact date, event attendance, or any CRM field',
-      'System finds every matching lead automatically',
-      'Personalised email sent from your own Gmail or Outlook account',
-      'Send activity logged to each lead\'s CRM record',
-      'Leads marked as contacted so you never double-up',
-    ],
-    tools: ['Your CRM', 'Gmail', 'Outlook', 'Email platform'],
-    payoff:
-      'After your open home, every attendee receives a personalised follow-up. 47 emails sent, logged, and done in the time it takes to make a coffee.',
-  },
-  {
-    title: 'Email Engagement Tracking',
-    tagline: 'Know exactly who\'s opening your emails, logged to their record automatically.',
-    problem:
-      'You send campaigns but follow up blind. No idea who\'s engaged and who\'s gone cold, so you waste calls on the wrong people and miss the ones who are ready.',
-    howItWorks: [
-      'Lead opens or clicks a link in your email campaign',
-      'Engagement event captured the moment it happens',
-      'System looks up the lead in your CRM',
-      'Open date, click, and campaign name all logged to their contact record',
-      'Warmest leads rise to the top so you know who to call first',
-    ],
-    tools: ['Email platform', 'Your CRM'],
-    payoff:
-      'You can see that a lead opened your last three emails and clicked the appraisal link twice. That\'s your next call.',
-  },
-  {
     title: 'Lead Enrichment & Database Cleaning',
     tagline: 'Fill the gaps. Remove duplicates. Walk into every conversation informed.',
     problem:
@@ -141,17 +109,17 @@ const services: Service[] = [
     title: 'Marketing List & Newsletter Automation',
     tagline: 'Opt-ins go straight to the right list. Leads nurtured from the moment they raise their hand.',
     problem:
-      'Leads opt in to your market updates but you have to manually export from your CRM and import into your email tool. Someone always gets missed, added to the wrong list, or left waiting until you have time.',
+      'Leads opt in to your market updates, but sorting them by hand means a seller ends up on the buyer alerts list, a landlord gets sent listings emails instead of rent roll updates, and some people wait days before anyone gets around to adding them at all.',
     howItWorks: [
-      'Lead\'s opt-in status changes in your CRM or they fill in a form',
-      'System detects the change and checks your email marketing tool',
-      'Contact added to the correct list or segment automatically',
+      'Lead opts in via a website form, portal enquiry, or a box ticked in your CRM',
+      'System detects the opt-in and matches them in your email platform',
+      'Contact added to the correct list (buyer alerts, seller updates, or landlord/investor news) automatically',
       'Activity logged to their CRM record',
       'Nurture or newsletter sequence begins with no manual trigger needed',
     ],
-    tools: ['Your CRM', 'Email platform', 'Your Website'],
+    tools: ['Your CRM (VaultRE, AgentBox, Rex...)', 'Mailchimp / Brevo / ActiveCampaign', 'Your website forms'],
     payoff:
-      'A lead from your open home opts in on the spot. They\'re on your next market update before you\'ve driven home.',
+      'A lead from your open home opts in on the spot. They\'re on your next buyer alert before you\'ve driven home.',
   },
 ];
 
@@ -196,7 +164,7 @@ function ServiceRow({ service, idx, isOpen, onToggle }: {
             <div className="md:pl-20 pb-10 grid md:grid-cols-2 gap-8">
               {/* Problem */}
               <div className="bg-primary/6 border-l-2 border-primary/40 px-6 py-5">
-                <p className="text-xs uppercase tracking-widest font-sans text-primary/70 mb-3">Sound familiar?</p>
+                <p className="text-xs uppercase tracking-widest font-sans text-primary/70 mb-3">The problem</p>
                 <p className="text-sm text-foreground font-light leading-relaxed">{service.problem}</p>
               </div>
 
