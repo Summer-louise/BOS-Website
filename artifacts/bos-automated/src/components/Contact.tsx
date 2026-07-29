@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, CalendarDays } from 'lucide-react';
-
-const CALENDLY = 'https://calendly.com/summer-bosautomated/30min';
+import { ArrowRight } from 'lucide-react';
+import { ContactDropdown } from '@/components/ContactDropdown';
 
 export function Contact() {
   return (
@@ -25,19 +24,8 @@ export function Contact() {
               No obligation. No jargon. Just a conversation.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-10 flex-wrap">
-              <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col gap-2"
-              >
-                <span className="text-sm uppercase tracking-wider text-accent-foreground/50 font-sans">Book a call</span>
-                <span className="text-xl font-serif flex items-center gap-2 group-hover:opacity-80 transition-opacity">
-                  Pick a time online
-                  <CalendarDays size={18} className="group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
+            <div className="flex flex-col sm:flex-row gap-10 flex-wrap items-start">
+              <ContactDropdown label="Let's talk" openUp />
 
               <a 
                 href="mailto:summer@bosautomated.com"
