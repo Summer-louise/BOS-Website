@@ -36,32 +36,151 @@ export function About() {
               </div>
             </div>
 
-            {/* Small personal photos — trio */}
-            <div className="grid grid-cols-3 gap-2 items-end">
-              {/* Desk + cat */}
-              <div className="overflow-hidden bg-muted" style={{ aspectRatio: '4/3' }}>
+            {/* Editorial photo collage */}
+            <div className="relative mt-2" style={{ height: '360px' }}>
+
+              {/* Terracotta spotlight — large soft radial behind the cutout */}
+              <div style={{
+                position: 'absolute',
+                left: '50%',
+                top: '52%',
+                transform: 'translate(-50%, -50%)',
+                width: '230px',
+                height: '230px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, hsl(18 55% 52% / 0.28) 0%, hsl(18 55% 52% / 0.10) 55%, transparent 80%)',
+                zIndex: 0,
+              }} />
+
+              {/* Outer decorative ring */}
+              <div style={{
+                position: 'absolute',
+                left: '50%',
+                top: '52%',
+                transform: 'translate(-50%, -50%)',
+                width: '290px',
+                height: '290px',
+                borderRadius: '50%',
+                border: '1px solid hsl(18 55% 52% / 0.18)',
+                zIndex: 0,
+              }} />
+
+              {/* Inner subtle ring */}
+              <div style={{
+                position: 'absolute',
+                left: '50%',
+                top: '52%',
+                transform: 'translate(-50%, -50%)',
+                width: '200px',
+                height: '200px',
+                borderRadius: '50%',
+                border: '1px dashed hsl(18 55% 52% / 0.14)',
+                zIndex: 0,
+              }} />
+
+              {/* Sage green accent dots */}
+              <div style={{ position:'absolute', width:9, height:9, borderRadius:'50%', background:'hsl(128 22% 48% / 0.55)', top:22, left:'12%', zIndex:0 }} />
+              <div style={{ position:'absolute', width:5, height:5, borderRadius:'50%', background:'hsl(128 22% 48% / 0.35)', top:52, left:'22%', zIndex:0 }} />
+              <div style={{ position:'absolute', width:6, height:6, borderRadius:'50%', background:'hsl(18 55% 52% / 0.45)', top:18, right:'16%', zIndex:0 }} />
+              <div style={{ position:'absolute', width:4, height:4, borderRadius:'50%', background:'hsl(18 55% 52% / 0.3)', bottom:55, right:'10%', zIndex:0 }} />
+              <div style={{ position:'absolute', width:7, height:7, borderRadius:'50%', background:'hsl(128 22% 48% / 0.3)', bottom:30, left:'5%', zIndex:0 }} />
+
+              {/* Warm stage floor arc behind Summer */}
+              <div style={{
+                position: 'absolute',
+                left: '50%',
+                bottom: -6,
+                transform: 'translateX(-50%)',
+                width: '170px',
+                height: '85px',
+                borderRadius: '85px 85px 0 0',
+                background: 'hsl(18 55% 52% / 0.10)',
+                zIndex: 1,
+              }} />
+
+              {/* Desk + cat — left, tilted back */}
+              <div style={{
+                position: 'absolute',
+                left: 0,
+                bottom: 0,
+                width: '48%',
+                aspectRatio: '4/3',
+                overflow: 'hidden',
+                transform: 'rotate(-2.5deg)',
+                boxShadow: '0 10px 36px rgba(0,0,0,0.18)',
+                zIndex: 2,
+              }}>
                 <img
                   src="/summer-desk.jpg"
-                  alt="Summer working at her desk with her cat"
-                  className="w-full h-full object-cover object-center"
+                  alt="Summer at her desk with her cat"
+                  style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center' }}
                 />
               </div>
-              {/* Casual — transparent bg shows cream */}
-              <div className="flex items-end justify-center" style={{ aspectRatio: '3/4' }}>
+
+              {/* Summer PNG cutout — centrepiece */}
+              <div style={{
+                position: 'absolute',
+                left: '50%',
+                bottom: 0,
+                transform: 'translateX(-50%)',
+                width: '29%',
+                zIndex: 4,
+              }}>
                 <img
                   src="/summer-casual.png"
                   alt="Summer casual"
-                  className="w-full h-full object-contain object-bottom drop-shadow-sm"
+                  style={{
+                    width: '100%',
+                    objectFit: 'contain',
+                    objectPosition: 'bottom',
+                    filter: 'drop-shadow(0 10px 22px rgba(0,0,0,0.22))',
+                  }}
                 />
               </div>
-              {/* Couple — taller */}
-              <div className="overflow-hidden bg-muted" style={{ aspectRatio: '3/4' }}>
+
+              {/* Couple — right, tilted forward, with cream border frame */}
+              <div style={{
+                position: 'absolute',
+                right: 0,
+                bottom: 0,
+                width: '43%',
+                aspectRatio: '3/4',
+                overflow: 'hidden',
+                transform: 'rotate(2.2deg)',
+                boxShadow: '0 10px 36px rgba(0,0,0,0.16)',
+                zIndex: 3,
+                outline: '3px solid hsl(42 40% 96%)',
+                outlineOffset: '-3px',
+              }}>
                 <img
                   src="/couple.jpg"
                   alt="Summer with her partner"
-                  className="w-full h-full object-cover object-top"
+                  style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'top' }}
                 />
               </div>
+
+              {/* Caption label */}
+              <div style={{
+                position: 'absolute',
+                bottom: 8,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                zIndex: 5,
+                background: 'hsl(20 52% 16% / 0.72)',
+                backdropFilter: 'blur(4px)',
+                padding: '3px 12px',
+                borderRadius: '100px',
+              }}>
+                <span style={{
+                  fontSize: '10px',
+                  color: 'hsl(42 40% 92%)',
+                  fontFamily: 'DM Sans, sans-serif',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  whiteSpace: 'nowrap',
+                }}>Outside the office</span>
+              </div>
+
             </div>
           </motion.div>
 
