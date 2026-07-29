@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <div className="min-h-[100dvh] w-full flex flex-col bg-background">
       <Navigation />
-      <main className="flex-1 flex flex-col gap-[120px] pb-[120px]">
+      <main className="flex-1 flex flex-col gap-[120px]">
         <Hero />
         <WorkflowSection />
         <PainPoints />

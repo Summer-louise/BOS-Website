@@ -89,7 +89,7 @@ export default function WhatIsAutomation() {
         </div>
       </div>
 
-      <div className="max-w-[780px] mx-auto px-5 md:px-8 pt-36 pb-32">
+      <div className="max-w-[780px] mx-auto px-5 md:px-8 pt-36 pb-0">
 
         {/* Hero */}
         <motion.div
