@@ -10,7 +10,7 @@ const industries = [
   },
   {
     name: 'Construction & Roofing',
-    description: 'Lead capture, follow-up nurturing, job scheduling, and quoting — from first enquiry through to site visit and approval.',
+    description: 'Lead capture, follow-up nurturing, job scheduling, and quoting. From first enquiry through to site visit and approval.',
     link: '/construction',
   },
 ];

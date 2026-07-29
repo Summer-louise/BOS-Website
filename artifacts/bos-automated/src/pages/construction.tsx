@@ -1,12 +1,22 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, Phone, FolderOpen, MessageSquare, Star } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Phone, FolderOpen, MessageSquare, Star, ChevronDown, CalendarDays, Mail, MapPin } from 'lucide-react';
 import { Footer } from '@/components/Footer';
 
 const CALENDLY = 'https://calendly.com/summer-bosautomated/30min';
 
+const IN_PERSON_MAILTO = `mailto:summer@bosautomated.com?subject=In-Person%20Meeting%20Request&body=Hi%20Summer%2C%0A%0AI%27d%20love%20to%20meet%20in%20person.%20To%20make%20the%20most%20of%20our%20time%2C%20here%20are%20a%20few%20quick%20details%20from%20me%3A%0A%0AMy%20Name%3A%20%0APhone%3A%20%0ABusiness%20Name%3A%20%0ASuburb%3A%20%0ARough%20budget%3A%20%0AWhat%20I%27m%20hoping%20to%20sort%20out%2Fdiscuss%3A%20%0ABest%20days%2Ftimes%20to%20meet%3A%20%0A%0ALooking%20forward%20to%20it!`;
+
+const ctaOptions = [
+  { label: 'Book a call', sub: 'Pick a time that suits you', href: CALENDLY, icon: CalendarDays, external: true },
+  { label: 'Virtual call', sub: 'Video call, wherever you are', href: CALENDLY, icon: CalendarDays, external: true },
+  { label: 'Meet in person', sub: 'Sunshine Coast', href: IN_PERSON_MAILTO, icon: MapPin, external: false },
+  { label: 'Email me directly', sub: 'summer@bosautomated.com', href: 'mailto:summer@bosautomated.com', icon: Mail, external: false },
+];
+
 const painPoints = [
   "You're up on a roof, your phone rings, and you can't answer it. By the time you're down and call back, they've already booked the next guy on the list.",
-  "Leads come in from everywhere — phone calls, Facebook messages, your website, referrals from mates — and they all end up scattered. Nothing's tracked in one place, so some just get forgotten.",
+  "Leads come in from everywhere. Phone calls, Facebook messages, your website, referrals from mates. They all end up scattered, nothing's tracked in one place, so some just get forgotten.",
   "A quote goes out and then... nothing. No one's chasing it up, so jobs that should've been booked just go cold.",
   "Word travels fast on the Sunshine Coast. Even when the work is great, if people feel like they got left on read, that's the story that gets told.",
 ];
@@ -15,17 +25,17 @@ const features = [
   {
     icon: Phone,
     title: 'Missed Call Text-Back',
-    body: "Someone calls while you're on a roof and you can't pick up? They get an instant text back so they know you got it and haven't been ignored — instead of hanging up and calling the next roofer on Google.",
+    body: "Someone calls while you're on a roof and you can't pick up? They get an instant text back so they know you got it and haven't been ignored. Not just ignored while they call the next roofer on Google.",
   },
   {
     icon: FolderOpen,
     title: 'One Place for Every Lead',
-    body: "Calls, Facebook messages, website enquiries, referrals — everything lands in one system automatically. Nothing gets lost in a text thread or forgotten on a scrap of paper.",
+    body: "Calls, Facebook messages, website enquiries, referrals. Everything lands in one system automatically. Nothing gets lost in a text thread or forgotten on a scrap of paper.",
   },
   {
     icon: MessageSquare,
     title: 'Automatic Follow-Up',
-    body: "Sent a quote and haven't heard back? The system nudges them for you — a few days later, then again — until they book or say no. You stop losing jobs to silence.",
+    body: "Sent a quote and haven't heard back? The system nudges them for you. A few days later, then again, until they book or say no. You stop losing jobs to silence.",
   },
   {
     icon: Star,
@@ -40,6 +50,66 @@ const fadeUp = {
   viewport: { once: true, margin: '-60px' },
   transition: { duration: 0.8, ease: 'easeOut' },
 };
+
+function CtaDropdown() {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  const handleOption = (href: string, external: boolean) => {
+    setOpen(false);
+    if (external) {
+      window.open(href, '_blank', 'noopener,noreferrer');
+    } else {
+      window.location.href = href;
+    }
+  };
+
+  return (
+    <div ref={ref} className="relative inline-block">
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-medium text-base px-8 py-4 transition-all duration-200 hover:shadow-md"
+      >
+        Get in touch
+        <ChevronDown size={16} className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 6 }}
+            transition={{ duration: 0.15 }}
+            className="absolute left-0 bottom-full mb-2 w-64 bg-background shadow-xl border border-border/60 z-50"
+          >
+            {ctaOptions.map((opt) => (
+              <button
+                key={opt.label}
+                onClick={() => handleOption(opt.href, opt.external)}
+                className="w-full flex items-start gap-3 px-5 py-4 hover:bg-muted/60 transition-colors text-left border-b border-border/40 last:border-0"
+              >
+                <opt.icon size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-sans font-medium text-foreground">{opt.label}</p>
+                  <p className="text-xs text-muted-foreground font-light">{opt.sub}</p>
+                </div>
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function Construction() {
   return (
@@ -76,7 +146,7 @@ export default function Construction() {
             Don't lose leads because you were on a roof.
           </h1>
           <p className="text-xl text-foreground/70 font-light leading-relaxed mb-10 max-w-[560px]">
-            Automation that answers, tracks, and follows up on every lead — so nothing falls through the cracks while you're busy doing the actual work.
+            Automation that answers, tracks, and follows up on every lead. Nothing falls through the cracks while you're busy doing the actual work.
           </p>
           <a
             href={CALENDLY}
@@ -115,9 +185,7 @@ export default function Construction() {
                 transition={{ duration: 0.7, ease: 'easeOut', delay: i * 0.08 }}
                 className="bg-background border border-border/60 px-7 py-6"
               >
-                <p className="text-foreground/80 font-light leading-relaxed">
-                  {point}
-                </p>
+                <p className="text-foreground/80 font-light leading-relaxed">{point}</p>
               </motion.div>
             ))}
           </div>
@@ -128,8 +196,48 @@ export default function Construction() {
         </div>
       </section>
 
-      {/* What I Build For You */}
+      {/* Turn up. Do the job. Get paid. */}
       <section className="py-20 md:py-24">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div {...fadeUp}>
+              <span className="text-xs tracking-widest uppercase font-sans text-muted-foreground mb-4 block">
+                The goal
+              </span>
+              <h2 className="text-4xl md:text-5xl font-serif text-foreground leading-[1.05] mb-6">
+                Turn up.<br />Do the job.<br />Get paid.
+              </h2>
+              <p className="text-lg text-foreground/70 font-light leading-relaxed">
+                You got into this trade to build things, not to spend your evenings chasing quotes and answering texts. The admin should handle itself.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="flex flex-col gap-5"
+            >
+              {[
+                { label: 'Admin sorted', body: 'Every lead, quote, and follow-up handled in the background. Nothing slips, nothing gets forgotten.' },
+                { label: 'Calendar filled', body: 'Bookings come in automatically. You wake up knowing what the week looks like, not scrambling to fill it.' },
+                { label: 'Less time on the phone', body: 'The system does the chasing. You talk to customers when it counts, not just to keep things moving.' },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-5 items-start">
+                  <div className="w-1 self-stretch bg-primary/40 flex-shrink-0 rounded-full" />
+                  <div>
+                    <p className="font-serif text-lg text-foreground mb-1">{item.label}</p>
+                    <p className="text-sm text-muted-foreground font-light leading-relaxed">{item.body}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* What I Build For You */}
+      <section className="bg-muted/40 py-20 md:py-24">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <motion.div {...fadeUp} className="mb-12">
             <span className="text-xs tracking-widest uppercase font-sans text-muted-foreground mb-4 block">
@@ -139,7 +247,7 @@ export default function Construction() {
               What I build for you
             </h2>
             <p className="text-lg text-foreground/70 font-light max-w-[560px]">
-              This is what automation actually looks like for a roofing business — no new software to learn, no extra admin. It just runs in the background.
+              This is what automation actually looks like for a roofing business. No new software to learn, no extra admin. It just runs in the background.
             </p>
           </motion.div>
 
@@ -151,7 +259,7 @@ export default function Construction() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.7, ease: 'easeOut', delay: i * 0.08 }}
-                className="border border-border/60 px-7 py-7 flex flex-col gap-4"
+                className="bg-background border border-border/60 px-7 py-7 flex flex-col gap-4"
               >
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <f.icon size={18} className="text-primary" />
@@ -174,25 +282,9 @@ export default function Construction() {
               This is the exact kind of thing I build.
             </h2>
             <p className="text-lg text-background/70 font-light leading-relaxed mb-10">
-              If any of this sounds like your business, I'd like to show you what it would actually look like set up for you — no cost, no obligation, just a quick look at where the leaks are and how to plug them.
+              If any of this sounds like your business, I'd like to show you what it would actually look like set up for you. No cost, no obligation, just a quick look at where the leaks are and how to plug them.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-medium text-base px-8 py-4 transition-all duration-200 hover:shadow-md"
-              >
-                Book a Call
-                <ArrowRight size={16} />
-              </a>
-              <a
-                href="mailto:summer@bosautomated.com"
-                className="inline-flex items-center gap-3 text-background/80 hover:text-background font-sans font-medium text-base px-8 py-4 border border-background/20 hover:border-background/40 transition-all duration-200"
-              >
-                Reply to my email
-              </a>
-            </div>
+            <CtaDropdown />
           </motion.div>
         </div>
       </section>
