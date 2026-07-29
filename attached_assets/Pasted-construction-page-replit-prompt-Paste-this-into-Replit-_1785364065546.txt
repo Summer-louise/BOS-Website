@@ -1,0 +1,40 @@
+construction-page-replit-prompt
+Paste this into Replit (in the same project as bosautomated.com)
+Build a new page at the route /construction on the existing site. This is a landing page for roofing and construction proposals — it does not need to be linked from the main navigation.
+Technical requirements
+Reuse the exact design system already in this codebase: same color variables, fonts, spacing, button styles, and section components used on the homepage. Don't introduce new colors or fonts.
+Reuse the existing footer component exactly as-is (same links, same content).
+Keep the header simple — logo + one CTA button (e.g. "Book a Call") is enough. This page is being sent to warm leads via a proposal email, so it doesn't need full site navigation pulling them away.
+Fully responsive, same as the rest of the site.
+Keep the page shorter than the homepage — this only needs a hero, a "Sound Familiar?" section, a "What I Build For You" section, and a closing CTA before the footer.
+Plain, simple, everyday language throughout. No jargon like "leverage," "seamless," "synergy," "streamline your workflows." Write like you're talking to a roofing business owner, not a tech buyer.
+Page copy
+Hero
+Headline: Don't lose leads because you were on a roof.
+Subheadline: Automation that answers, tracks, and follows up on every lead — so nothing falls through the cracks while you're busy doing the actual work.
+CTA button: Book a Call
+Section: Sound Familiar?
+Section heading: Sound familiar?
+Intro line: Talk to any roofing business on the Coast and you'll hear some version of this:
+Pain point cards/list:
+You're up on a roof, your phone rings, and you can't answer it. By the time you're down and call back, they've already booked the next guy on the list.
+Leads come in from everywhere — phone calls, Facebook messages, your website, referrals from mates — and they all end up scattered. Nothing's tracked in one place, so some just get forgotten.
+A quote goes out and then... nothing. No one's chasing it up, so jobs that should've been booked just go cold.
+Word travels fast on the Sunshine Coast. Even when the work is great, if people feel like they got left on read, that's the story that gets told.
+Closing line: None of this is because you're bad at your job. It's because you're doing ten jobs at once and follow-up takes a system, not more hours in the day.
+Section: What I Build For You
+Section heading: What I build for you
+Intro line: This is what automation actually looks like for a roofing business — no new software to learn, no extra admin. It just runs in the background.
+Feature cards:
+Missed Call Text-Back
+Someone calls while you're on a roof and you can't pick up? They get an instant text back so they know you got it and haven't been ignored — instead of hanging up and calling the next roofer on Google.
+One Place for Every Lead
+Calls, Facebook messages, website enquiries, referrals — everything lands in one system automatically. Nothing gets lost in a text thread or forgotten on a scrap of paper.
+Automatic Follow-Up
+Sent a quote and haven't heard back? The system nudges them for you — a few days later, then again — until they book or say no. You stop losing jobs to silence.
+Review Requests, Sent Automatically
+After a job's done, a review request goes out on its own. More good reviews, less admin, and it directly fixes the "can I trust this roofer" question before it's even asked.
+Closing CTA section
+Heading: This is the exact kind of thing I build.
+Body: If any of this sounds like your business, I'd like to show you what it would actually look like set up for you — no cost, no obligation, just a quick look at where the leaks are and how to plug them.
+CTA button: Book a Call (or: Reply to my email)
