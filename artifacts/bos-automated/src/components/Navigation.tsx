@@ -27,7 +27,9 @@ export function Navigation() {
     const id = href.replace('#', '');
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navHeight = 80;
+      const top = element.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
       setMobileMenuOpen(false);
     }
   };

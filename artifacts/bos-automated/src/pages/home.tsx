@@ -8,6 +8,7 @@ import { AutomationShowcase } from '@/components/AutomationShowcase';
 import { Industries } from '@/components/Industries';
 import { About } from '@/components/About';
 import { HowItWorks } from '@/components/HowItWorks';
+import { PricingModel } from '@/components/PricingModel';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 
@@ -66,6 +67,7 @@ export default function Home() {
         <Industries />
         <About />
         <HowItWorks />
+        <PricingModel />
         <Contact />
       </main>
       <Footer />

@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import { useLocation } from 'wouter';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { Footer } from '@/components/Footer';
 
 const faqs = [
   {
     q: 'Do I need to be technical to use this?',
-    a: 'Not at all. You describe what you want to happen ("when someone fills in my contact form, I want it to go into my spreadsheet and send them a welcome email"). Summer builds it. You use it.',
+    a: 'Not at all. You describe what you want to happen ("when someone fills in my contact form, I want it to go into my spreadsheet and send them a welcome email"). I build it. You use it.',
   },
   {
     q: 'Does it replace my existing tools?',
@@ -13,11 +14,11 @@ const faqs = [
   },
   {
     q: 'What if something goes wrong?',
-    a: 'Make.com logs every run. If a step fails, you get notified. Summer also builds in error handling so that edge cases are caught before they become problems.',
+    a: 'Make.com logs every run. If a step fails, I will be notified and have it repaired before it causes any issues. I also build in error handling so that edge cases are caught before they become problems.',
   },
   {
     q: 'Is this only for big businesses?',
-    a: 'The opposite, actually. Larger businesses already have whole IT departments. Automations are most valuable for small business owners who are wearing every hat themselves and losing hours to repetitive admin.',
+    a: 'The opposite, actually. Larger businesses already have whole IT departments handling this. Automations are most valuable for small to medium business owners who are wearing every hat themselves, losing hours to repetitive admin, or paying someone a full salary to handle tasks that a well-built system could eliminate entirely.',
   },
   {
     q: 'How long does it take to set up?',
@@ -32,9 +33,9 @@ const examples = [
     label: 'Lead capture',
   },
   {
-    before: 'You finish a CPD session with 40 attendees.',
-    after: 'Every attendee is added to your database, tagged as "CPD: July", and receives the recording link, while you\'re still packing up the room.',
-    label: 'Event follow-up',
+    before: 'A buyer submits an enquiry on your listing at 8pm on a Friday.',
+    after: 'Within 60 seconds they receive a warm reply in your name with a callback booking link. By Monday morning the appointment is already in your calendar and your competitor never got a look in.',
+    label: 'After-hours enquiry',
   },
   {
     before: 'A prospect from six months ago goes quiet.',
@@ -154,8 +155,8 @@ export default function WhatIsAutomation() {
                     <p className="text-base text-foreground font-light leading-relaxed">{ex.before}</p>
                     <p className="text-sm text-muted-foreground font-light mt-3 italic">You do the rest manually.</p>
                   </div>
-                  <div className="px-6 py-6 bg-primary/[0.03]">
-                    <p className="text-[10px] font-sans uppercase tracking-widest text-primary/70 mb-3">With automation</p>
+                  <div className="px-6 py-6 bg-secondary/[0.06]">
+                    <p className="text-[10px] font-sans uppercase tracking-widest text-secondary mb-3">With automation</p>
                     <p className="text-base text-foreground font-light leading-relaxed">{ex.after}</p>
                   </div>
                 </div>
@@ -225,6 +226,7 @@ export default function WhatIsAutomation() {
         </motion.div>
 
       </div>
+      <Footer />
     </div>
   );
 }

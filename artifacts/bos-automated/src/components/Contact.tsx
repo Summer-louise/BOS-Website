@@ -16,8 +16,11 @@ export function Contact() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-6">
               Ready to get your time back?
             </h2>
-            <p className="text-xl text-accent-foreground/70 font-light mb-12">
+            <p className="text-xl text-accent-foreground/70 font-light mb-3">
               Let's have a conversation about what's possible for your business.
+            </p>
+            <p className="text-sm text-accent-foreground/50 font-light mb-12 uppercase tracking-widest">
+              No obligation. No jargon. Just a conversation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-10">

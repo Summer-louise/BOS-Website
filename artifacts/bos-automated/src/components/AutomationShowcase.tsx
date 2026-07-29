@@ -28,8 +28,8 @@ const flows = [
   },
   {
     src: '/automations/flow-6.png?v=3',
-    label: 'Marketing list & newsletter dispatch',
-    desc: 'One trigger fans out to every subscriber, with individual tracking and unsubscribe handling.',
+    label: 'AI email triage & team routing',
+    desc: 'Inbound emails are read, classified by intent, and routed to the right person or action queue automatically.',
   },
 ];
 

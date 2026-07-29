@@ -55,13 +55,16 @@ export function About() {
 
             <div className="space-y-6 text-lg text-foreground font-light leading-relaxed mb-10">
               <p>
-                I'm not a software developer who stumbled into consulting. I'm a former cafe owner from Mount Coolum who ran a real business, dealing with suppliers, staff rosters, inventory chaos, and customer flow, and discovered a passion for making messy operations simple.
+                I'm not a software developer who stumbled into consulting. I'm a former cafe owner from Mount Coolum who built a business from the ground up, sold it, and then spent the following two years immersed in digital marketing, CRM builds, data enrichment and refinement, and of course automation. Learning the art of turning your set-up efforts into something that works for you on autopilot.
               </p>
               <p>
-                After years deep in Make.com automations, I build systems that eliminate bottlenecks most business owners do not even realise they have. Technology should make your life easier, not harder. If a system does not save you real time and stress, it is not worth building.
+                I build systems that eliminate bottlenecks most business owners do not even realise they have. Technology should make your life easier, not harder. If a system does not save you real time and real stress, it is not worth building.
               </p>
               <p>
-                I genuinely care about finding solutions others do not see, and about the businesses I work with. Local knowledge, real-world experience, and a belief that even the smallest business deserves to run like a well-oiled machine.
+                I genuinely care about finding solutions others do not see, and about the businesses I work with. Local knowledge, real-world experience, and a firm belief that even the smallest business deserves to run like a well-oiled machine.
+              </p>
+              <p>
+                If you are curious about how to make technology work for you but are not sure where to start, or the whole thing feels overwhelming, just flick me an email. I am here to help. Businesses that start implementing these systems now will pull ahead of their competitors. Let me make that process easy for you.
               </p>
             </div>
 
