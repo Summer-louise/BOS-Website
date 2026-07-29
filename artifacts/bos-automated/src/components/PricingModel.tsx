@@ -7,7 +7,7 @@ const reassurances = [
     note: 'No surprise costs, ever.',
   },
   {
-    title: 'You own what we build',
+    title: 'You own what I build',
     note: 'Not locked to any platform or provider.',
   },
   {
