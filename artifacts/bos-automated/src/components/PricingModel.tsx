@@ -17,10 +17,7 @@ const reassurances = [
 ];
 
 export function PricingModel() {
-  const scrollToContact = () => {
-    const el = document.getElementById('contact');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
+  const CALENDLY = 'https://calendly.com/summer-bosautomated/30min';
 
   return (
     <section className="w-full">
@@ -97,13 +94,15 @@ export function PricingModel() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <button
-            onClick={scrollToContact}
-            className="flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-medium text-base px-8 py-4 transition-all duration-200 hover:shadow-md"
+          <a
+            href={CALENDLY}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-medium text-base px-8 py-4 transition-all duration-200 hover:shadow-md"
           >
             Book a discovery call
             <ArrowRight size={16} />
-          </button>
+          </a>
         </motion.div>
 
       </div>

@@ -209,18 +209,20 @@ export default function WhatIsAutomation() {
             You do not need to know exactly what you need. A 20-minute conversation is enough to figure out where automation can save you the most time.
           </p>
           <div className="flex flex-col sm:flex-row gap-6">
-            <button
-              onClick={() => navigate('/')}
+            <a
+              href="https://calendly.com/summer-bosautomated/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-medium text-base px-8 py-4 transition-all duration-200 hover:shadow-md w-fit"
             >
-              See what I build
+              Book a free call
               <ArrowRight size={16} />
-            </button>
+            </a>
             <a
               href="mailto:summer@bosautomated.com"
               className="flex items-center gap-3 text-accent-foreground hover:text-accent-foreground/80 font-sans font-medium text-base px-8 py-4 border border-accent-foreground/20 hover:border-accent-foreground/40 transition-all duration-200 w-fit"
             >
-              Email Summer directly
+              Email me directly
             </a>
           </div>
         </motion.div>

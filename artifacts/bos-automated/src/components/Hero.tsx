@@ -1,16 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const CALENDLY = 'https://calendly.com/summer-bosautomated/30min';
+
 const options = [
+  {
+    label: 'Book a call',
+    sub: 'Pick a time that suits you',
+    href: CALENDLY,
+  },
   {
     label: 'I can come to you',
     sub: 'In-person on the Sunshine Coast',
-    href: '#contact',
-  },
-  {
-    label: 'Virtual discussion',
-    sub: 'Video call, wherever you are',
-    href: '#contact',
+    href: CALENDLY,
   },
   {
     label: 'Email me directly',
@@ -38,8 +40,10 @@ export function Hero() {
     if (href.startsWith('#')) {
       const el = document.getElementById(href.replace('#', ''));
       el?.scrollIntoView({ behavior: 'smooth' });
-    } else {
+    } else if (href.startsWith('mailto:')) {
       window.location.href = href;
+    } else {
+      window.open(href, '_blank', 'noopener,noreferrer');
     }
   };
 
