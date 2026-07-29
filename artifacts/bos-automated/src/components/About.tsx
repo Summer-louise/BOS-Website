@@ -35,6 +35,34 @@ export function About() {
                 </p>
               </div>
             </div>
+
+            {/* Small personal photos — trio */}
+            <div className="grid grid-cols-3 gap-2 items-end">
+              {/* Desk + cat */}
+              <div className="overflow-hidden bg-muted" style={{ aspectRatio: '4/3' }}>
+                <img
+                  src="/summer-desk.jpg"
+                  alt="Summer working at her desk with her cat"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              {/* Casual — transparent bg shows cream */}
+              <div className="flex items-end justify-center" style={{ aspectRatio: '3/4' }}>
+                <img
+                  src="/summer-casual.png"
+                  alt="Summer casual"
+                  className="w-full h-full object-contain object-bottom drop-shadow-sm"
+                />
+              </div>
+              {/* Couple — taller */}
+              <div className="overflow-hidden bg-muted" style={{ aspectRatio: '3/4' }}>
+                <img
+                  src="/couple.jpg"
+                  alt="Summer with her partner"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
           </motion.div>
 
           {/* Right: Story */}
