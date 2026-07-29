@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const CALENDLY = 'https://calendly.com/summer-bosautomated/30min';
 
-const IN_PERSON_MAILTO = `mailto:summer@bosautomated.com?subject=In-Person%20Meeting%20Request&body=Hi%20Summer%2C%0A%0AI%27d%20love%20to%20meet%20in%20person.%20Here%20are%20my%20details%3A%0A%0AName%20%2F%20Business%3A%20%0AAddress%20(suburb%20is%20fine)%3A%20%0ABudget%3A%20%0AWhat%20I%27m%20interested%20in%3A%20%0A%0ALooking%20forward%20to%20chatting!`;
+const IN_PERSON_MAILTO = `mailto:summer@bosautomated.com?subject=In-Person%20Meeting%20Request&body=Hi%20Summer%2C%0A%0AI%27d%20love%20to%20meet%20in%20person.%20To%20make%20the%20most%20of%20our%20time%2C%20here%20are%20a%20few%20quick%20details%20from%20me%3A%0A%0AMy%20Name%3A%20%0APhone%3A%20%0ABusiness%20Name%3A%20%0ASuburb%3A%20%0ARough%20budget%3A%20%0AWhat%20I%27m%20hoping%20to%20sort%20out%2Fdiscuss%3A%20%0ABest%20days%2Ftimes%20to%20meet%3A%20%0A%0ALooking%20forward%20to%20it!`;
 
 const options = [
   {
