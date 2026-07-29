@@ -238,7 +238,7 @@ export function Services() {
             href="/construction"
             className="inline-flex items-center gap-1.5 mt-5 text-xs font-sans text-muted-foreground/60 hover:text-primary border border-border/40 hover:border-primary/30 px-3 py-1.5 rounded-full transition-all duration-200"
           >
-            <span>In roofing or construction?</span>
+            <span>In construction or trades?</span>
             <span className="text-[10px]">→</span>
           </Link>
         </motion.div>
