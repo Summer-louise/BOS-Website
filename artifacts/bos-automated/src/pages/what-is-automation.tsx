@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'wouter';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -46,6 +47,29 @@ const examples = [
 
 export default function WhatIsAutomation() {
   const [, navigate] = useLocation();
+
+  useEffect(() => {
+    const title = 'What Is Digital Automation? | BOS Automated — Sunshine Coast';
+    const description = 'A plain-language guide to digital automation for small businesses. Learn how Make.com automations connect your tools and eliminate repetitive manual work.';
+    const canonical = 'https://bosautomated.com/what-is-automation';
+
+    document.title = title;
+
+    const setMeta = (selector: string, attr: string, value: string) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute(attr, value);
+    };
+
+    setMeta('meta[name="description"]', 'content', description);
+    setMeta('meta[property="og:title"]', 'content', title);
+    setMeta('meta[property="og:description"]', 'content', description);
+    setMeta('meta[property="og:url"]', 'content', canonical);
+    setMeta('meta[name="twitter:title"]', 'content', title);
+    setMeta('meta[name="twitter:description"]', 'content', description);
+
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (canonicalEl) canonicalEl.setAttribute('href', canonical);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">

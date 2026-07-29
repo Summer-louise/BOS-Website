@@ -112,6 +112,29 @@ function ContactDropdown({ openUp = false }: { openUp?: boolean }) {
 }
 
 export default function Construction() {
+  useEffect(() => {
+    const title = 'Roofing & Construction Automation — Sunshine Coast | BOS Automated';
+    const description = 'Stop losing leads when you\'re on a roof. Automated missed-call text-back, lead tracking, and quote follow-up for roofing businesses on the Sunshine Coast.';
+    const canonical = 'https://bosautomated.com/construction';
+
+    document.title = title;
+
+    const setMeta = (selector: string, attr: string, value: string) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute(attr, value);
+    };
+
+    setMeta('meta[name="description"]', 'content', description);
+    setMeta('meta[property="og:title"]', 'content', title);
+    setMeta('meta[property="og:description"]', 'content', description);
+    setMeta('meta[property="og:url"]', 'content', canonical);
+    setMeta('meta[name="twitter:title"]', 'content', title);
+    setMeta('meta[name="twitter:description"]', 'content', description);
+
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (canonicalEl) canonicalEl.setAttribute('href', canonical);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
 

@@ -14,15 +14,31 @@ import { Footer } from '@/components/Footer';
 
 export default function Home() {
   useEffect(() => {
-    document.title = 'BOS Automated | Make.com Automation Specialist, Sunshine Coast';
+    const title = 'Real Estate Automation Sunshine Coast | BOS Automated';
+    const description = 'BOS Automated helps real estate agents and local businesses on the Sunshine Coast eliminate manual work with smart Make.com automations, CRM setup, and marketing flows.';
+    const canonical = 'https://bosautomated.com/';
 
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        'content',
-        'BOS Automated helps real estate agents and local businesses on the Sunshine Coast eliminate manual work with smart Make.com automations, CRM setup, and marketing flows.'
-      );
-    }
+    document.title = title;
+
+    const setMeta = (selector: string, attr: string, value: string) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute(attr, value);
+    };
+
+    setMeta('meta[name="description"]', 'content', description);
+
+    // Open Graph
+    setMeta('meta[property="og:title"]', 'content', title);
+    setMeta('meta[property="og:description"]', 'content', description);
+    setMeta('meta[property="og:url"]', 'content', canonical);
+
+    // Twitter
+    setMeta('meta[name="twitter:title"]', 'content', title);
+    setMeta('meta[name="twitter:description"]', 'content', description);
+
+    // Canonical
+    let canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (canonicalEl) canonicalEl.setAttribute('href', canonical);
 
     const structuredData = {
       '@context': 'https://schema.org',
