@@ -70,7 +70,7 @@ export function Navigation() {
                 alt="BOS Automated"
                 className="h-10 w-auto"
               />
-              <span className="hidden md:block text-[9px] tracking-widest uppercase font-sans text-muted-foreground/70 mt-0.5 leading-none">
+              <span className="text-[8px] tracking-widest uppercase font-sans text-muted-foreground/70 mt-0.5 leading-none">
                 Business Optimisation Systems
               </span>
             </Link>

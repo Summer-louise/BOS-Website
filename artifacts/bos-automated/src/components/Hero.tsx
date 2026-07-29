@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const CALENDLY = 'https://calendly.com/summer-bosautomated/30min';
 
+const IN_PERSON_MAILTO = `mailto:summer@bosautomated.com?subject=In-Person%20Meeting%20Request&body=Hi%20Summer%2C%0A%0AI%27d%20love%20to%20meet%20in%20person.%20Here%20are%20my%20details%3A%0A%0AName%20%2F%20Business%3A%20%0AAddress%20(suburb%20is%20fine)%3A%20%0ABudget%3A%20%0AWhat%20I%27m%20interested%20in%3A%20%0A%0ALooking%20forward%20to%20chatting!`;
+
 const options = [
   {
     label: 'Book a call',
@@ -10,9 +12,9 @@ const options = [
     href: CALENDLY,
   },
   {
-    label: 'I can come to you',
+    label: 'Meet in person',
     sub: 'In-person on the Sunshine Coast',
-    href: CALENDLY,
+    href: IN_PERSON_MAILTO,
   },
   {
     label: 'Email me directly',
