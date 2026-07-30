@@ -95,7 +95,7 @@ export default function Construction() {
       </header>
 
       {/* Hero */}
-      <section className="max-w-[1200px] mx-auto px-5 md:px-8 py-20 md:py-28">
+      <section className="relative max-w-[1200px] mx-auto px-5 md:px-8 py-20 md:py-28">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12">
           <motion.div {...fadeUp} className="max-w-[620px]">
             <span className="text-xs tracking-widest uppercase font-sans text-muted-foreground mb-6 block">
@@ -115,10 +115,10 @@ export default function Construction() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.9, ease: 'easeOut' }}
-            className="flex-shrink-0 flex flex-col items-center gap-3 md:items-end md:-mr-6"
+            className="absolute top-6 right-5 md:relative md:top-auto md:right-auto md:flex-shrink-0 md:flex md:flex-col md:items-end md:gap-3 md:-mr-6"
           >
             <div
-              className="w-36 h-36 md:w-44 md:h-44 overflow-hidden rounded-full border border-border/30"
+              className="w-20 h-20 md:w-44 md:h-44 overflow-hidden rounded-full border border-border/30"
               style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}
             >
               <img
@@ -128,7 +128,7 @@ export default function Construction() {
                 style={{ objectPosition: '60% 0%', transform: 'scale(1.5)', transformOrigin: '60% 32%' }}
               />
             </div>
-            <div className="text-center md:text-right">
+            <div className="hidden md:block md:text-right">
               <p className="text-xs font-sans uppercase tracking-widest text-muted-foreground">Summer-Louise Bevan</p>
               <p className="text-xs text-muted-foreground/60 font-light">Sunshine Coast</p>
             </div>
