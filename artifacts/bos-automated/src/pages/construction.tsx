@@ -122,10 +122,10 @@ export default function Construction() {
               style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}
             >
               <img
-                src="/summer.png"
+                src="/summer-construction.jpg"
                 alt="Summer-Louise Bevan, BOS Automated"
                 className="w-full h-full object-cover"
-                style={{ objectPosition: '55% 22%', transform: 'scale(1.9)', transformOrigin: 'center 39%' }}
+                style={{ objectPosition: '50% 0%', transform: 'scale(2.5)', transformOrigin: '57% 26%' }}
               />
             </div>
             <div className="text-center md:text-right">
