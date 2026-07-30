@@ -115,7 +115,7 @@ export default function Construction() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.9, ease: 'easeOut' }}
-            className="flex-shrink-0 flex flex-col items-center gap-3 md:items-end md:ml-4"
+            className="flex-shrink-0 flex flex-col items-center gap-3 md:items-end md:-mr-6"
           >
             <div
               className="w-36 h-36 md:w-44 md:h-44 overflow-hidden rounded-full border border-border/30"
