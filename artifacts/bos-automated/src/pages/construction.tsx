@@ -125,7 +125,7 @@ export default function Construction() {
                 src="/summer-construction.jpg"
                 alt="Summer-Louise Bevan, BOS Automated"
                 className="w-full h-full object-cover"
-                style={{ objectPosition: '50% 0%', transform: 'scale(2.5)', transformOrigin: '57% 26%' }}
+                style={{ objectPosition: '60% 0%', transform: 'scale(1.5)', transformOrigin: '60% 32%' }}
               />
             </div>
             <div className="text-center md:text-right">
