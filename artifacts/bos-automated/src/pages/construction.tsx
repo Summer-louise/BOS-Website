@@ -96,18 +96,43 @@ export default function Construction() {
 
       {/* Hero */}
       <section className="max-w-[1200px] mx-auto px-5 md:px-8 py-20 md:py-28">
-        <motion.div {...fadeUp} className="max-w-[720px]">
-          <span className="text-xs tracking-widest uppercase font-sans text-muted-foreground mb-6 block">
-            Trades &amp; Construction
-          </span>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.05] mb-6">
-            Don't lose leads because you were on site.
-          </h1>
-          <p className="text-xl text-foreground/70 font-light leading-relaxed mb-10 max-w-[560px]">
-            Automation that answers, tracks, and follows up on every lead. Nothing falls through the cracks while you're busy doing the actual work.
-          </p>
-          <ContactDropdown />
-        </motion.div>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12">
+          <motion.div {...fadeUp} className="max-w-[620px]">
+            <span className="text-xs tracking-widest uppercase font-sans text-muted-foreground mb-6 block">
+              Trades &amp; Construction
+            </span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.05] mb-6">
+              Don't lose leads because you were on site.
+            </h1>
+            <p className="text-xl text-foreground/70 font-light leading-relaxed mb-10 max-w-[560px]">
+              Automation that answers, tracks, and follows up on every lead. Nothing falls through the cracks while you're busy doing the actual work.
+            </p>
+            <ContactDropdown />
+          </motion.div>
+
+          {/* Portrait — trust signal, not focal point */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.9, ease: 'easeOut' }}
+            className="flex-shrink-0 flex flex-col items-center gap-3 md:items-end"
+          >
+            <div
+              className="w-36 h-36 md:w-44 md:h-44 overflow-hidden rounded-full border border-border/30"
+              style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}
+            >
+              <img
+                src="/summer.png"
+                alt="Summer-Louise Bevan, BOS Automated"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div className="text-center md:text-right">
+              <p className="text-xs font-sans uppercase tracking-widest text-muted-foreground">Summer-Louise Bevan</p>
+              <p className="text-xs text-muted-foreground/60 font-light">Sunshine Coast</p>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Sound Familiar */}
