@@ -125,7 +125,7 @@ export default function Construction() {
                 src="/summer.png"
                 alt="Summer-Louise Bevan, BOS Automated"
                 className="w-full h-full object-cover"
-                style={{ objectPosition: '58% 12%', transform: 'scale(1.6)', transformOrigin: '58% 12%' }}
+                style={{ objectPosition: '55% 22%', transform: 'scale(1.9)', transformOrigin: 'center 22%' }}
               />
             </div>
             <div className="text-center md:text-right">
