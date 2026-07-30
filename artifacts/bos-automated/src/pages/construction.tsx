@@ -5,6 +5,8 @@ import { ArrowRight, Phone, FolderOpen, MessageSquare, Star } from 'lucide-react
 import { Footer } from '@/components/Footer';
 import { ContactDropdown } from '@/components/ContactDropdown';
 
+const CALENDLY = 'https://calendly.com/summer-bosautomated/30min';
+
 
 const painPoints = [
   "I'm up on a roof and my phone rings. By the time I'm back on the ground and call back, they've already booked someone else.",
