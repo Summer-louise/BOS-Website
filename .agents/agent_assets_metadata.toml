@@ -6,3 +6,51 @@ id = "_TJT4unAEooa3SCkGKvP9"
 uri = "file://attached_assets/bos-automated-website-copy.md"
 type = "text"
 title = "BOS Automated — Website Copy"
+
+[[outputs]]
+id = "iqdiyXB80zob8MXVxDGz4"
+uri = "file://attached_assets/logo-A-wordmark.png"
+type = "image"
+title = "Option A — Pure hairline serif wordmark"
+
+[[outputs]]
+id = "ETNvOMw4kdaNh7R5tedIr"
+uri = "file://attached_assets/logo-B-arc-icon.png"
+type = "image"
+title = "Option B — Open-arc orbit icon + wordmark"
+
+[[outputs]]
+id = "DN5OcY1HRXIQVD-SiV0h8"
+uri = "file://attached_assets/logo-C-monogram.png"
+type = "image"
+title = "Option C — B·A ligature monogram + wordmark"
+
+[[outputs]]
+id = "RncrMliPyKPYCH6Va1Pm8"
+uri = "file://attached_assets/logo-D-vertical.png"
+type = "image"
+title = "Option D — Tall vertical BOS stacked wordmark"
+
+[[outputs]]
+id = "nVc4G2ZmE2PLmAkmmVyFC"
+uri = "file://attached_assets/logo-E-contrast-serif.png"
+type = "image"
+title = "Option E — High-contrast serif with swash (AURØRA style)"
+
+[[outputs]]
+id = "vg-1HX3ZIa8X5QQsIAKnz"
+uri = "file://attached_assets/logo-F-hairline.png"
+type = "image"
+title = "Option F — Ultra-thin hairline tall caps (LUEUR style)"
+
+[[outputs]]
+id = "QabzIsjFj9v5VQoDZ739H"
+uri = "file://attached_assets/logo-G-interlock.png"
+type = "image"
+title = "Option G — Interlocking letterforms + terracotta (RUCO style)"
+
+[[outputs]]
+id = "pFtT3Cs5RkzMjOQIgJJ26"
+uri = "file://attached_assets/logo-H-geometric-mark.png"
+type = "image"
+title = "Option H — Small geometric mark + wordmark (HŌMA style)"
