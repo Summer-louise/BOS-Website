@@ -15,9 +15,10 @@ const options = [
 interface Props {
   label?: string;
   openUp?: boolean;
+  buttonClassName?: string;
 }
 
-export function ContactDropdown({ label = 'Get in touch', openUp = false }: Props) {
+export function ContactDropdown({ label = 'Get in touch', openUp = false, buttonClassName }: Props) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -42,7 +43,7 @@ export function ContactDropdown({ label = 'Get in touch', openUp = false }: Prop
     <div ref={ref} className="relative inline-block">
       <button
         onClick={() => setOpen(o => !o)}
-        className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-medium text-base px-8 py-4 transition-all duration-200 hover:shadow-md"
+        className={buttonClassName ?? "inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-medium text-base px-8 py-4 transition-all duration-200 hover:shadow-md"}
       >
         {label}
         <ChevronDown size={16} className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />

@@ -66,7 +66,7 @@ export function Navigation() {
               }}
             >
               <img
-                src="/icon-circles.png"
+                src="/icon-topo.png"
                 alt=""
                 className="h-10 w-auto"
               />

@@ -81,7 +81,7 @@ export function WorkflowVisualization() {
                 {/* Dashed line */}
                 <line
                   x1={x1 + 4} y1={y} x2={x2 - 8} y2={y}
-                  stroke="hsl(var(--secondary))"
+                  stroke="#9C8570"
                   strokeWidth="1"
                   strokeDasharray="4 4"
                   opacity="0.7"
@@ -89,13 +89,13 @@ export function WorkflowVisualization() {
                 {/* Arrowhead */}
                 <polygon
                   points={`${x2 - 6},${y - 4} ${x2 + 1},${y} ${x2 - 6},${y + 4}`}
-                  fill="hsl(var(--secondary))"
+                  fill="#9C8570"
                   opacity="0.7"
                 />
                 {/* Travelling dot */}
                 <motion.circle
                   r="3"
-                  fill="hsl(var(--primary))"
+                  fill="#C4714A"
                   opacity="0.8"
                   initial={{ cx: x1 + 4 }}
                   animate={{ cx: x2 - 6 }}
@@ -141,8 +141,8 @@ export function WorkflowVisualization() {
                 width={PILL_W}
                 height={PILL_H}
                 rx={RX}
-                fill={isPain ? 'hsl(var(--primary) / 0.08)' : 'hsl(var(--secondary) / 0.1)'}
-                stroke={isPain ? 'hsl(var(--primary))' : 'hsl(var(--secondary))'}
+                fill={isPain ? 'rgba(196,113,74,0.10)' : 'rgba(96,100,48,0.09)'}
+                stroke={isPain ? '#C4714A' : '#606430'}
                 strokeWidth="1.5"
               />
               {/* Main label */}
@@ -153,7 +153,7 @@ export function WorkflowVisualization() {
                 fontSize="10.5"
                 fontFamily="'DM Sans', sans-serif"
                 fontWeight="500"
-                fill={isPain ? 'hsl(var(--primary))' : 'hsl(var(--foreground))'}
+                fill={isPain ? '#C4714A' : 'hsl(var(--foreground))'}
               >
                 {node.label}
               </text>
@@ -176,13 +176,13 @@ export function WorkflowVisualization() {
         {/* Legend */}
         <g transform={`translate(0, ${TOTAL_H - 22})`}>
           <rect x="0" y="0" width="11" height="11" rx="2"
-            fill="hsl(var(--primary) / 0.08)" stroke="hsl(var(--primary))" strokeWidth="1.2" />
+            fill="rgba(196,113,74,0.10)" stroke="#C4714A" strokeWidth="1.2" />
           <text x="15" y="9" fontSize="8.5" fontFamily="'DM Sans', sans-serif"
             fill="hsl(var(--muted-foreground))">
             Pain point without automation
           </text>
           <rect x="190" y="0" width="11" height="11" rx="2"
-            fill="hsl(var(--secondary) / 0.1)" stroke="hsl(var(--secondary))" strokeWidth="1.2" />
+            fill="rgba(96,100,48,0.09)" stroke="#606430" strokeWidth="1.2" />
           <text x="205" y="9" fontSize="8.5" fontFamily="'DM Sans', sans-serif"
             fill="hsl(var(--muted-foreground))">
             Automated by BOS Automated

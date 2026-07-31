@@ -77,7 +77,7 @@ export default function Construction() {
       <header className="w-full border-b border-border/40 bg-background/95 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/icon-circles.png" alt="" className="h-9 w-auto" />
+            <img src="/icon-topo.png" alt="" className="h-9 w-auto" />
             <div className="flex flex-col gap-0">
               <span className="text-sm md:text-base font-serif tracking-[0.2em] uppercase text-foreground leading-tight">BOS Automated</span>
               <span className="text-[8px] tracking-[0.18em] uppercase font-sans text-muted-foreground/70 leading-none">Business Optimisation Systems</span>
