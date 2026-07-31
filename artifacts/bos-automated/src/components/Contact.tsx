@@ -25,7 +25,7 @@ export function Contact() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-10 flex-wrap items-start">
-              <ContactDropdown label="Let's talk" openUp buttonClassName="bg-[#C4714A] hover:bg-[#B0643E] text-white" />
+              <ContactDropdown label="Let's talk" openUp buttonClassName="inline-flex items-center gap-3 border border-accent-foreground/60 hover:border-accent-foreground text-accent-foreground font-sans font-medium text-base px-8 py-4 transition-all duration-200 hover:bg-accent-foreground/10" />
 
               <a 
                 href="mailto:summer@bosautomated.com"
