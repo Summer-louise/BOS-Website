@@ -180,3 +180,27 @@ id = "xTlFW8V5V9qUu6BCEfp6r"
 uri = "file://attached_assets/logo-flow-5.png"
 type = "image"
 title = "5 — Two bold ovals with flow tails (in → process → out)"
+
+[[outputs]]
+id = "PYwya5JIsu30yScN4NmqO"
+uri = "file://attached_assets/logo-3a.png"
+type = "image"
+title = "3A — Terracotta filled centre node, charcoal outer nodes + flow path"
+
+[[outputs]]
+id = "ZgndF2IJUtRna7WuHMOQi"
+uri = "file://attached_assets/logo-3b.png"
+type = "image"
+title = "3B — Charcoal nodes, terracotta as the connector path itself"
+
+[[outputs]]
+id = "ctB-5opQt7ojo-1nxsfTs"
+uri = "file://attached_assets/logo-1a.png"
+type = "image"
+title = "1A — Three nodes, deliberate left-to-right progression, all charcoal"
+
+[[outputs]]
+id = "qp2XAvqvGXP5o1fWM2P4q"
+uri = "file://attached_assets/logo-1b.png"
+type = "image"
+title = "1B — Just two nodes with one generous arcing connector between them"
