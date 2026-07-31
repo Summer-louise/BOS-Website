@@ -90,3 +90,63 @@ id = "JBTWoVMN-PRyDHKEBQQEt"
 uri = "file://attached_assets/icon-6-seed.png"
 type = "image"
 title = "6 — Organic seed / nested form"
+
+[[outputs]]
+id = "0JzK9NYIWdVVRSgAUp9Fm"
+uri = "file://attached_assets/icon-new-1-bold-oval.png"
+type = "image"
+title = "1 — Bold organic imperfect oval"
+
+[[outputs]]
+id = "WTUDKiziHuDd_huhRSaGA"
+uri = "file://attached_assets/icon-new-2-dot-circle.png"
+type = "image"
+title = "2 — Organic oval with floating dot"
+
+[[outputs]]
+id = "-jB-JDi6lZ9GXeQRk5U1H"
+uri = "file://attached_assets/icon-new-3-linked-rings.png"
+type = "image"
+title = "3 — Interlocking organic rings"
+
+[[outputs]]
+id = "ltHkR6YclnK6PJ2FVbA-W"
+uri = "file://attached_assets/icon-new-4-bisected-circle.png"
+type = "image"
+title = "4 — Vertical line through circle"
+
+[[outputs]]
+id = "gsuY16Gph76g0PWAUKkGx"
+uri = "file://attached_assets/icon-new-5-calligraphy-arc.png"
+type = "image"
+title = "5 — Calligraphic brushstroke sweep"
+
+[[outputs]]
+id = "Yvq0gNNjr2Uo2HZdvOMoS"
+uri = "file://attached_assets/icon-new-6-fluid-s.png"
+type = "image"
+title = "6 — Fluid S-curve with loop"
+
+[[outputs]]
+id = "n67zqx_4NsSKZfgKPm0Q_"
+uri = "file://attached_assets/icon-new-7-spiral.png"
+type = "image"
+title = "7 — Golden ratio nautilus spiral"
+
+[[outputs]]
+id = "2XGrk4__qZ7O2cPr9fu-c"
+uri = "file://attached_assets/icon-new-8-filled-form.png"
+type = "image"
+title = "8 — Bold filled terracotta organic form"
+
+[[outputs]]
+id = "WtRTta8gQj_O8ahhpmPDj"
+uri = "file://attached_assets/icon-new-9-labyrinth.png"
+type = "image"
+title = "9 — Organic concentric labyrinth"
+
+[[outputs]]
+id = "B9RN31NWeAxzLg6LWeglT"
+uri = "file://attached_assets/icon-new-10-b-form.png"
+type = "image"
+title = "10 — Abstract fluid terracotta form"
