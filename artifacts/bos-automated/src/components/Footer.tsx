@@ -8,9 +8,10 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start gap-1">
             <div className="flex items-center gap-4">
               <img
-                src="/icon-footer.png"
+                src="/icon-topo.png"
                 alt=""
-                className="h-12 w-auto opacity-80"
+                className="h-12 w-auto opacity-75"
+                style={{ filter: 'brightness(0) invert(1) sepia(0.15)' }}
               />
               <div className="flex flex-col gap-1">
                 <span className="text-base font-serif tracking-[0.22em] uppercase text-accent-foreground leading-tight">BOS Automated</span>
