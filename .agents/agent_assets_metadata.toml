@@ -228,3 +228,33 @@ id = "G--_x9UNhGczH4AixP97B"
 uri = "file://attached_assets/typo-4-lowercase-organic.png"
 type = "image"
 title = "T4 — Lowercase flowing organic serif, katara-style"
+
+[[outputs]]
+id = "HC3yhiG29jS5aDGGupdLK"
+uri = "file://attached_assets/typo-n1-sols.png"
+type = "image"
+title = "N1 — \"bos\" clean lowercase minimal serif (sols-style)"
+
+[[outputs]]
+id = "RtqGCOR1n2Q5_jqRusHVB"
+uri = "file://attached_assets/typo-n2-wavy.png"
+type = "image"
+title = "N2 — \"BOS\" wavy fluid letterforms (ÑCO-style)"
+
+[[outputs]]
+id = "UsNKbYcJict6lGVPfx6uo"
+uri = "file://attached_assets/typo-n3-tall-stretch.png"
+type = "image"
+title = "N3 — \"BOS\" extreme tall stretched serif (M HORAL-style)"
+
+[[outputs]]
+id = "2bWFDluSqaLf9PS1tvNPf"
+uri = "file://attached_assets/typo-n4-aurora.png"
+type = "image"
+title = "N4 — \"BOS AUTOMATED\" high-contrast Didone serif (AURØRA-style)"
+
+[[outputs]]
+id = "bqMys4t7c2i-L92QiToPc"
+uri = "file://attached_assets/typo-n5-icon-combo.png"
+type = "image"
+title = "N5 — Flow node icon + hairline wordmark combined"
