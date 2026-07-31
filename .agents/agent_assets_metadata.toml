@@ -360,3 +360,39 @@ id = "ARchKy8Wvq69T6dPq_bRi"
 uri = "file://attached_assets/reco-4-topographic.png"
 type = "image"
 title = "R4 — Three topographic/fingerprint circles on olive (reference 4 style)"
+
+[[outputs]]
+id = "ASDT0lj58KFXQ73FTwf_J"
+uri = "file://attached_assets/topo-v0-icon-only.png"
+type = "image"
+title = "V0 — Icon only (horizontal) — standalone mark"
+
+[[outputs]]
+id = "MgfJxdyd3n86UXdzmRFBp"
+uri = "file://attached_assets/topo-v1-BOS.png"
+type = "image"
+title = "V1 — Icon + \"BOS\" acronym"
+
+[[outputs]]
+id = "BA2_WeRQacXrDcsmaj-Cy"
+uri = "file://attached_assets/topo-v2-boss-automated.png"
+type = "image"
+title = "V2 — Icon + \"Boss Automated\" mixed-case serif"
+
+[[outputs]]
+id = "_5l9QNWA83YHK3ZD5rLxk"
+uri = "file://attached_assets/topo-v3-full-identity.png"
+type = "image"
+title = "V3 — Full identity: BOS AUTOMATED + Business Optimisation Systems"
+
+[[outputs]]
+id = "JppFlYkn45WZSpzk90rsB"
+uri = "file://attached_assets/topo-v4-creative-stacked.png"
+type = "image"
+title = "V4 — Creative stacked: Boss large / Automated small / tagline"
+
+[[outputs]]
+id = "Nj0M2cZWdyv52y7LmL_W5"
+uri = "file://attached_assets/topo-v5-creative-fusion.png"
+type = "image"
+title = "V5 — Creative: topo circles used as the O in BOS"
