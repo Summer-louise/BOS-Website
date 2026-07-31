@@ -150,3 +150,33 @@ id = "B9RN31NWeAxzLg6LWeglT"
 uri = "file://attached_assets/icon-new-10-b-form.png"
 type = "image"
 title = "10 — Abstract fluid terracotta form"
+
+[[outputs]]
+id = "hLUYQlH9zmc9qr43rGwY5"
+uri = "file://attached_assets/logo-flow-1.png"
+type = "image"
+title = "1 — Three organic nodes connected by flowing curves"
+
+[[outputs]]
+id = "AfM2F3Oz8wkXPnZ--0vTd"
+uri = "file://attached_assets/logo-flow-2.png"
+type = "image"
+title = "2 — Interlocking rings with flowing node connection"
+
+[[outputs]]
+id = "vYuVE06C3LpV0hmxWIrqT"
+uri = "file://attached_assets/logo-flow-3.png"
+type = "image"
+title = "3 — Flow path through nodes, terracotta accent"
+
+[[outputs]]
+id = "tqCyu1J8qRym_QB5a97A3"
+uri = "file://attached_assets/logo-flow-4.png"
+type = "image"
+title = "4 — Chain of overlapping organic nodes in a flowing arc"
+
+[[outputs]]
+id = "xTlFW8V5V9qUu6BCEfp6r"
+uri = "file://attached_assets/logo-flow-5.png"
+type = "image"
+title = "5 — Two bold ovals with flow tails (in → process → out)"
