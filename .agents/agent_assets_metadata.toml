@@ -336,3 +336,27 @@ id = "X9i6wNen-nQ02rClmQj0w"
 uri = "file://attached_assets/bubble-ako-combo.png"
 type = "image"
 title = "W3 — Bubble icon + ÂKO-style open-O wordmark combined"
+
+[[outputs]]
+id = "ysS7ROmTwCAjqdG20OTxm"
+uri = "file://attached_assets/reco-1-circle-organic.png"
+type = "image"
+title = "R1 — Organic circle mark with fluid interior (reference 1 style)"
+
+[[outputs]]
+id = "MGD8Kzp3cfbxk5G25W7TE"
+uri = "file://attached_assets/reco-2-branching.png"
+type = "image"
+title = "R2 — Branching coral/snowflake icon + wordmark on sage (reference 2 style)"
+
+[[outputs]]
+id = "iu7L3jkYnEyognsVh1CUO"
+uri = "file://attached_assets/reco-3-stacked-stones.png"
+type = "image"
+title = "R3 — Stacked zen pebbles in forest green (reference 3 style)"
+
+[[outputs]]
+id = "ARchKy8Wvq69T6dPq_bRi"
+uri = "file://attached_assets/reco-4-topographic.png"
+type = "image"
+title = "R4 — Three topographic/fingerprint circles on olive (reference 4 style)"
