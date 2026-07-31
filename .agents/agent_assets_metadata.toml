@@ -204,3 +204,27 @@ id = "qp2XAvqvGXP5o1fWM2P4q"
 uri = "file://attached_assets/logo-1b.png"
 type = "image"
 title = "1B — Just two nodes with one generous arcing connector between them"
+
+[[outputs]]
+id = "6Cu1tB0FTOLka4rYwPkiW"
+uri = "file://attached_assets/typo-1-flowing-ligature.png"
+type = "image"
+title = "T1 — Letters connected like nodes, organic ligatures"
+
+[[outputs]]
+id = "0bjXSsIirLvkjYKmaIHjY"
+uri = "file://attached_assets/typo-2-terracotta-O.png"
+type = "image"
+title = "T2 — High-contrast serif, terracotta O as the focal accent"
+
+[[outputs]]
+id = "ZWqbCl3qr15ERfYZ1NCx9"
+uri = "file://attached_assets/typo-3-textured-hairline.png"
+type = "image"
+title = "T3 — Tall hairline caps on warm textured paper"
+
+[[outputs]]
+id = "G--_x9UNhGczH4AixP97B"
+uri = "file://attached_assets/typo-4-lowercase-organic.png"
+type = "image"
+title = "T4 — Lowercase flowing organic serif, katara-style"
