@@ -288,3 +288,33 @@ id = "mm6na22ITw-cR9QcFAyqw"
 uri = "file://attached_assets/ref-5-arc-symbol-lockup.png"
 type = "image"
 title = "R5 — Two-arc terracotta/charcoal symbol + BOSS AUTOMATED lockup"
+
+[[outputs]]
+id = "P6b7eK7Vqeq61--65GYDN"
+uri = "file://attached_assets/boss-v1-exact.png"
+type = "image"
+title = "V1 — Closest to reference: terracotta circle, flowing line, spiral curls"
+
+[[outputs]]
+id = "KgBLgggdO4vyFfJMhsEai"
+uri = "file://attached_assets/boss-v2-three-nodes.png"
+type = "image"
+title = "V2 — Three nodes: two outline spirals + terracotta centre"
+
+[[outputs]]
+id = "etyDfbdArrTyl8w0iIJNG"
+uri = "file://attached_assets/boss-v3-big-spirals.png"
+type = "image"
+title = "V3 — Bigger looser spirals, vine-like"
+
+[[outputs]]
+id = "0fn18IZUBTo6SfOD6Gp9X"
+uri = "file://attached_assets/boss-v4-vertical-sun.png"
+type = "image"
+title = "V4 — Vertical: terracotta sun on top, vine curling below"
+
+[[outputs]]
+id = "sgpVA9IvNDTqMaHRkusnb"
+uri = "file://attached_assets/boss-v5-B-form.png"
+type = "image"
+title = "V5 — Flowing line that loosely reads as a \"B\""
