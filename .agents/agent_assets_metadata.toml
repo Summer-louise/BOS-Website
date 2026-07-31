@@ -258,3 +258,33 @@ id = "bqMys4t7c2i-L92QiToPc"
 uri = "file://attached_assets/typo-n5-icon-combo.png"
 type = "image"
 title = "N5 — Flow node icon + hairline wordmark combined"
+
+[[outputs]]
+id = "23MqUWbNyyEg7Q3n2qRoe"
+uri = "file://attached_assets/ref-1-ako-open-O.png"
+type = "image"
+title = "R1 — BOSS with open-circle O, ÂKO-style high-contrast serif"
+
+[[outputs]]
+id = "a-isQaYZL8K5ElqV8BVrl"
+uri = "file://attached_assets/ref-2-arc-O-wordmark.png"
+type = "image"
+title = "R2 — BOSS with two-arc O symbol (images 5 & 6 style)"
+
+[[outputs]]
+id = "4R9mjzJcI20lbo-CtUwAM"
+uri = "file://attached_assets/ref-3-fluid-blob-mark.png"
+type = "image"
+title = "R3 — Organic fluid blob mark + hairline wordmark"
+
+[[outputs]]
+id = "XiahyTpxvcRGvFerwxp3V"
+uri = "file://attached_assets/ref-4-calligraphic-B.png"
+type = "image"
+title = "R4 — Bold calligraphic B mark (image 3 style)"
+
+[[outputs]]
+id = "mm6na22ITw-cR9QcFAyqw"
+uri = "file://attached_assets/ref-5-arc-symbol-lockup.png"
+type = "image"
+title = "R5 — Two-arc terracotta/charcoal symbol + BOSS AUTOMATED lockup"
