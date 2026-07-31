@@ -77,7 +77,7 @@ export default function WhatIsAutomation() {
       <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50 py-4">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 flex items-center justify-between">
           <button onClick={() => navigate('/')}>
-            <img src="/logo.svg" alt="BOS Automated" className="h-10 w-auto" />
+            <img src="/logo-dark.png" alt="BOS Automated — Business Optimisation Systems" className="h-10 md:h-12 w-auto max-w-[240px] md:max-w-none" />
           </button>
           <button
             onClick={() => navigate('/')}

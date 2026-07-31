@@ -76,11 +76,8 @@ export default function Construction() {
       {/* Simple header */}
       <header className="w-full border-b border-border/40 bg-background/95 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
-          <Link href="/" className="flex flex-col gap-0.5">
-            <img src="/logo.svg" alt="BOS Automated" className="h-9 w-auto" />
-            <span className="text-[8px] tracking-widest uppercase font-sans text-muted-foreground/70 leading-none">
-              Business Optimisation Systems
-            </span>
+          <Link href="/">
+            <img src="/logo-dark.png" alt="BOS Automated — Business Optimisation Systems" className="h-10 md:h-12 w-auto max-w-[240px] md:max-w-none" />
           </Link>
           <a
             href={CALENDLY}
