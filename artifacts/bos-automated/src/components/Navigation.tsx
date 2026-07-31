@@ -59,17 +59,21 @@ export function Navigation() {
           <div className="flex items-center justify-between">
             <Link
               href="#hero"
-              className="cursor-pointer"
+              className="cursor-pointer flex items-center gap-3"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
               <img
-                src="/logo-dark.png"
-                alt="BOS Automated — Business Optimisation Systems"
-                className="h-10 md:h-14 w-auto max-w-[260px] md:max-w-none"
+                src="/icon-circles.png"
+                alt=""
+                className="h-10 w-auto"
               />
+              <div className="flex flex-col gap-0">
+                <span className="text-sm md:text-base font-serif tracking-[0.2em] uppercase text-foreground leading-tight">BOS Automated</span>
+                <span className="text-[8px] tracking-[0.18em] uppercase font-sans text-muted-foreground/70 leading-none">Business Optimisation Systems</span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}

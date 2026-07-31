@@ -426,3 +426,15 @@ id = "Ls7B3BdhuCDlIo75IjU2P"
 uri = "file://attached_assets/logo-final-white-bg.png"
 type = "image"
 title = "⬇ Download — Charcoal on white"
+
+[[outputs]]
+id = "ik8DBHvp-8M0gx6esHGri"
+uri = "file://attached_assets/icon-circles-clean.png"
+type = "image"
+title = "Icon — transparent topographic circles"
+
+[[outputs]]
+id = "FhIKLzgOlEBIYtaTF3ewy"
+uri = "file://attached_assets/icon-circles-round.png"
+type = "image"
+title = "Round topographic circles icon"
