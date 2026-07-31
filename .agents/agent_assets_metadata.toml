@@ -54,3 +54,39 @@ id = "pFtT3Cs5RkzMjOQIgJJ26"
 uri = "file://attached_assets/logo-H-geometric-mark.png"
 type = "image"
 title = "Option H — Small geometric mark + wordmark (HŌMA style)"
+
+[[outputs]]
+id = "hD51_8KTf3dIjQkS6J4-U"
+uri = "file://attached_assets/icon-1-loop.png"
+type = "image"
+title = "1 — Organic flowing loop"
+
+[[outputs]]
+id = "45ltpSDP32KuSvUcJ9BJa"
+uri = "file://attached_assets/icon-2-botanical.png"
+type = "image"
+title = "2 — Botanical overlapping forms"
+
+[[outputs]]
+id = "akzh8tvxZecWkklJ5BVtU"
+uri = "file://attached_assets/icon-3-arcs.png"
+type = "image"
+title = "3 — Three flowing arcs"
+
+[[outputs]]
+id = "FHn2Qr5TXnN_mbL85hhWX"
+uri = "file://attached_assets/icon-4-ovals.png"
+type = "image"
+title = "4 — Interlocking organic ovals"
+
+[[outputs]]
+id = "kSWrNo_i3IdldlUOusQeP"
+uri = "file://attached_assets/icon-5-weave.png"
+type = "image"
+title = "5 — Organic weave / ribbon"
+
+[[outputs]]
+id = "JBTWoVMN-PRyDHKEBQQEt"
+uri = "file://attached_assets/icon-6-seed.png"
+type = "image"
+title = "6 — Organic seed / nested form"
