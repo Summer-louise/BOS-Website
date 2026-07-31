@@ -318,3 +318,21 @@ id = "sgpVA9IvNDTqMaHRkusnb"
 uri = "file://attached_assets/boss-v5-B-form.png"
 type = "image"
 title = "V5 — Flowing line that loosely reads as a \"B\""
+
+[[outputs]]
+id = "8F9TrVc_rnLCoxwQS-45X"
+uri = "file://attached_assets/ako-boss-wordmark.png"
+type = "image"
+title = "W1 — BOSS AUTOMATED in ÂKO open-circle serif (wordmark only)"
+
+[[outputs]]
+id = "vfJAXs4ds7ugFDWz5mp_Y"
+uri = "file://attached_assets/bubble-icon-boss.png"
+type = "image"
+title = "W2 — Bubble/cell icon + BOSS AUTOMATED wordmark"
+
+[[outputs]]
+id = "X9i6wNen-nQ02rClmQj0w"
+uri = "file://attached_assets/bubble-ako-combo.png"
+type = "image"
+title = "W3 — Bubble icon + ÂKO-style open-O wordmark combined"
