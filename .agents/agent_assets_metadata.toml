@@ -438,3 +438,27 @@ id = "FhIKLzgOlEBIYtaTF3ewy"
 uri = "file://attached_assets/icon-circles-round.png"
 type = "image"
 title = "Round topographic circles icon"
+
+[[outputs]]
+id = "tvwAfkOKUA6du22WP-Nwz"
+uri = "file://artifacts/bos-automated/public/logo-olive.png"
+type = "image"
+title = "BOS Automated — Olive green"
+
+[[outputs]]
+id = "7DX7dsvyOZEHAf2gqrPk1"
+uri = "file://artifacts/bos-automated/public/logo-cream.png"
+type = "image"
+title = "BOS Automated — Cream (for light backgrounds)"
+
+[[outputs]]
+id = "a_juNNPy-YgSjVOoIODb-"
+uri = "file://artifacts/bos-automated/public/logo-white-bg.png"
+type = "image"
+title = "BOS Automated — White background"
+
+[[outputs]]
+id = "Fbvv3_NbLOrVDOqRcda3C"
+uri = "file://artifacts/bos-automated/public/logo-charcoal.png"
+type = "image"
+title = "BOS Automated — Charcoal (for dark backgrounds)"
