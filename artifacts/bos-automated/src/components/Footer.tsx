@@ -6,7 +6,18 @@ export function Footer() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-accent-foreground/60 font-light">
           <div className="flex flex-col items-center md:items-start gap-1">
-            <img src="/logo-olive.png" alt="BOS Automated — Business Optimisation Systems" className="h-14 w-auto" />
+            <div className="flex items-center gap-4">
+              <img
+                src="/icon-footer.png"
+                alt=""
+                className="h-12 w-auto opacity-80"
+              />
+              <div className="flex flex-col gap-1">
+                <span className="text-base font-serif tracking-[0.22em] uppercase text-accent-foreground leading-tight">BOS Automated</span>
+                <div className="h-px w-full bg-accent-foreground/30" />
+                <span className="text-[8px] tracking-[0.22em] uppercase font-sans text-accent-foreground/60 leading-none">Business Optimisation Systems</span>
+              </div>
+            </div>
           </div>
           <div>
             Sunshine Coast, QLD
