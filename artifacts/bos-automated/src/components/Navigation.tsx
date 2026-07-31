@@ -66,13 +66,10 @@ export function Navigation() {
               }}
             >
               <img
-                src="/logo.svg"
-                alt="BOS Automated"
-                className="h-10 w-auto"
+                src="/logo-dark.png"
+                alt="BOS Automated — Business Optimisation Systems"
+                className="h-10 md:h-14 w-auto max-w-[260px] md:max-w-none"
               />
-              <span className="text-[8px] tracking-widest uppercase font-sans text-muted-foreground/70 mt-0.5 leading-none">
-                Business Optimisation Systems
-              </span>
             </Link>
 
             {/* Desktop Navigation */}

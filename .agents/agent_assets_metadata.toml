@@ -396,3 +396,33 @@ id = "Nj0M2cZWdyv52y7LmL_W5"
 uri = "file://attached_assets/topo-v5-creative-fusion.png"
 type = "image"
 title = "V5 — Creative: topo circles used as the O in BOS"
+
+[[outputs]]
+id = "jKcf_JFGa3On9dcxdhmPb"
+uri = "file://attached_assets/logo-final-olive.png"
+type = "image"
+title = "⬇ Download — White on olive green (original)"
+
+[[outputs]]
+id = "XjItW7ixxijb-l90mk8v6"
+uri = "file://attached_assets/logo-final-cream.png"
+type = "image"
+title = "⬇ Download — Olive on warm cream (light backgrounds)"
+
+[[outputs]]
+id = "O851IwaFjlXB91pq585__"
+uri = "file://attached_assets/logo-final-white.png"
+type = "image"
+title = "⬇ Download — Charcoal on white background"
+
+[[outputs]]
+id = "xp8zCZmPbxBtp8bVL-Eb8"
+uri = "file://attached_assets/logo-final-dark.png"
+type = "image"
+title = "⬇ Download — White on deep charcoal"
+
+[[outputs]]
+id = "Ls7B3BdhuCDlIo75IjU2P"
+uri = "file://attached_assets/logo-final-white-bg.png"
+type = "image"
+title = "⬇ Download — Charcoal on white"

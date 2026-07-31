@@ -6,10 +6,7 @@ export function Footer() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-accent-foreground/60 font-light">
           <div className="flex flex-col items-center md:items-start gap-1">
-            <img src="/logo.svg" alt="BOS Automated" className="h-8 w-auto opacity-80" />
-            <span className="text-[9px] tracking-widest uppercase font-sans text-accent-foreground/40 leading-none">
-              Business Optimisation Systems ~ Automated
-            </span>
+            <img src="/logo-light.png" alt="BOS Automated — Business Optimisation Systems" className="h-12 w-auto opacity-90" />
           </div>
           <div>
             Sunshine Coast, QLD
