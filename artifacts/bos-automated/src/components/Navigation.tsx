@@ -68,11 +68,11 @@ export function Navigation() {
               <img
                 src="/icon-topo.png"
                 alt=""
-                className="h-16 md:h-10 w-auto"
+                className="h-28 md:h-10 w-auto flex-shrink-0"
               />
-              <div className="flex flex-col gap-0.5 md:gap-0">
-                <span className="text-base md:text-base font-serif tracking-[0.2em] uppercase text-foreground leading-tight">BOS Automated</span>
-                <span className="text-[10px] md:text-[8px] tracking-[0.18em] uppercase font-sans text-muted-foreground/70 leading-none">Business Optimisation Systems</span>
+              <div className="flex flex-col gap-1 md:gap-0">
+                <span className="text-lg md:text-base font-serif tracking-[0.2em] uppercase text-foreground leading-tight whitespace-nowrap">BOS Automated</span>
+                <span className="hidden md:block text-[8px] tracking-[0.18em] uppercase font-sans text-muted-foreground/70 leading-none">Business Optimisation Systems</span>
               </div>
             </Link>
 
