@@ -1,0 +1,6 @@
+[build]
+  command   = "pnpm install && pnpm --filter @workspace/bos-automated run build"
+  publish   = "artifacts/bos-automated/dist/public"
+
+[build.environment]
+  NODE_VERSION = "20"
